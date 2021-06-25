@@ -1,0 +1,28 @@
+---
+description: The supported workflow for reviewing findings added to reports
+---
+
+# Finding Edit & Review Workflow
+
+## Local Findings
+
+Findings added to a report are considered "local" to that report. Editing these findings _have no effect_ on the "master" record in the findings library.
+
+### Finding Assignments
+
+When a finding is added to a report the **Assigned Operator** is automatically set to the current user. The assignee is the **Owner** of that finding. If the current user owns the finding they will see a bold red **You** in that column. Findings owned by other users are represented by a grey username.
+
+![Findings Added to a Report](../../.gitbook/assets/report_findings_table.png)
+
+Findings assigned to a user will appear on that user's dashboard under `/home` when they login.
+
+### Finding Status
+
+Each local finding has a **Status** that defaults to **Needs Editing**. Once the owner has finished editing the finding and attached evidence files they click **Mark as Complete** from the dropdown menu under **Options**. This changes the status to **Ready for Review**, a sign to the assessment lead that the finding is complete and can be reviewed for finalizing the write-up.
+
+If the reviewer believes the finding needs more work, the **Flag for Editing** option will reverse the status.
+
+{% hint style="success" %}
+This is a preliminary version of the review workflow. Future versions will enable reviewers to leave comments, sign-off on findings, and track changes.
+{% endhint %}
+

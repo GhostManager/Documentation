@@ -1,0 +1,8 @@
+---
+description: Using the Operation Logs
+---
+
+# Operation Logs
+
+The Ghostwriter operation logs is a place to view and edit all commands that have been executed for a particular project. With a simple table view, an operator or project manager can quickly review any action taken in a target network and supplement them with addtional data. Commands can be imported and exported for use in external reporting tools.
+

@@ -1,0 +1,10 @@
+---
+description: Using Ghostwriter to manage and monitor servers and domain names
+---
+
+# Infrastructure Management
+
+Ghostwriter helps you manage and monitor covert infrastructure, including servers and domain names. Tracking infrastructure in Ghostwriter creates a historical record of how and when your infrastructure was used.
+
+Additionally, the infrastructure manager can be setup to monitor assets for changes in domain categorization and open ports/services exposed to the public internet.
+
