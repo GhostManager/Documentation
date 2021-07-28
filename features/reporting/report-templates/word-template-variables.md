@@ -177,8 +177,7 @@ The filter collection is under development and will continue to grow.
       <td style="text-align:left">
         <p>Accepts the <code>findings</code> variable and filters it with a list of
           severities</p>
-        <p>Example: This statement loops over only findings rated as &quot;High&quot;
-          or &quot;Medium&quot; severity:</p>
+        <p>Example: This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p>
         <p> <code>{% for x in findings|filter_severity([&quot;High&quot;, &quot;Medium&quot;]) %}</code>
         </p>
       </td>
@@ -193,8 +192,14 @@ The filter collection is under development and will continue to grow.
         marked as compromised.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">filter_type(list)</td>
+      <td style="text-align:left">
+        <p>Accepts the <code>findings</code> variable and filters it with a list of
+          categories</p>
+        <p>Example: This statement loops over only findings with the type <em>Network</em>:</p>
+        <p> <code>{% for x in findings|filter_type([&quot;Network&quot;]) %}</code>
+        </p>
+      </td>
     </tr>
   </tbody>
 </table>
