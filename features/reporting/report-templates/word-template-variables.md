@@ -76,6 +76,10 @@ Dates are localized based on your locale configuration in the server settings. T
 The `project` key has separate values for the day, month, and year the project started and ended. Use these to assemble your own date or date range formats if you need to represent a date differently or only want part of the date.
 {% endhint %}
 
+{% hint style="success" %}
+If you do not have a client `short_name` value set, Ghostwriter will replace references to `client.short_name` with the client's full name.
+{% endhint %}
+
 #### Findings Attributes – HTML & Rich Text Attributes
 
 You write your findings in Ghostwriter's WYSIWYG editor where you can style text like you would directly in Word. The WYSIWYG editor uses HTML, so Ghostwriter stores your content as HTML.
