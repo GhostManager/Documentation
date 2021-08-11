@@ -36,7 +36,7 @@ If you are using `zsh`, use this command: `setopt dotglob`
 The `.envs` directory contains `.local` and `.production` directories. Each of these directories contains the same two files, `.django` and `.postgres`. These files manage the environment variables for the Docker containers.
 
 {% hint style="info" %}
-Ghostwriter does not allow users to sign-up for an account by default. If you intend to have users sign-up for accounts, edit the `.django` file to re-enable `DJANGO_ACCOUNT_ALLOW_REGISTRATION`. Also, enable `DJANGO_ACCOUNT_EMAIL_VERIFICATION` if you want to require email verification. 
+Ghostwriter does not allow users to sign-up for an account by default. If you intend to have users sign-up for accounts, edit the `.django` file to re-enable `DJANGO_ACCOUNT_ALLOW_REGISTRATION`. Also, enable `ACCOUNT_EMAIL_VERIFICATION` if you want to require email verification. 
 {% endhint %}
 
 ## Building the Container

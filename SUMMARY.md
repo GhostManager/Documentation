@@ -67,20 +67,21 @@
 
 ## Development
 
-* [Stack Overview](development/stack-overview.md)
+* [Stack Overview](development/stack-overview/README.md)
+  * [Behind the Scenes](development/stack-overview/behind-the-scenes.md)
 * [Modifying Code](development/modifying-code.md)
+* [Testing Code](development/testing-code.md)
+* [Contributing to the Project](development/contributing-to-the-project.md)
 * [Database Models](development/database-models/README.md)
   * [Home Models](development/database-models/home-models.md)
   * [Client & Project Models](development/database-models/rolodex-models.md)
   * [Infrastructure Models](development/database-models/infrastructure-models.md)
   * [Reporting Models](development/database-models/reporting-models.md)
-* [Behind the Scenes](development/behind-the-scenes.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
 
 ## Known Issues & FAQ
 
-* [Your Background Tasks Are Not Running](known-issues-and-faq/your-background-tasks-are-not-running/README.md)
-  * [Untitled](known-issues-and-faq/your-background-tasks-are-not-running/untitled.md)
+* [Getting Help with a Problem](known-issues-and-faq/getting-help-with-a-problem.md)
 
 ## Change Logs
 
