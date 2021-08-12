@@ -2,7 +2,7 @@
 description: How to report a problem or get support
 ---
 
-# Getting Help with a Problem
+# Reporting a Problem
 
 ## Getting Help
 

@@ -79,9 +79,10 @@
   * [Reporting Models](development/database-models/reporting-models.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
 
-## Known Issues & FAQ
+## Getting Help
 
-* [Getting Help with a Problem](known-issues-and-faq/getting-help-with-a-problem.md)
+* [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
+* [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
 
 ## Change Logs
 
