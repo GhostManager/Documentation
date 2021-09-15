@@ -14,13 +14,11 @@ Everything runs inside of a Docker container, with Docker Compose, for simple de
 
 {% embed url="https://docs.docker.com/compose/" %}
 
-Ghostwriter uses the Docker **Python3.7-Alpine** image, a barebones image with Python 3.7 only the most necessary Python libraries.
-
-{% embed url="https://github.com/docker-library/python/tree/81462d1d42bef466d89f1108dde44462c408d3b7" %}
+Ghostwriter uses the Docker **Python3.8-Alpine** image, a barebones image with Python 3.8 only the most necessary Python libraries.
 
 Docker Compose handles all of the dependencies, so nothing needs to be installed on the host except Docker.
 
-![Anatomy of the Docker Container for Ghostwriter](../../.gitbook/assets/ghostwriter_stack_anatomy.png)
+![Anatomy of the Docker Container for Ghostwriter](../../.gitbook/assets/image%20%2830%29.png)
 
 ### The Database — PostgreSQL
 

@@ -40,3 +40,11 @@ The Ghostwriter project gladly accepts pull requests \(PR\). All PRs must includ
 
 Your PR will be automatically reviewed by GitHub Actions. The PR must pass these CI/CD checks before it can be accepted by a member of the project team.
 
+{% hint style="success" %}
+Make sure any code contributions that introduce new features or functionality to the core project are vendor agnostic and flexible. A good PR introduces something that many people are likely to find useful or beneficial.
+
+A not-so-good PR is something specifically tailored to a certain workflow or assumes a certain vendor \(e.g., registrar\) or service \(e.g., API, chat app\). PRs like that would be better suited as a plugin.
+{% endhint %}
+
+
+
