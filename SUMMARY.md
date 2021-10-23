@@ -53,7 +53,7 @@
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
 
-## Workflow & Usage <a id="workflow"></a>
+## Workflow & Usage <a href="workflow" id="workflow"></a>
 
 * [The Workflow](workflow/basic-usage/README.md)
   * [Finding Edit & Review Workflow](workflow/basic-usage/finding-review-workflow.md)
@@ -86,9 +86,9 @@
 
 ## Change Logs
 
+* [22 October 2021, v2.2.2](change-logs/22-october-2021-v2.2.2.md)
 * [27 September 2021, v2.2.2-rc2](change-logs/27-september-2021-v2.2.2-rc2.md)
 * [15 September 2021, v2.2.2-rc1](change-logs/15-september-2021-v2.2.2-rc1.md)
 * [28 May 2021, v2.2.1](change-logs/28-may-2021-v2.2.1.md)
 * [10 May 2021, v2.2.0](change-logs/10-may-2021-v2.2.0.md)
 * [13 April 2021, v2.2.0-rc1](change-logs/13-april-2021-v2.2.0-rc1.md)
-
