@@ -9,23 +9,21 @@ This is the final release of v2.2.2. This release contains mostly optimizations 
 ### New Features
 
 * Added new filters for report templates
-* `add_days`: Add some number of business days to a date
-* `format_datetime`: Change the format of the provided datetime string
+  * `add_days`: Add some number of business days to a date
+  * `format_datetime`: Change the format of the provided datetime string
 * The cloud monitoring task can now collect information about AWS Lightsail instances and S3 buckets
 * A new "Notification Delay" setting is available under the Cloud Configurations
   * This setting delays cloud infrastructure teardown notifications by X days
   * Useful if you want to run the cloud monitor task more frequently and not get teardown reminders for some period of time after a project ends
 * Projects now have fields for  timezone, start time, and end time to track working hours
-* User profiles and client contacts now have a timezone field
+* Client contacts now have a timezone field
 * You can now save up to three additional IP addresses for cloud servers (they are stored in an array for easy iteration)
 
 ### Fixed
 
 * Fixed the sorting of the domain age column in the domain table
 * Fixed issue with the JavaScript for deleting entries in a formset selecting other checkboxes
-*   Fixed `WhoisStatus` model's `count` property
-
-    Upgraded TinyMCE to v5.8.2 to address potential XSS discovered in older TinyMCE versions
+* Fixed `WhoisStatus` model's `count` property
 * Fixed error handling that could suppress report generation error messages when generating all reports
 * Fixed error that could lead to WebSocket disconnections and errors when editing the timestamp values of a log entry
 * Fixed a typo in the emoji used by the default Slack message for an untracked server
@@ -40,13 +38,14 @@ This is the final release of v2.2.2. This release contains mostly optimizations 
 * Bumped 50 character limit on certain `OplogEntry` values to 255 (the standard for other models)
 * Condensed Docker image layers and disabled caching for `pip` and `apk` to reduce image sizes by about 0.2 to 0.3GB
 * Optimized and improved code quality throughout the project based on recommendations from Code Factor ([https://www.codefactor.io/repository/github/ghostmanager/ghostwriter](https://www.codefactor.io/repository/github/ghostmanager/ghostwriter))
-* **New for RC2: **Added Signals to release a checked-out server or domain if the current checkout is deleted (so it is released immediately rather than waiting for a scheduled task to run)
-* **New in RC2:** When updating a project's dates, Ghostwriter will no longer update the dates on domain and server checkouts if the checkout has already expired
-* **New for RC2: **If an in-use domain is flagged as "burned" by the health check task, a notification will now be sent to the project's Slack channel if a Slack channel is configured
-* **New for RC2:** All core libraries have been bumped up to their latest versions and Django has been upgraded to v3.1 from v3.0
+* Added Signals to release a checked-out server or domain if the current checkout is deleted (so it is released immediately rather than waiting for a scheduled task to run)
+* When updating a project's dates, Ghostwriter will no longer update the dates on domain and server checkouts if the checkout has already expired
+* If an in-use domain is flagged as "burned" by the health check task, a notification will now be sent to the project's Slack channel if a Slack channel is configured
+* All core libraries have been bumped up to their latest versions and Django has been upgraded to v3.1 from v3.0
 
 ### Security Changes
 
 * Upgraded the Django image to Alpine v3.14 to address potential security vulnerabilities in the base image
 * Upgraded Postgres image to Postgres v11.12 to address potential security vulnerabilities in previously used version/base image
 * Pinned nginx image to v1.12.1 for security and stability
+* Upgraded TinyMCE to v5.8.2 to address potential XSS discovered in older TinyMCE versions
