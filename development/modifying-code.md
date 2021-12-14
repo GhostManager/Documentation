@@ -6,9 +6,9 @@ description: Modifying and then deploying code changes
 
 ## Local Development
 
-While running Ghostwriter using `local.yml`, you can make changes on the fly without needing to run any Docker commands. Django smartly restarts the server when it detects a file change. Also, the local deployment mounts Ghostwriter's directory on your host, so changes to the code \(Python or templates\) will be live once the file is saved.
+While running Ghostwriter using `local.yml`, you can make changes on the fly without needing to run any Docker commands. Django smartly restarts the server when it detects a file change. Also, the local deployment mounts Ghostwriter's directory on your host, so changes to the code (Python or templates) will be live once the file is saved.
 
-The `build, stop, rm, up -d` commands need to be run only if you add a new library or if you add a new task to **tasks.py** __\(only after initially adding the new function, not each time you change the function\).
+The `build, stop, rm, up -d` commands need to be run only if you add a new library or if you add a new task to **tasks.py** __ (only after initially adding the new function, not each time you change the function).
 
 `docker-compose -f local.yml stop; docker-compose -f local.yml rm -f; docker-compose -f local.yml build; docker-compose -f local.yml up -d`
 
@@ -30,11 +30,11 @@ No additional work is required. Once a migration is successful, your model chang
 
 ### Troubleshooting
 
-Most errors will be displayed in your web browser thanks to the verbose error output configured for local deployments. 
+Most errors will be displayed in your web browser thanks to the verbose error output configured for local deployments.&#x20;
 
 Of course, there will be no visible output in your browser if an error prevents Django from starting the server. To view logging output from Redis, PostgreSQL, and Django, use the Docker `logs` command:
 
-```text
+```
 docker-compose -f local.yml logs
 docker-compose -f local.yml logs django
 docker-compose -f local.yml logs queue
@@ -56,12 +56,11 @@ If you break something or want to start from scratch, stop all of your container
 The following assumes only Ghostwriter container and volumes are present on your system. Proceed with caution if you use Docker for other things on your development system.
 {% endhint %}
 
-```text
+```
 docker system prune -a
 docker volume rm -f $(docker volume ls)
 ```
 
 The first command will remove all stopped containers. If you only need to re-build, you can stop there and build your containers again.
 
-The second command deletes all volumes. Thie volumes hold your data \(e.g., the database and files\). If you leave them intact, your new container will launch ready to use with your existing data. You'll need to delete the volumes to get a true fresh start.
-
+The second command deletes all volumes. Thie volumes hold your data (e.g., the database and files). If you leave them intact, your new container will launch ready to use with your existing data. You'll need to delete the volumes to get a true fresh start.

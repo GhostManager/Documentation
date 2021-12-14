@@ -4,7 +4,7 @@ description: Configuring the API endpoint for automatic activity logging
 
 # Setting up Automated Logging
 
-There are currently two different C2 frameworks we've built integrations for \(Mythic and Cobalt Strike\) that use the Ghostwriter REST API to automatically create and update Oplog entries.
+There are currently two different C2 frameworks we've built integrations for (Mythic and Cobalt Strike) that use the Ghostwriter REST API to automatically create and update Oplog entries.
 
 ## Obtaining an API Key
 
@@ -14,7 +14,7 @@ A new Ghostwriter API key is displayed automatically for you when you finish [cr
 
 In order to use any automated logging solution, you will first need to create an API key. You must be admin to do this. First, navigate to the admin panel and click on the "Add" button in the API keys row.
 
-![](../../.gitbook/assets/create_api_key.png)
+![](../../.gitbook/assets/create\_api\_key.png)
 
 You will be presented with a basic form that requires a name and optionally an expiration date. Set the appropriate fields and click save.
 
@@ -26,14 +26,14 @@ Once you hit save, a green toast message will appear and present you with the AP
 
 ## Setting up Syncing with Cobalt Strike
 
-{% embed url="https://github.com/GhostManager/cobalt\_sync" %}
+{% embed url="https://github.com/GhostManager/cobalt_sync" %}
 
-  
-Clone the [cobalt\_sync project](https://github.com/GhostManager/cobalt_sync) to your Cobalt Strike teamserver and follow the instructions contained in the [README](https://github.com/GhostManager/cobalt_sync/blob/main/README.md) to enable syncing for each Cobalt Strike teamserver you deploy.
+\
+Clone the [cobalt\_sync project](https://github.com/GhostManager/cobalt\_sync) to your Cobalt Strike teamserver and follow the instructions contained in the [README](https://github.com/GhostManager/cobalt\_sync/blob/main/README.md) to enable syncing for each Cobalt Strike teamserver you deploy.
 
-To integrate Cobalt Strike with the Ghostwriter Oplog API, we have released a server side aggressor script that will post any command to the Ghostwriter server. In order to set this up, clone the [_oplog.cna_](https://github.com/GhostManager/cobalt_sync) script to your teamserver and make sure that it is loaded by `agscript`. In this file, there are a series of placeholder Ghostwriter variables that you must set. These variables include:
+To integrate Cobalt Strike with the Ghostwriter Oplog API, we have released a server side aggressor script that will post any command to the Ghostwriter server. In order to set this up, clone the [_oplog.cna_](https://github.com/GhostManager/cobalt\_sync) script to your teamserver and make sure that it is loaded by `agscript`. In this file, there are a series of placeholder Ghostwriter variables that you must set. These variables include:
 
-* $oplog::GhostwriterOplogURL - The base URL of the Ghostwriter server without any paths or trailing "/" \(e.g., _https://ghostwriter.contoso.com_\)
+* $oplog::GhostwriterOplogURL - The base URL of the Ghostwriter server without any paths or trailing "/" (e.g., _https://ghostwriter.contoso.com_)
 * $oplog::GhostwriterOplogID - This needs to be set to the corresponding Oplog ID
 * $oplog::GhostwriterOplogAPIKey - This needs to be set to the API key generated above
 
@@ -47,13 +47,11 @@ Once the script is loaded by `agscript`, every command entered in an interactive
 
 ## Setting up Syncing with Mythic
 
-{% embed url="https://github.com/GhostManager/mythic\_sync" %}
+{% embed url="https://github.com/GhostManager/mythic_sync" %}
 
-Clone the [mythic\_sync project](https://github.com/GhostManager/mythic_sync) to your Mythic C2 server and follow the instructions contained in the README to enable syncing for each Mythic server you deploy.
+Clone the [mythic\_sync project](https://github.com/GhostManager/mythic\_sync) to your Mythic C2 server and follow the instructions contained in the README to enable syncing for each Mythic server you deploy.
 
 {% hint style="info" %}
 **Note**: Since Mythic associates output with the original command, the _mythic\_sync_ project will retroactively update previous Oplog entries when output is received. _This will overwrite any additional context that was added to the original entry within Ghostwriter before the new output was received._
 {% endhint %}
-
-
 

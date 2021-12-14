@@ -53,7 +53,7 @@
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
 
-## Workflow & Usage <a href="workflow" id="workflow"></a>
+## Workflow & Usage <a href="#workflow" id="workflow"></a>
 
 * [The Workflow](workflow/basic-usage/README.md)
   * [Finding Edit & Review Workflow](workflow/basic-usage/finding-review-workflow.md)
@@ -71,7 +71,8 @@
   * [Behind the Scenes](development/stack-overview/behind-the-scenes.md)
 * [Modifying Code](development/modifying-code.md)
 * [Testing Code](development/testing-code.md)
-* [Contributing to the Project](development/contributing-to-the-project.md)
+* [Contributing to the Project](development/contributing-to-the-project/README.md)
+  * [Pre-Release Checklist](development/contributing-to-the-project/pre-release-checklist.md)
 * [Database Models](development/database-models/README.md)
   * [Home Models](development/database-models/home-models.md)
   * [Client & Project Models](development/database-models/rolodex-models.md)
