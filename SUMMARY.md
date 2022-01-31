@@ -87,6 +87,7 @@
 
 ## Change Logs
 
+* [28 January 2022, v2.2.3-rc1](change-logs/28-january-2022-v2.2.3-rc1.md)
 * [22 October 2021, v2.2.2](change-logs/22-october-2021-v2.2.2.md)
 * [27 September 2021, v2.2.2-rc2](change-logs/27-september-2021-v2.2.2-rc2.md)
 * [15 September 2021, v2.2.2-rc1](change-logs/15-september-2021-v2.2.2-rc1.md)
