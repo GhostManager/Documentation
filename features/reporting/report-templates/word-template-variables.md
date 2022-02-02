@@ -13,9 +13,9 @@ Jinja2 uses _statements_, _expressions_, and _filters_. These equate to lines of
 * **Statement** – `{% ... %}`
   * Statements are lines of code, like `{% if some_variable %}`
 * **Expression** – `{{ ... }}`
-  * In general, an expression works like a variable in most cases, like `{{ client }}`
+  * In general, an expression works like a variable in most cases, like `{{ client.name }}`
 * **Filter** – `... |filter ...`
-  * You can pipe a value into a filter to modify it, like `{{ client|title }}`
+  * You can pipe a value into a filter to modify it, like `{{ client.name|title }}`
 
 Templates can contain basic expressions that Ghostwriter simply replaces and more complicated statements (e.g., for loops, if/else). In addition to the custom expressions and filters documented on this page, Jinja2 offers built-in statements, expressions, and filters you can use with Ghostwriter templates.
 
@@ -32,7 +32,7 @@ Whitespace Control
 {% endembed %}
 
 {% hint style="danger" %}
-All of Ghostwriter's expressions and statements should be wrapped in curly braces with one space to either side (`{{ client }}`or `{% if ... %}` ) – unless otherwise noted.
+All of Ghostwriter's expressions and statements should be wrapped in curly braces with one space to either side (`{{ client.name }}`or `{% if ... %}` ) – unless otherwise noted.
 
 If you do not include the spaces, that expression will not be recognized as valid and ignored by Jinja2.
 {% endhint %}
@@ -41,21 +41,21 @@ If you do not include the spaces, that expression will not be recognized as vali
 
 These expressions are built into Jinja2 and might be useful in your Word documents:
 
-| Expression                            | Description                                                      |
-| ------------------------------------- | ---------------------------------------------------------------- |
-| `capitalize(string)`                  | Capitalize the first character and convert the rest to lowercase |
-| `lower(string)`                       | Convert a value to all lowercase                                 |
-| `replace(string, old, new)`           | Replace the old string with a new string                         |
-| `title(string)`                       | Return a titlecased string                                       |
-| `trim(value, chars=None)`             | Strip leading and trailing characters (default is whitespace)    |
-| `unique(value, case_sensitive=False)` | Return a list of unique items from an iterable                   |
-| `upper(string)`                       | Convert a value to all uppercase                                 |
+| **Expression**                        | **Description**                                                              |
+| ------------------------------------- | ---------------------------------------------------------------------------- |
+| `capitalize(string)`                  | Capitalize the first character and convert the rest to lowercase             |
+| `lower(string)`                       | Convert a value to all lowercase                                             |
+| `replace(string, old, new)`           | Replace the old string (a substring of the first argument) with a new string |
+| `title(string)`                       | Return a titlecased string                                                   |
+| `trim(value, chars=None)`             | Strip leading and trailing characters (default is whitespace)                |
+| `unique(value, case_sensitive=False)` | Return a list of unique items from an iterable                               |
+| `upper(string)`                       | Convert a value to all uppercase                                             |
 
 ### Ghostwriter Expressions
 
 To see what all is available for your report, generate the JSON report. Everything in the resulting JSON will be available to a report template. The following table describes the top-level keys:
 
-| Expression     | Description                                                                                                           |
+| **Expression** | **Description**                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------- |
 | report\_date   | \[`String`] Full date the report was generated (localized based on server settings)                                   |
 | project        | \[`Dict`] All information about the project                                                                           |
@@ -64,11 +64,12 @@ To see what all is available for your report, generate the JSON report. Everythi
 | objectives     | \[`Dict`] All objectives information                                                                                  |
 | targets        | \[`Dict`] All project targets                                                                                         |
 | scope          | \[`Dict`] All project scope lists                                                                                     |
+| infrastructure | \[`Dict`] All project infrastructure information                                                                      |
 | findings       | \[`Dict`] All information about a project's findings                                                                  |
 | docx\_template | \[`Dict`] All information about the selected DOCX template                                                            |
 | pptx\_template | \[`Dict`] All information about the selected PPTX template                                                            |
 | company        | \[`Dict`] All information about your company (configured in the admin panel)                                          |
-| title          | \[`String`] The report's title                                                                                        |
+| title          | \[`String`] The report's title set in Ghostwriter                                                                     |
 | complete       | \[`Bool`] Value indicating if the report has been marked as complete                                                  |
 | archived       | \[`Bool`] Value indicating if the report has been marked as archived                                                  |
 | delivered      | \[`Bool`] Value indicating if the report has been marked as delivered                                                 |
@@ -86,7 +87,7 @@ If you do not have a client `short_name` value set, Ghostwriter will replace ref
 
 #### Findings Attributes – HTML & Rich Text Attributes
 
-You write your findings in Ghostwriter's WYSIWYG editor where you can style text like you would directly in Word. The WYSIWYG editor uses HTML, so Ghostwriter stores your content as HTML.
+You write your findings in Ghostwriter's WYSIWYG editor where you can style text as you would directly in Word. The WYSIWYG editor uses HTML, so Ghostwriter stores your content as HTML.
 
 Let's say you put the following Jinja2 code in a template:
 
@@ -96,7 +97,7 @@ Let's say you put the following Jinja2 code in a template:
 {% endfor %}
 ```
 
-That would drop-in raw HTML using whatever style you had assigned to `{{ finding.description }}` in the template. It's unlikely you would want that.
+That would drop in raw HTML using whatever style you had assigned to `{{ finding.description }}` in the template. It's unlikely you would want that.
 
 Jinja2's `striptags` filter can help, but that removes all HTML without preserving new lines. Ghostwriter's custom `strip_html` filter will strip the tags and preserve newlines, but the output will still be all plaintext. You will have to re-apply character and paragraph styles, font changes, and other options. Your evidence files will also appear as their text placeholders.
 
@@ -108,11 +109,11 @@ To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for 
 {% endfor %}
 ```
 
-This will drop-in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied) and all of your text will be styled.
+This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied) and all of your text will be styled.
 
 Each finding also has a unique `severity_rt` attribute. You don't style this text in the WYSIWYG editor. Ghostwriter creates a rich text version of your severity category that is colored using your configured color code for that category.
 
-The `severity_rt` attribute only styles the color of the text run, so you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag like so:
+The `severity_rt` attribute only styles the color of the text run, so you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag (for a run) like so:
 
 ![Severity Category Styled as Heading 4](<../../../.gitbook/assets/image (19).png>)
 
@@ -126,12 +127,12 @@ There are several tags used for Word documents that are not built into Jinja2. T
 
 Example: `{{p findings_subdoc }}`
 
-| Tag | Description   |
-| --- | ------------- |
-| p   | New paragraph |
-| tr  | Table row     |
-| tc  | Table column  |
-| r   | Text run      |
+| **Tag** | **Description** |
+| ------- | --------------- |
+| r       | Text run        |
+| p       | New paragraph   |
+| tr      | Table row       |
+| tc      | Table column    |
 
 The table tags may appear complicated at first. You can create a table with a row for each point of contact using the provided statements, expressions, and tags like this:
 
@@ -159,10 +160,10 @@ Here is my paragraph
 
 There are several statements for Word documents that are not built into Jinja2:
 
-| Statement                  | Description                                                       |
-| -------------------------- | ----------------------------------------------------------------- |
-| {% cellbg color\_var %}    | Color a table cell where `color_var` is a hex value without the # |
-| {% colspan some\_number %} | Span a table cell over a `some_number` of columns                 |
+| **Statement**               | **Description**                                                   |
+| --------------------------- | ----------------------------------------------------------------- |
+| `{% cellbg color_var %}`    | Color a table cell where `color_var` is a hex value without the # |
+| `{% colspan some_number %}` | Span a table cell over a `some_number` of columns                 |
 
 ### Ghostwriter Filters
 
@@ -172,16 +173,18 @@ Ghostwriter offers some custom filters you can use to quickly modify report valu
 The filter collection is under development and will continue to grow.
 {% endhint %}
 
-| Filter                 | Usage                                                                                                                                                                                                                                                                                 |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| filter\_severity(list) | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p>Example: This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p> |
-| strip\_html            | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                             |
-| compromised            | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                   |
-| filter\_type(list)     | <p>Accepts the <code>findings</code> variable and filters it with a list of categories</p><p>Example: This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                                |
+| **Filter**                                              | **Usage**                                                                                                                                                                                                                                                                                 |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filter_severity(list)`                                 | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p><br>Example: This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p> |
+| `strip_html`                                            | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                                 |
+| `compromised`                                           | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                       |
+| `filter_type(list)`                                     | <p>Accepts the <code>findings</code> variable and filters it with a list of categories</p><p>Example: This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                                    |
+| `add_days(date,`` `_``_` ``current_format, new_format)` | <p>Provide a date to format with the current format string and a new format string. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | add_days("%b. %d, %Y", -10)</code></p>                                                                                         |
+| `format_datetime`_`(`_`date, format_str, days)`         | <p>Provide a date, a format string, and a number of days to add or subtract. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | format_datetime("%b. %d, %Y", "%B %-d, %Y")</code></p>                                                                                |
 
 ### Subdocuments
 
-Subdocuments are like other variables except they are pre-rendered Word documents. When a subdocument is inserted into the template, it is like copy/pasting content from one document into another. A subdocument can be a small paragraph or much larger sections.
+Subdocuments are like other variables except they are pre-rendered Word documents. When a subdocument is inserted into the template, it is like copy/pasting content from one document into another. A subdocument can be a small paragraph or a much larger section.
 
 Ghostwriter uses subdocuments to translate your WYSIWYG content (e.g., findings) to Office Open XML.
 
