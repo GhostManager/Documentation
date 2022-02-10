@@ -2,7 +2,7 @@
 
 ## v2.2.3-rc2
 
-[https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3-rc2](https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3-rc2)
+{% embed url="https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3-rc2" %}
 
 This is the second release candidate for v2.2.3. This release contains everything from v2.2.3-rc1 with the addition of some new changes.
 
