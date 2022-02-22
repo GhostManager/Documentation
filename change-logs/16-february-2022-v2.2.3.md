@@ -1,6 +1,6 @@
 # 16 February 2022, v2.2.3
 
-## v2.2.3 (Unreleased)
+## v2.2.3
 
 [https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3](https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3)
 
