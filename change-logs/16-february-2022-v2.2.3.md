@@ -2,7 +2,7 @@
 
 ## v2.2.3
 
-[https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3](https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3)
+{% embed url="https://github.com/GhostManager/Ghostwriter/releases/tag/v2.2.3" %}
 
 This is the final release of v2.2.3. This release contains everything from the release candidates with the addition of some minor changes. This page contains a complete changelog from v2.2.3-rc1, v2.2.3-rc2, and v2.2.3.
 
