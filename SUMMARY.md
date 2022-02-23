@@ -52,6 +52,8 @@
 * [Background Tasks](features/background-tasks/README.md)
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
+* [GraphQL API - ALPHA](features/graphql-api-alpha/README.md)
+  * [Authentication](features/graphql-api-alpha/authentication.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 

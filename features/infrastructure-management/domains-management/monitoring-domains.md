@@ -12,22 +12,21 @@ Ghostwriter grades a domain's health as **Healthy** or **Burned**. Health is bas
 
 Domain categories are pulled from VirusTotal, which pulls categorization information from multiple sources. See the VirusTotal configuration for more information.
 
-{% page-ref page="../../../configuring-global-settings/configuring-apis/configuring-virustotal.md" %}
+{% content-ref url="../../../configuring-global-settings/configuring-apis/configuring-virustotal.md" %}
+[configuring-virustotal.md](../../../configuring-global-settings/configuring-apis/configuring-virustotal.md)
+{% endcontent-ref %}
 
-{% hint style="success" %}
-Ghostwriter tracks domain categories for all of these third-parties:
+Categorization data is stored as _jsonb_ in the `categorization` field. The format is:
 
-* Cisco Talos
-* IBM Xforce
-* Fortiguard
-* Bluecoat
-* OpenDNS
-* Trendmicro
+```json
+{
+    "VENDOR": "CATEGORY",
+    "VENDOR": "CATEGORY",
+    ...
+}
+```
 
-However, Ghostwriter only automatically updates the VirusTotal results. The other services do not offer APIs and actively block webscraping by using reCAPTCHAs and permanently banning  IP addresses. They ask the public to not scrape results and the Ghostwriter project honors that request.
-{% endhint %}
-
-Ghostwriter These categories are bad and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
+Ghostwriter assumes these categories are bad and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
 
 * spam
 * phishing
@@ -42,7 +41,7 @@ Ghostwriter These categories are bad and any source flagging a domain with one o
 {% hint style="info" %}
 Most of these categories are self-explanatory, but some ⁠— like gambling ⁠— may not seem like they belong.
 
-* **Placeholders:** This often appears when a domain's category is undetermined. It translates to Uncategorized, and may mean the domain is under review.
+* **Placeholders:** This often appears when a domain's category is undetermined. It translates to _Uncategorized_ and may mean the domain is under review.
 * **Gambling:** Not malicious, but likely blocked in a corporate environment.
 {% endhint %}
 
@@ -59,7 +58,7 @@ The infrastructure manager also references _malwaredomains.com_ to check if one 
 You can also track the current DNS records for your domain names. Ghostwriter pulls this information using DNS queries.
 
 {% hint style="warning" %}
-These queries will not return subdomain records. You will have to manually track subdomains or use your registrar's API \(if available\) to pull these records.
+These queries will not return subdomain records. You will have to manually track subdomains or use your registrar's API (if available) to pull these records.
 
 You can edit or add tasks to _tasks.py_ to leverage an API.
 {% endhint %}
@@ -70,15 +69,17 @@ You can edit or add tasks to _tasks.py_ to leverage an API.
 Scheduling these tasks will keep records up-to-date without requiring any user interaction.
 {% endhint %}
 
-{% page-ref page="../../background-tasks/scheduled-tasks.md" %}
+{% content-ref url="../../background-tasks/scheduled-tasks.md" %}
+[scheduled-tasks.md](../../background-tasks/scheduled-tasks.md)
+{% endcontent-ref %}
 
 Domain update tasks exist in the `tasks.py`. These functions can be scheduled or requested manually.
 
 {% tabs %}
 {% tab title="Update All Domains" %}
-The **Domain Update Control Panel** lives at `/shepherd/update` and provides information on when the updates were last run, how long they took to complete, and their exit state \(success or error messages\).
+The **Domain Update Control Panel** lives at `/shepherd/update` and provides information on when the updates were last run, how long they took to complete, and their exit state (success or error messages).
 
-![The Control Panel Under /shepherd/update](../../../.gitbook/assets/domain_update_controls.png)
+![The Control Panel Under /shepherd/update](../../../.gitbook/assets/domain\_update\_controls.png)
 
 Click the **Start Update** button under the desired check to queue a check for _all domains_.
 {% endtab %}
@@ -89,6 +90,4 @@ To update domain information or DNS records for just a single domain, open the d
 Each of these panes contains a **Refresh** button. Click this button to queue an update for just the one domain.
 {% endtab %}
 {% endtabs %}
-
-
 
