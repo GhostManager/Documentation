@@ -52,8 +52,9 @@
 * [Background Tasks](features/background-tasks/README.md)
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
-* [GraphQL API - ALPHA](features/graphql-api-alpha/README.md)
-  * [Authentication](features/graphql-api-alpha/authentication.md)
+* [GraphQL API](features/graphql-api/README.md)
+  * [Authentication](features/graphql-api/authentication.md)
+  * [Authorization](features/graphql-api/authorization.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 
@@ -69,6 +70,7 @@
 
 ## Development
 
+* [Development Road Map](development/development-road-map.md)
 * [Stack Overview](development/stack-overview/README.md)
   * [Behind the Scenes](development/stack-overview/behind-the-scenes.md)
 * [Modifying Code](development/modifying-code.md)

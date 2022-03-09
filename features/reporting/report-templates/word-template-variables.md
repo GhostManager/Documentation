@@ -92,9 +92,11 @@ You write your findings in Ghostwriter's WYSIWYG editor where you can style text
 Let's say you put the following Jinja2 code in a template:
 
 ```
+{% raw %}
 {% for finding in findings %}
 {{ finding.description }}
 {% endfor %}
+{% endraw %}
 ```
 
 That would drop in raw HTML using whatever style you had assigned to `{{ finding.description }}` in the template. It's unlikely you would want that.
@@ -104,9 +106,11 @@ Jinja2's `striptags` filter can help, but that removes all HTML without preservi
 To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for rich text) to the attribute's name and use the `p` tag (see **Ghostwriter Tags** below). The above example becomes:
 
 ```
+{% raw %}
 {% for finding in findings %}
 {{p finding.description_rt }}
 {% endfor %}
+{% endraw %}
 ```
 
 This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied) and all of your text will be styled.
@@ -144,15 +148,19 @@ Per `python-docx-template`, do not use `{%p`, `{%tr`, `{%tc` or `{%r` twice in t
 Bad:
 
 ```
+{% raw %}
 {%p if display_paragraph %}Here is my paragraph {%p endif %}
+{% endraw %}
 ```
 
 Good:
 
 ```
+{% raw %}
 {%p if display_paragraph %}
 Here is my paragraph
 {%p endif %}
+{% endraw %}
 ```
 {% endhint %}
 

@@ -15,8 +15,10 @@ Ghostwriter leverages the library's more advanced features to create `FormHelper
 If created correctly, the form can be added to a template with two lines:
 
 ```
+{% raw %}
 {% load crispy_forms_tags %}
 {% crispy form form.helper %}
+{% endraw %}
 ```
 
 Read about Crispy's `FormHelper()` and `Layout()` objects:
