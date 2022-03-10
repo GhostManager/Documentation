@@ -4,10 +4,6 @@ description: Documentation for the GraphQL API
 
 # GraphQL API
 
-{% hint style="success" %}
-There are no v2.3.x-alpha releases that are available today. Once available, this page will update and pre-release builds will be tagged on GitHub.
-{% endhint %}
-
 {% hint style="warning" %}
 The GraphQL API is currently available with v2.3.x-alpha releases. Until the final release, it should be used for testing purposes only.
 
@@ -35,9 +31,11 @@ Once done, disable the console access to better protect against unauthorized acc
 With the default configuration, the GraphQL endpoints are:
 
 * Local: [http://127.0.0.1:8080/v1/graphql](http://127.0.0.1:8000/graphql)
-* Production: [https://domain/v1/graphql](http://127.0.0.1:8000/graphql)
+* Production: [http://domain:8080/v1/graphql](http://127.0.0.1:8000/graphql)
 
-In production, the nginx server acts as a proxy for all GraphQL traffic, so users do not need to submit queries to a different port or subdomain.
+{% hint style="warning" %}
+Note that the API uses HTTP at this time. In the future, nginx will act as a reverse proxy for TLS.
+{% endhint %}
 
 Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. That means you can get exactly what you need without making multiple requests or parsing extra data.
 
