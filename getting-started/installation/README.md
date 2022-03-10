@@ -35,7 +35,11 @@ mkdir .envs && cp -r .envs_template/* .envs/
 If you are using `zsh`, use this command: `setopt dotglob`
 {% endhint %}
 
-The `.envs` directory contains `.local` and `.production` directories. Each of these directories contains the same two files, `.django` and `.postgres`. These files manage the environment variables for the Docker containers.
+The `.envs` directory contains `.local` and `.production` directories. Each of these directories contains the same set of files: `.django`, `.postgres`, and `.hasura`. These files manage the environment variables for the Docker containers.
+
+When configuring these files for your initial local deployment, the default options will be fine. You will want to change some of the values before deploying Ghostwriter into a production environment. This is covered in-depth in the [_**Switch to Production**_](../production.md) section.
+
+If you wish to change any of the default values now, refer to the _**Adjusting Production Settings**_ section on that page for guidance.
 
 {% hint style="info" %}
 Ghostwriter does not allow users to sign-up for an account by default. If you intend to have users sign-up for accounts, edit the `.django` file to re-enable `DJANGO_ACCOUNT_ALLOW_REGISTRATION`. Also, enable `ACCOUNT_EMAIL_VERIFICATION` if you want to require email verification.&#x20;

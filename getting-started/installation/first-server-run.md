@@ -22,7 +22,7 @@ To create a superuser, run:
 
 Success looks like this:
 
-```text
+```
 $ docker-compose -f local.yml run --rm django python manage.py createsuperuser
 Creating ghostwriter_django_run ... done
 PostgreSQL is available
@@ -53,7 +53,7 @@ Signups are disabled by default as it is assumed most deployments will not want 
 
 ### Password Changes
 
-Once you create an account, hand-off the username and password to the intended user. That person may then login and click their avatar icon in the upper-right corner to change their password and upload a custom avatar \(if they so desire\).
+Once you create an account, hand-off the username and password to the intended user. That person may then login and click their avatar icon in the upper-right corner to change their password and upload a custom avatar (if they so desire).
 
 Users can request password resets using the email address linked to their account and the "forgot password" link on the login form.
 
@@ -65,7 +65,8 @@ Unless you configure an email back-end for Django, the server will send the reco
 
 Use Ghostwriter for some time and see if everything is working properly. If you intend to make modifications to the codebase now is the time to do that.
 
-Visit [Command Center ](../../configuring-global-settings/introduction-to-command-center.md)to personalize your server configuration.
+Visit [_**Command Center**_ ](../../configuring-global-settings/introduction-to-command-center.md)to personalize your server configuration.
 
-{% page-ref page="../../configuring-global-settings/introduction-to-command-center.md" %}
-
+{% content-ref url="../../configuring-global-settings/introduction-to-command-center.md" %}
+[introduction-to-command-center.md](../../configuring-global-settings/introduction-to-command-center.md)
+{% endcontent-ref %}

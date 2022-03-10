@@ -1,5 +1,11 @@
 # Authorization
 
+{% hint style="success" %}
+This page does not necessarily reflect the permissions set in Hasura. Consider this information to be a draft or proposal of what is to come. Hasura's metadata can be easily changed for testing.
+
+To adjust permissions, visit [http://127.0.0.1:8080/console/data/default/schema/public/permissions](http://127.0.0.1:8080/console/data/default/schema/public/permissions) and adjust permissions as desired for experimentation.
+{% endhint %}
+
 ## Introduction
 
 User roles are the primary authorization mechanism. There are three user roles:
@@ -9,6 +15,10 @@ User roles are the primary authorization mechanism. There are three user roles:
 * Admin
 
 A user's role is set by a Ghostwriter administrator in the admin panel. All accounts are assigned the `user` role by default.
+
+{% hint style="info" %}
+If you look in Hasura you will also see a `public` role. This role is only used by Hasura. An unauthenticated request (i.e., any request that lacks a valid JWT in an `Authorization` header) is considered to have the `public` role. Certain webhook endpoints (e.g., `login`) are accessible by this role.
+{% endhint %}
 
 The roles carry the following privileges:
 

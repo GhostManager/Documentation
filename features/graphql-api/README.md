@@ -7,12 +7,14 @@ description: Documentation for the GraphQL API
 {% hint style="warning" %}
 The GraphQL API is currently available with v2.3.x-alpha releases. Until the final release, it should be used for testing purposes only.
 
+The Hasura container is intentionally left out of production for the time being. It is only built and brought up in local/development environments with _local.yml_. Once it is secured and tested, Hasura will be added to _production.yml_ with a production Dockerfile.
+
 This documentation is a work in progress and published for visibility and feedback.
 {% endhint %}
 
 ## Introduction
 
-Starting in v2.3.0, Ghostwriter includes a Docker container for [Hasura](https://hasura.io) used to manage access to the back-end PostgreSQL database via GraphQL. Hasura is invisible unless console access is enabled.
+Starting in v2.3.0, Ghostwriter includes a Docker container for [Hasura](https://hasura.io) used to manage access to the back-end PostgreSQL database via GraphQL.
 
 If the `HASURA_GRAPHQL_ENABLE_CONSOLE` environment variable is set to `true`, `t`, `yes`, or `y`, the Hasura console is available on port 8080. The console is where administrators can manage role-based access controls and other configurations.
 
@@ -23,7 +25,7 @@ Hasura is connected **directly** to the PostgreSQL database! Changes made in the
 
 In most situations, administrators should leave configurations alone and only use the console for experimenting with the GraphQL requests and possibly adjusting user role permissions.
 
-Once done, disable the console access to better protect against unauthorized access to your database.
+Once done, disable the console access to better protect against unauthorized access to your database. It can be easily re-enabled by updating the env variable.
 {% endhint %}
 
 ## Interacting with the API
@@ -34,7 +36,9 @@ With the default configuration, the GraphQL endpoints are:
 * Production: [http://domain:8080/v1/graphql](http://127.0.0.1:8000/graphql)
 
 {% hint style="warning" %}
-Note that the API uses HTTP at this time. In the future, nginx will act as a reverse proxy for TLS.
+Note that the API uses HTTP at this time. In the future, nginx will act as a reverse proxy for TLS. For now, Hasura is only in development environments where nginx is not used.
+
+Those interested in how TLS can be used with Hasura can review this documentation covering the nginx reverse proxy: [https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html](https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html)
 {% endhint %}
 
 Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. That means you can get exactly what you need without making multiple requests or parsing extra data.
@@ -49,7 +53,7 @@ A standard query is submitted with `Content-Type: application/json` in the heade
 }
 ```
 
-The `query` and `operationName` keys are required. The `variables` key is only provided in certain situations. Different query scenarios are covered in the following sections.
+The `query` and `operationName` keys are required. The `operationName` tells GraphQL which action should be executed. This can be helpful if you stack multiple queries and mutations in the `query` key and want to selectively execute them (see the example at the bottom of the page).
 
 The response will always come back in this form:
 
@@ -178,31 +182,45 @@ import json
 import requests
 
 
-TOKEN = "JWT_VALUE"
+headers = {"Content-Type": "application/json", }
 
-headers = {
-  "Content-Type": "application/json",
-  "Authorization": f"Bearer {TOKEN}"
-}
-Pyth
-query = \
-{
-  "query": """
-  query getClient {
-    client(where: {name: {_eq: "Murphy Group"}}) {
-      id name note shortName timezone
+def prepare_query(query, operation):
+  return json.dumps({
+    "query": query,
+    "operationName": operation
+  })
+
+def post_query(headers, data):
+  return requests.post(
+    "http://localhost:8080/v1/graphql",
+    headers=headers,
+    data=data
+  )
+
+# Stacked query with `Login` and `Whoami` operations
+query = """
+  mutation Login {
+    login(password:"sp3ct3rops", username:"benny") {
+      token expires
     }
   }
-  """,
-  "operationName": "getClient"
-}
 
-req = requests.post(
-  "http://127.0.0.1:8080/v1/graphql",
-  headers=headers,
-  data=json.dumps(query)
-)
+  query Whoami {
+    whoami {
+      username role expires
+    }
+  }
+  """
 
-print(req.json())
+# Send query and set `Login` as the `operationName`
+response = post_query(headers, prepare_query(query, "Login"))
+# Get the JWT from the response and add it to the headers
+token = response.json()["data"]["login"]["token"]
+headers["Authorization"] = f"Bearer {token}"
+# Send the query again but execute the `Whoami` operation this time
+response = post_query(headers, prepare_query(query, "Whoami"))
+# Print our JWT's whoami informaiton
+print(response.json())
+
 ```
 
