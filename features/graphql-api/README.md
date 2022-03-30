@@ -36,9 +36,9 @@ With the default configuration, the GraphQL endpoints are:
 * Production: [http://domain:8080/v1/graphql](http://127.0.0.1:8000/graphql)
 
 {% hint style="warning" %}
-Note that the API uses HTTP at this time. In the future, nginx will act as a reverse proxy for TLS. For now, Hasura is only in development environments where nginx is not used.
+Note that the API uses HTTP at this time. In production mode, Nginx will act as a reverse proxy for TLS. For now, Hasura is only in development environments where Nginx is not used.
 
-Those interested in how TLS can be used with Hasura can review this documentation covering the nginx reverse proxy: [https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html](https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html)
+Those interested in how TLS can be used with Hasura can review this documentation covering the Nginx reverse proxy: [https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html](https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html)
 {% endhint %}
 
 Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. That means you can get exactly what you need without making multiple requests or parsing extra data.
@@ -140,7 +140,7 @@ query MyQuery {
 
 Finally, you might want to try to take the result of one query and use it as a variable for a subsequent query. When GraphQL receives multiple queries, like in the above example, GraphQL resolves all queries **simultaneously**, so the results of one cannot feed into another.
 
-In most cases, you can accomplish your goal with a single query. Always remember, you are crafting database queries, so you can leverage relationships tracked in Hasura.
+In most cases, you can accomplish your goal with a single query. Always remember, you can leverage database relationships tracked in Hasura.
 
 For this final example, assume you want to get the title and severity of every finding ever associated with a particular client's projects where the `title` contains `SMB`. This can be accomplished with nested database relationships and the addition of a condition:
 
@@ -173,9 +173,9 @@ Queries are simple until you need to pack them into the nested JSON for a web re
 If you are using the Hasura console to build your query you can click the _Code Exporter_ button to view the query in a code snippet. Hasura generates code for JavaScript, TypeScript, and the Apollo Client right now, but the examples can be easily adapted to another language.
 {% endhint %}
 
-You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python;'s `json.dumps()` to create the properly formatted payload for the POST request.
+You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request.
 
-Here is an example query request in Python:
+Here is an example query request in Python. Note how the `query` variable contains a mutation and a query named `Login` and `Whoami` respectively. GraphQL executes the operation named in the `operationName` key in the requests JSON payload.
 
 ```python
 import json
