@@ -91,6 +91,7 @@
 
 ## Change Logs
 
+* [4 April 2022, v2.3.0-rc1](change-logs/4-april-2022-v2.3.0-rc1.md)
 * [16 February 2022, v2.2.3](change-logs/16-february-2022-v2.2.3.md)
 * [9 February 2022, v2.2.3-rc2](change-logs/9-february-2022-v2.2.3-rc2.md)
 * [28 January 2022, v2.2.3-rc1](change-logs/28-january-2022-v2.2.3-rc1.md)
