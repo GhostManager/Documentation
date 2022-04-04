@@ -28,6 +28,19 @@ In most situations, administrators should leave configurations alone and only us
 Once done, disable the console access to better protect against unauthorized access to your database. It can be easily re-enabled by updating the env variable.
 {% endhint %}
 
+## In-Development Limitations
+
+While the GraphQL API is still in development there are some limitations to be aware of during testing:
+
+* Mutations that create new entries for models with default values will fail
+  * Primarily affects notes (default `NOW()` timestamp), but there may be other cases
+  * These models need migrations that are in development
+* Client and project invitations can only be managed via the Django admin panel or the API
+  * See the [_**Authorization**_](authorization.md) page for details
+* Generating long-term API keys is in-development
+  * Use the `login` mutation to authenticate and get a JSON Web Token
+  * Alternatively, use the Hasura console or admin secret to experiment with the API
+
 ## Interacting with the API
 
 With the default configuration, the GraphQL endpoints are:
