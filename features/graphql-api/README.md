@@ -37,22 +37,13 @@ While the GraphQL API is still in development there are some limitations to be a
   * These models need migrations that are in development
 * Client and project invitations can only be managed via the Django admin panel or the API
   * See the [_**Authorization**_](authorization.md) page for details
-* Generating long-term API keys is in-development
-  * Use the `login` mutation to authenticate and get a JSON Web Token
-  * Alternatively, use the Hasura console or admin secret to experiment with the API
 
 ## Interacting with the API
 
 With the default configuration, the GraphQL endpoints are:
 
 * Local: [http://127.0.0.1:8080/v1/graphql](http://127.0.0.1:8000/graphql)
-* Production: [http://domain:8080/v1/graphql](http://127.0.0.1:8000/graphql)
-
-{% hint style="warning" %}
-Note that the API uses HTTP at this time. In production mode, Nginx will act as a reverse proxy for TLS. For now, Hasura is only in development environments where Nginx is not used.
-
-Those interested in how TLS can be used with Hasura can review this documentation covering the Nginx reverse proxy: [https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html](https://hasura.io/docs/latest/graphql/core/deployment/enable-https.html)
-{% endhint %}
+* Production: [https://\<HOST>/v1/graphql](http://127.0.0.1:8000/graphql)
 
 Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. That means you can get exactly what you need without making multiple requests or parsing extra data.
 

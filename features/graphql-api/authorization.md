@@ -1,9 +1,7 @@
 # Authorization
 
 {% hint style="success" %}
-This page does not necessarily reflect the permissions set in Hasura. Consider this information to be a draft or proposal of what is to come. Hasura's metadata can be easily changed for testing.
-
-To adjust permissions, visit [http://127.0.0.1:8080/console/data/default/schema/public/permissions](http://127.0.0.1:8080/console/data/default/schema/public/permissions) and adjust permissions as desired for experimentation.
+This page does not necessarily reflect the final permissions model. Consider this information to be a draft or proposal of what is to come.
 {% endhint %}
 
 ## Introduction
