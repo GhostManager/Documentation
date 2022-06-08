@@ -4,10 +4,9 @@
 
 ## Getting Started
 
-* [Installation](getting-started/installation/README.md)
-  * [Database Setup](getting-started/installation/database-setup.md)
-  * [First Server Run](getting-started/installation/first-server-run.md)
-* [Switch to Production](getting-started/production.md)
+* [Quickstart](getting-started/quickstart.md)
+* [Updating Ghostwriter](getting-started/updating-ghostwriter.md)
+* [Managing the Server](getting-started/managing-the-server.md)
 
 ## Configuring Global Settings
 
@@ -55,6 +54,7 @@
 * [GraphQL API](features/graphql-api/README.md)
   * [Authentication](features/graphql-api/authentication.md)
   * [Authorization](features/graphql-api/authorization.md)
+  * [Common API Actions](features/graphql-api/common-api-actions.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 

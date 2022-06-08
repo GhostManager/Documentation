@@ -1,8 +1,8 @@
-# Authorization
+---
+description: Explanation of Ghostwriter's role-based access controls
+---
 
-{% hint style="success" %}
-This page does not necessarily reflect the final permissions model. Consider this information to be a draft or proposal of what is to come.
-{% endhint %}
+# Authorization
 
 ## Introduction
 
@@ -43,8 +43,8 @@ If an account is flagged as a Django _Superuser_ that account will automatically
 
 ### Admin Role
 
-The `admin` role has complete access to everything available via the API. This role is even capable of creating and managing users and modifying fields not exposed to other roles.
+The `admin` role is only used by the GraphQL API. This role has complete access to everything available via the API. This role is even capable of creating and managing users and modifying fields not exposed to other roles.
 
 {% hint style="danger" %}
-Use great care when assigning this role to an account or acting as an administrator with the Hasura admin secret and `X-Hasura-Admin-Secret` header.
+Use great care when assigning this role to an account. In general, a user should only ever be a `manager` or a `user`.
 {% endhint %}

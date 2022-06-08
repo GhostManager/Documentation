@@ -14,7 +14,7 @@ This documentation is a work in progress and published for visibility and feedba
 
 ## Introduction
 
-Starting in v2.3.0, Ghostwriter includes a Docker container for [Hasura](https://hasura.io) used to manage access to the back-end PostgreSQL database via GraphQL.
+Starting in v2.3.0, Ghostwriter includes a Docker container for [Hasura](https://hasura.io/) used to manage access to the back-end PostgreSQL database via GraphQL.
 
 If the `HASURA_GRAPHQL_ENABLE_CONSOLE` environment variable is set to `true`, `t`, `yes`, or `y`, the Hasura console is available on port 8080. The console is where administrators can manage role-based access controls and other configurations.
 
@@ -28,13 +28,10 @@ In most situations, administrators should leave configurations alone and only us
 Once done, disable the console access to better protect against unauthorized access to your database. It can be easily re-enabled by updating the env variable.
 {% endhint %}
 
-## In-Development Limitations
+## Current Limitations
 
 While the GraphQL API is still in development there are some limitations to be aware of during testing:
 
-* Mutations that create new entries for models with default values will fail
-  * Primarily affects notes (default `NOW()` timestamp), but there may be other cases
-  * These models need migrations that are in development
 * Client and project invitations can only be managed via the Django admin panel or the API
   * See the [_**Authorization**_](authorization.md) page for details
 
@@ -144,7 +141,7 @@ query MyQuery {
 
 Finally, you might want to try to take the result of one query and use it as a variable for a subsequent query. When GraphQL receives multiple queries, like in the above example, GraphQL resolves all queries **simultaneously**, so the results of one cannot feed into another.
 
-In most cases, you can accomplish your goal with a single query. Always remember, you can leverage database relationships tracked in Hasura.
+In most cases, you can accomplish your goal with a single query. Always remember, you can leverage relationships.
 
 For this final example, assume you want to get the title and severity of every finding ever associated with a particular client's projects where the `title` contains `SMB`. This can be accomplished with nested database relationships and the addition of a condition:
 
