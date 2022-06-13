@@ -10,8 +10,6 @@ description: >-
 **STOP!** Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker before proceeding.
 
 You will need a version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation.
-
-You will also need `openssl` to be installed if you want Ghostwriter to generate certificates for you during installation.
 {% endhint %}
 
 ## Getting Started
@@ -38,8 +36,10 @@ cd Ghostwriter
 ./ghostwriter-cli install prod
 ```
 
-{% hint style="warning" %}
-If you don't have `openssl` installed, create your TLS/SSL certificate files before running the `install` command. If you don't have the files ready the web server won't be able to start. There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
+{% hint style="info" %}
+Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use your own signed certificates, do that now to make things easier. If you don't have them ready, you can always install them later.
+
+There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
 {% endhint %}
 
 The last command will take care of everything necessary to install a production (`prod`) environment for you. That command performs the following actions:
@@ -47,9 +47,9 @@ The last command will take care of everything necessary to install a production 
 * Sets up the default server configuration
 * Generates TLS certificates for the server
 * Builds the Docker containers
-* Creates a default _admin_ user for you to get started
+* Creates a default _admin_ user with a randomly generated password
 
-{% hint style="info" %}
+{% hint style="success" %}
 If you'd prefer to install a development (`dev`) environment, you can run:&#x20;
 
 `./ghostwriter-cli install dev`
@@ -59,9 +59,9 @@ A development environment is best if you want to change Ghostwriter's codebase o
 
 ### Accessing Ghostwriter
 
-The Ghostwriter server will now be accessible! Just visit _https://127.0.0.1_ and authenticate with the _admin_ user.
+The Ghostwriter server will now be accessible! Just visit _https://127.0.0.1_ and authenticate with the _admin_ user. The password is displayed in the Ghostwriter CLI output at the end of the installation.
 
-Ghostwriter CLI generates a random 32-character password for the new user. You can get it by running this command:
+You can also get the password by running this command:
 
 `./ghostwriter-cli config get admin_password`
 
@@ -83,7 +83,7 @@ You may wish to change some of the configuration options. The following sections
 
 If you make changes to the configuration, restart Ghostwriter for the changes to take effect:
 
-`./ghostwriter-cli restart prod`
+`./ghostwriter-cli restart {prod|dev}`
 
 #### Using Your Own Certificates
 

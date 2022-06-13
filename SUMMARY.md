@@ -55,6 +55,7 @@
   * [Authentication](features/graphql-api/authentication.md)
   * [Authorization](features/graphql-api/authorization.md)
   * [Common API Actions](features/graphql-api/common-api-actions.md)
+  * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 

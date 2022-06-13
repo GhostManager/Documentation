@@ -4,6 +4,10 @@ description: Explanation of Ghostwriter's role-based access controls
 
 # Authorization
 
+{% hint style="success" %}
+The role-based access controls described on this page apply _only to the GraphQL API_. These controls will apply to the web interface in a future version.
+{% endhint %}
+
 ## Introduction
 
 User roles are the primary authorization mechanism. There are three user roles:
@@ -15,12 +19,12 @@ User roles are the primary authorization mechanism. There are three user roles:
 A user's role is set by a Ghostwriter administrator in the admin panel. All accounts are assigned the `user` role by default.
 
 {% hint style="info" %}
-If you look in Hasura you will also see a `public` role. This role is only used by Hasura. An unauthenticated request (i.e., any request that lacks a valid JWT in an `Authorization` header) is considered to have the `public` role. Certain webhook endpoints (e.g., `login`) are accessible by this role.
+If you look in Hasura you will also see a `public` role. This role is only used by Hasura. An unauthenticated request (i.e., any request that lacks a valid JWT in an `Authorization` header) is considered to have the `public` role. Certain webhook endpoints (e.g., `login`) are accessible to this role.
 {% endhint %}
 
 The roles carry the following privileges:
 
-### User Role
+### User Role Privileges
 
 The `user` role can only access client and project data if they:
 
@@ -30,7 +34,7 @@ The `user` role can only access client and project data if they:
 
 Otherwise, this role has the standard permissions you might expect. They can edit or delete their own comments, update their personal profiles, and view the shared information in the various libraries (e.g., findings, domains).
 
-### Manager Role
+### Manager Role Privileges
 
 The `manager` role has the ability to view all clients and projects. The role can also:
 
@@ -41,7 +45,13 @@ The `manager` role has the ability to view all clients and projects. The role ca
 
 If an account is flagged as a Django _Superuser_ that account will automatically inherit the `manager` role.
 
-### Admin Role
+{% hint style="info" %}
+In v3.0.0 web interface, client and project invitations must be created via the admin panel (_/admin/rolodex/clientinvite/_ and _/admin/rolodex/projecttinvite/_). Access to the admin panel requires an account with `superuser` status.
+
+A future release will add an option to invite users from the client and project pages for the `manager` role.
+{% endhint %}
+
+### Admin Role Privileges
 
 The `admin` role is only used by the GraphQL API. This role has complete access to everything available via the API. This role is even capable of creating and managing users and modifying fields not exposed to other roles.
 

@@ -4,29 +4,9 @@ description: Documentation for the GraphQL API
 
 # GraphQL API
 
-{% hint style="warning" %}
-The GraphQL API is currently available with v2.3.x-alpha releases. Until the final release, it should be used for testing purposes only.
-
-The Hasura container is intentionally left out of production for the time being. It is only built and brought up in local/development environments with _local.yml_. Once it is secured and tested, Hasura will be added to _production.yml_ with a production Dockerfile.
-
-This documentation is a work in progress and published for visibility and feedback.
-{% endhint %}
-
 ## Introduction
 
-Starting in v2.3.0, Ghostwriter includes a Docker container for [Hasura](https://hasura.io/) used to manage access to the back-end PostgreSQL database via GraphQL.
-
-If the `HASURA_GRAPHQL_ENABLE_CONSOLE` environment variable is set to `true`, `t`, `yes`, or `y`, the Hasura console is available on port 8080. The console is where administrators can manage role-based access controls and other configurations.
-
-The console is useful for crafting queries and experimenting.
-
-{% hint style="danger" %}
-Hasura is connected **directly** to the PostgreSQL database! Changes made in the Hasura console take immediate effect. Changing the schema or deleting data will irreversibly change your database and could render Ghostwriter unusable.
-
-In most situations, administrators should leave configurations alone and only use the console for experimenting with the GraphQL requests and possibly adjusting user role permissions.
-
-Once done, disable the console access to better protect against unauthorized access to your database. It can be easily re-enabled by updating the env variable.
-{% endhint %}
+Starting in v3.0.0, Ghostwriter includes a GraphQL API powered by the [Hasura GraphQL Engine](https://hasura.io/). You can use the API to perform all the same tasks available via the web interface. It's a powerful tool for automation, pushing and pulling data, and integrating external tools with Ghostwriter.
 
 ## Current Limitations
 
@@ -169,10 +149,6 @@ Note how the above example references the `severity` relationship, instead of re
 ### Interacting via Automation
 
 Queries are simple until you need to pack them into the nested JSON for a web request. You should use a script to craft the proper payloads and make them repeatable.
-
-{% hint style="info" %}
-If you are using the Hasura console to build your query you can click the _Code Exporter_ button to view the query in a code snippet. Hasura generates code for JavaScript, TypeScript, and the Apollo Client right now, but the examples can be easily adapted to another language.
-{% endhint %}
 
 You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request.
 
