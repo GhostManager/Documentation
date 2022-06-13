@@ -9,7 +9,9 @@ description: >-
 {% hint style="danger" %}
 **STOP!** Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker before proceeding.
 
-You will need a version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation.
+You will need a Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation.
+
+You will need a Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
 {% endhint %}
 
 ## Getting Started
