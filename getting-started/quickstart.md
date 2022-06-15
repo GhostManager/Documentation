@@ -85,7 +85,10 @@ You may wish to change some of the configuration options. The following sections
 
 If you make changes to the configuration, restart Ghostwriter for the changes to take effect:
 
-`./ghostwriter-cli restart {prod|dev}`
+```
+./ghostwriter-cli down {prod|dev}
+./ghostwriter-cli up {prod|dev}
+```
 
 #### Using Your Own Certificates
 
