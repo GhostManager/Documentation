@@ -87,6 +87,7 @@
 
 ## Getting Help
 
+* [FAQ](getting-help/faq.md)
 * [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
 * [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
 
