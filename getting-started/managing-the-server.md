@@ -6,39 +6,48 @@ description: How to use Ghostwriter CLI to monitor and manage your Ghostwriter i
 
 ## Using Ghostwriter CLI to Manage the Server
 
-Ghostwriter CLI can handle just about anything you might need or want to do with your Ghostwriter installation. Running the tool with the `help` command–or no command at all–will print the latest usage information.
+Ghostwriter CLI can handle just about anything you might need or want to do with your Ghostwriter installation. Running the tool with the `help` command–or no command–will print the latest usage information.
 
 The following sections explain some of the core functionality.
 
 ### Managing Docker Containers
 
-Ghostwriter CLI can perform the following actions:
+Ghostwriter CLI's `containers` command contains the following subcommands:
 
-* `up <dev|prod>` : Bring up Ghostwriter containers
-* `down <dev|prod>` : Bring down Ghostwriter containers
-* `build <dev|prod>` : Rebuild the containers (not the data volumes)
-* `restart <dev|prod>` : Bring all containers down and then back up
+* `build` : Rebuild the containers (not the data volumes)
+* `up` : Bring up Ghostwriter containers
+* `down` : Bring down Ghostwriter containers
+* `start`: Start all stopped services and restart any running services
+* `stop`: Stop all running serviced
+* `restart` : Stop and restart all services
 
-If you ever need to check which containers are running, issue the `running` command. This command lists all running containers related to Ghostwriter. The output will look something like this:
+If you ever need to check which containers are running, issue the `running` command. This command lists all running containers related to Ghostwriter. The output will look something like this (edited for easier display):
 
 ```
 $ ./ghostwriter-cli running
 [+] Collecting list of running Ghostwriter containers...
-* ghostwriter_local_graphql
-* ghostwriter_local_queue
-* ghostwriter_local_django
-* ghostwriter_production_postgres
+[+] Found 4 running Ghostwriter containers
+
+ Container ID  Image                           Status          Ports                              Names
+ ––––––––––––  ––––––––––––                    ––––––––––––    ––––––––––––                       ––––––––––––
+ de943...       ghostwriter_local_graphql       Up 2 hours      0.0.0.0:8080:8080 » 8080/tcp      /ghostwriter_graphql_engine_1
+ 89814...       ghostwriter_local_django        Up 2 hours      0.0.0.0:8000:8000 » 8000/tcp      /ghostwriter_django_1
+ bf572...       ghostwriter_local_queue         Up 2 hours                                        /ghostwriter_queue_1
+ a6b71...       ghostwriter_production_postgres Up 2 hours      0.0.0.0:5432:5432 » 5432/tcp      /ghostwriter_postgres_1
 ```
 
 ### Collecting Logs
 
 You can use the `logs` command to view a particular container's recent log events. The command requires the name of a running container. Valid container names are:
 
+* all
 * ghostwriter\_django
 * ghostwriter\_graphql
 * ghostwriter\_nginx
 * ghostwriter\_postgres
 * ghostwriter\_redis
+
+Using `all` for the container name will return logs from all running containers. By default, `logs` will return up to 500 lines. You can use the `--lines` flag to adjust how many lines you want to retrieve.
 
 ```
 $ ./ghostwriter-cli logs ghostwriter_django

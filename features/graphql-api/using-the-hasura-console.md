@@ -24,7 +24,8 @@ Access to this console is disabled by default for new production installations. 
 
 ```
 ./ghostwriter-cli config set hasura_graphql_enable_console true
-./ghostwriter-cli restart prod
+./ghostwriter-cli containers down
+./ghostwriter-cli containers up
 ```
 
 Once the services have restarted, the console will be available at:

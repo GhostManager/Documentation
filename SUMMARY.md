@@ -79,9 +79,12 @@
 * [Contributing to the Project](development/contributing-to-the-project/README.md)
   * [Pre-Release Checklist](development/contributing-to-the-project/pre-release-checklist.md)
 * [Database Models](development/database-models/README.md)
-  * [Home Models](development/database-models/home-models.md)
+  * [API Models](development/database-models/api-models.md)
   * [Client & Project Models](development/database-models/rolodex-models.md)
+  * [Configuration Models](development/database-models/configuration-models.md)
+  * [Home & User Models](development/database-models/home-models.md)
   * [Infrastructure Models](development/database-models/infrastructure-models.md)
+  * [Oplog Models](development/database-models/oplog-models.md)
   * [Reporting Models](development/database-models/reporting-models.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
 

@@ -23,7 +23,7 @@ If your version number and release date are older than the reported latest relea
 
 Updating Ghostwriter is as easy as pulling the latest code and building the updated containers. Your data will be unaffected because it is all stored in separate Docker volumes.
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 Updates are generally easy, but you should **strongly** consider taking a snapshot of your host server in case anything goes wrong. There is always a chance something like a Python library may not install properly and you don't have the time to address it on the spot. You will thank yourself if you are able to restore a snapshot and try again later.
 {% endhint %}
 
@@ -31,9 +31,9 @@ To perform an update:
 
 ```
 git pull
-./ghostwriter-cli down prod
-./ghostwriter-cli build prod
-./ghostwriter-cli up prod
+./ghostwriter-cli containers down
+./ghostwriter-cli containers build
+./ghostwriter-cli containers up
 ```
 
 These commands pull the latest code, stop any running production containers, build the new containers, and then bring Ghostwriter back online.

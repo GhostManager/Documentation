@@ -35,7 +35,7 @@ You can install Ghostwriter with three basic commands:
 ```
 git clone https://github.com/GhostManager/Ghostwriter.git
 cd Ghostwriter
-./ghostwriter-cli install prod
+./ghostwriter-cli install
 ```
 
 {% hint style="info" %}
@@ -54,7 +54,7 @@ The last command will take care of everything necessary to install a production 
 {% hint style="success" %}
 If you'd prefer to install a development (`dev`) environment, you can run:&#x20;
 
-`./ghostwriter-cli install dev`
+`./ghostwriter-cli install --dev`
 
 A development environment is best if you want to change Ghostwriter's codebase or test functionality. Debug logging is enabled, which makes it easier to troubleshoot. The `dev` installation does not use TLS, so it skips creating certificates.
 {% endhint %}
@@ -86,8 +86,8 @@ You may wish to change some of the configuration options. The following sections
 If you make changes to the configuration, restart Ghostwriter for the changes to take effect:
 
 ```
-./ghostwriter-cli down {prod|dev}
-./ghostwriter-cli up {prod|dev}
+./ghostwriter-cli containers down
+./ghostwriter-cli containers up
 ```
 
 #### Using Your Own Certificates

@@ -10,14 +10,14 @@ The Hasura Console (see [Using the Hasura Console](using-the-hasura-console.md))
 
 However, the Hasura Console should not be made widely accessible to anyone except the server administrator.&#x20;
 
-For a safer option that offers all users access to something like the console, you can use an API testing/browsing application like Postman. Import the GraphQL SDL from the _schema.graphql_ in the code repository and configure your personal API token.
+For a safer option that offers all users access to something like the console, you can use an API testing/browsing application like Postman. Import the GraphQL SDL from the _/DOCS/schema.graphql_ in the code repository and configure your personal API token.
 
 For example, using Postman:
 
 1. Click _New_ and add a new API
 2. Give it a name (e.g., Ghostwriter) and set the schema type to GraphQL
 3. Save it and then open your newly created API
-4. Click the _Definition_ tab and paste in the contents of the _schema.graphql_ file
+4. Click the _Definition_ tab and paste in the contents of the _/DOCS/schema.graphql_ file
 5. Click _Save_ and wait a bit for Postman to process the definitions
 
 Back in the _Collections_ tab, you can create new requests with the newly created API. Select GraphQL as the format for the body and then select the API you just created from the dropdown list. Postman should auto-fetch the schema to enable auto-complete.
