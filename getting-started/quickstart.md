@@ -90,14 +90,6 @@ If you make changes to the configuration, restart Ghostwriter for the changes to
 ./ghostwriter-cli containers up
 ```
 
-#### Using Your Own Certificates
-
-You can use your own TLS/SSL certificates for Ghostwriter. To swap in your own certificate package:
-
-1. Name the keypair files _ghostwriter.key_ and _ghostwriter.crt_
-2. Name the Diffie-Helman Parameters file _dhparam.pem_
-3. Place all three files inside the _ssl_ directory
-
 #### Customizing the Date Format
 
 The default format is `d M Y` which formats dates like so: _3 Jun 2022_
@@ -112,6 +104,16 @@ When you set `DATE_FORMAT` use Django's format string values:
 [https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#std:templatefilter-date](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#std:templatefilter-date)
 {% endhint %}
 
+#### Using Your Own Certificates
+
+You can use your own TLS/SSL certificates for Ghostwriter. To swap in your own certificate package:
+
+1. Name the keypair files _ghostwriter.key_ and _ghostwriter.crt_
+2. Name the Diffie-Helman Parameters file _dhparam.pem_
+3. Place all three files inside the _ssl_ directory
+
+Your certificate will likely have a new hostname, so continue to the next section to complete the customization of your domain name.
+
 #### Customizing the Domain Name or IP Address
 
 To avoid potential exposure to [HTTP Host header attacks](https://portswigger.net/web-security/host-header), Ghostwriter explicitly checks the hostname against a list of allowed hosts. To access Ghostwriter with your custom domain name or server IP address, you must tell the server to allow new IP addresses or hostnames.
@@ -119,6 +121,10 @@ To avoid potential exposure to [HTTP Host header attacks](https://portswigger.ne
 To allow a new IP address or hostname, run this command:
 
 `./ghostwriter-cli config allowhost <YOUR DOMAIN NAME OR IP>"`
+
+If you are setting up a new domain accompanied by a TLS certificate, update the Nginx hostname to match your new certificate and domain name:
+
+`./ghostwriter-cli config set NGINX_HOST <YOUR DOMAIN NAME>"`
 
 You can use `config disallowhost` to remove a host you have added to the list.
 
