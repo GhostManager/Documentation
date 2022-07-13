@@ -6,13 +6,44 @@ description: >-
 
 # Quickstart
 
-{% hint style="danger" %}
-**STOP!** Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker before proceeding.
+## Before You Begin: System Requirements
 
-You will need a Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation.
+Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker before proceeding.
+
+You will need a Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
 
 You will need a Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
-{% endhint %}
+
+```python
+$ docker-compose --version
+docker-compose version 1.29.2, build 5becea4c   # Good; >=1.26.x
+
+$ docker version                                                                                                                               1 ↵
+Client:
+ Cloud integration: v1.0.25
+ Version:           20.10.16                    # Good; >=20.x.x
+ API version:       1.41
+ Go version:        go1.17.10
+ Git commit:        aa7e414
+ Built:             Thu May 12 09:20:34 2022
+ OS/Arch:           darwin/amd64
+ Context:           default
+ Experimental:      true
+
+« snip »
+```
+
+Docker requires sufficient resources to successfully build the containers. Most systems capable of running a modern OS should have the necessary resources. If building Ghostwriter inside of a VM, ensure the VM meets the following recommended specs:
+
+* Two (2) vCPUs
+* 3GB RAM
+* 10GB Storage
+
+The above specs are recommendations for the bare minimum necessary to get started. Ideally, provide at least one vCPU per container, more RAM to allow for multiple users and scheduled tasks to run smoothly, and more storage for file uploads.
+
+* Five (5) vCPUs
+* 4GB RAM
+* 60GB
 
 ## Getting Started
 
