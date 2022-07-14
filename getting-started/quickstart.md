@@ -51,7 +51,7 @@ Ghostwriter comes with the [Ghostwriter CLI](https://github.com/GhostManager/Gho
 
 Ghostwriter can run on Windows, macOS, and Linux, so there are multiple versions of Ghostwriter CLI. Pick the appropriate Ghostwriter CLI binary for your operating system.
 
-* `ghostwriter-cli-macos` : macOS (Intel)
+* `ghostwriter-cli-macos` : macOS
 * `ghostwriter-cli-linux` : Linux amd64
 * `ghostwriter-cli.exe` : Windows 64-bit
 
@@ -75,7 +75,7 @@ Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use y
 There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
 {% endhint %}
 
-The `install` command will take care of everything necessary to create a production environment for you. That command performs the following actions:
+The last command will take care of everything necessary to install a production (`prod`) environment for you. That command performs the following actions:
 
 * Sets up the default server configuration
 * Generates TLS certificates for the server
@@ -151,7 +151,7 @@ To avoid potential exposure to [HTTP Host header attacks](https://portswigger.ne
 
 To allow a new IP address or hostname, run this command:
 
-`./ghostwriter-cli config allowhost <YOUR DOMAIN NAME OR IP>`
+`./ghostwriter-cli config allowhost <YOUR DOMAIN NAME OR IP>"`
 
 If you are setting up a new domain accompanied by a TLS certificate, update the Nginx hostname to match your new certificate and domain name:
 
