@@ -10,22 +10,22 @@ Ghostwriter supports a variety of report types:
 
 * Raw JSON
 * Microsoft Office 2019 / 365
-  * Word \(docx\)
-  * Excel \(xlsx\)
-  * PowerPoint \(pptx\)
+  * Word (docx)
+  * Excel (xlsx)
+  * PowerPoint (pptx)
 
 ### Selecting a Report Type
 
 While viewing a report, scroll down to the **Generate Reports** section to configure your report and select the type of report you want.
 
-![Report Generation Options](../../../.gitbook/assets/image.png)
+![Report Generation Options](<../../../.gitbook/assets/image (1).png>)
 
 ### JSON
 
 The JSON output is the foundation of every other report type. It is surfaced as a report type to enable users to take it and create custom reports and visualizations.
 
 {% code title="Example Report JSON" %}
-```text
+```
 {
   "client": {
     "id": 1,
@@ -148,13 +148,17 @@ You can customize each of these so the exported files fit your specific needs.
 
 For Word, Ghostwriter renders a _docx_ file using the JSON data and a report template document. Review the Word section for more information on customization options and how to get started generating Word documents.
 
-{% page-ref page="word-document-customization.md" %}
+{% content-ref url="word-document-customization.md" %}
+[word-document-customization.md](word-document-customization.md)
+{% endcontent-ref %}
 
 #### PowerPoint Slide Decks
 
 For PowerPoint, Ghostwriter renders a _pptx_ file using the JSON data and a slide deck master. Review the PowerPoint section for more information on customization options and how to get started generating slide decks.
 
-{% page-ref page="powerpoint-deck-customization.md" %}
+{% content-ref url="powerpoint-deck-customization.md" %}
+[powerpoint-deck-customization.md](powerpoint-deck-customization.md)
+{% endcontent-ref %}
 
 
 
@@ -162,7 +166,7 @@ For PowerPoint, Ghostwriter renders a _pptx_ file using the JSON data and a slid
 
 For Excel, Ghostwriter renders an _xlsx_ file using the JSON data. Review the Excel section for more information on customization options.
 
-{% page-ref page="excel-spreadsheet-customization.md" %}
-
-
+{% content-ref url="excel-spreadsheet-customization.md" %}
+[excel-spreadsheet-customization.md](excel-spreadsheet-customization.md)
+{% endcontent-ref %}
 
