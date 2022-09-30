@@ -18,7 +18,7 @@ Ghostwriter supports a variety of report types:
 
 While viewing a report, scroll down to the **Generate Reports** section to configure your report and select the type of report you want.
 
-![Report Generation Options](<../../../.gitbook/assets/image (1).png>)
+![Report Generation Options](<../../../.gitbook/assets/image (1) (2).png>)
 
 ### JSON
 

@@ -12,7 +12,7 @@ This site will always have the most up-to-date documentation for how to install 
 
 {% embed url="https://posts.specterops.io/introducing-ghostwriter-part-1-61e7bd014aff" %}
 
-Ghostwriter is entirely free and open-source \(FOSS\) software. All of the code is available on GitHub:
+Ghostwriter is entirely free and open-source (FOSS) software. All of the code is available on GitHub:
 
 {% embed url="https://github.com/GhostManager/Ghostwriter" %}
 
@@ -21,8 +21,8 @@ Ghostwriter is entirely free and open-source \(FOSS\) software. All of the code 
 Ghostwriter is licensed under the **BSD-3** license.
 
 {% code title="LICENSE" %}
-```text
-Copyright (c) 2019, Christopher Maddalena
+```
+Copyright (c) 2022, Christopher Maddalena
 
 All rights reserved.
 
@@ -52,6 +52,4 @@ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISE
 OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 {% endcode %}
-
-
 

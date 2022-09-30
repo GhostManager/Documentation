@@ -150,54 +150,66 @@ Note how the above example references the `severity` relationship, instead of re
 
 Queries are simple until you need to pack them into the nested JSON for a web request. You should use a script to craft the proper payloads and make them repeatable.
 
-You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request.
+You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request. However, this can lead to accidental double-encoding which will cause issues down the line. The simplest option is using a library built for handling GraphQL requests, like `gql` for Python.
 
-Here is an example query request in Python. Note how the `query` variable contains a mutation and a query named `Login` and `Whoami` respectively. GraphQL executes the operation named in the `operationName` key in the requests JSON payload.
+Here is an example query request in Python using the `gql` library:
 
 ```python
-import json
-import requests
+from gql import Client, gql
+from gql.transport.aiohttp import AIOHTTPTransport
+from gql.transport.exceptions import TransportQueryError
+from graphql.error.graphql_error import GraphQLError
+from asyncio.exceptions import TimeoutError
 
+try:
+	# Define our queries and mutations as `gql()` objects
+	login_query = gql(
+		"""
+		mutation Login {
+			login(password:"sp3ct3rops", username:"benny") {
+				token expires
+			}
+		}
+		"""
+	)
+	whoami_query = gql(
+		"""
+		query Whoami {
+			whoami {
+				username role expires
+			}
+		}
+		"""
+	)
 
-headers = {"Content-Type": "application/json", }
+	# Prepare our initial unauthenticated GraphQL client
+	transport = AIOHTTPTransport(url="http://127.0.0.1:8080/v1/graphql")
+	client = Client(transport=transport, fetch_schema_from_transport=True)
 
-def prepare_query(query, operation):
-  return json.dumps({
-    "query": query,
-    "operationName": operation
-  })
+	# Login and get our token
+	result = client.execute(login_query)
+	token = result["login"]["token"]
 
-def post_query(headers, data):
-  return requests.post(
-    "http://localhost:8080/v1/graphql",
-    headers=headers,
-    data=data
-  )
+	# Setup future requests to use token
+	headers = {"Authorization": f"Bearer {token}"}
+	transport = AIOHTTPTransport(url="http://127.0.0.1:8080/v1/graphql", headers=headers)
+	authenticated_client = Client(transport=transport, fetch_schema_from_transport=True)
 
-# Stacked query with `Login` and `Whoami` operations
-query = """
-  mutation Login {
-    login(password:"sp3ct3rops", username:"benny") {
-      token expires
-    }
-  }
+	# Test the token with a `whois` query
+	result = authenticated_client.execute(whoami_query)
 
-  query Whoami {
-    whoami {
-      username role expires
-    }
-  }
-  """
+	# Print our user information
+	print(result)
+except TimeoutError:
+	# Do something...
+	pass
+except TransportQueryError as e:
+	# Do something...
+	pass
+except GraphQLError as e:
+	# Do something...
+	pass
 
-# Send query and set `Login` as the `operationName`
-response = post_query(headers, prepare_query(query, "Login"))
-# Get the JWT from the response and add it to the headers
-token = response.json()["data"]["login"]["token"]
-headers["Authorization"] = f"Bearer {token}"
-# Send the query again but execute the `Whoami` operation this time
-response = post_query(headers, prepare_query(query, "Whoami"))
-# Print our JWT's whoami informaiton
-print(response.json())
 
 ```
 

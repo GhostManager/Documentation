@@ -28,24 +28,26 @@ $ ./ghostwriter-cli running
 [+] Collecting list of running Ghostwriter containers...
 [+] Found 4 running Ghostwriter containers
 
- Container ID  Image                           Status          Ports                              Names
- ––––––––––––  ––––––––––––                    ––––––––––––    ––––––––––––                       ––––––––––––
- de943...       ghostwriter_local_graphql       Up 2 hours      0.0.0.0:8080:8080 » 8080/tcp      /ghostwriter_graphql_engine_1
- 89814...       ghostwriter_local_django        Up 2 hours      0.0.0.0:8000:8000 » 8000/tcp      /ghostwriter_django_1
- bf572...       ghostwriter_local_queue         Up 2 hours                                        /ghostwriter_queue_1
- a6b71...       ghostwriter_production_postgres Up 2 hours      0.0.0.0:5432:5432 » 5432/tcp      /ghostwriter_postgres_1
+ Name                   Container ID    Image                           Status                  Ports
+ ––––––––––––           ––––––––––––    ––––––––––––                    ––––––––––––            ––––––––––––
+ ghostwriter_graphql    d90e....        ghostwriter_local_graphql       Up 43 hours (healthy)   0.0.0.0:9691:9691 » 9691/tcp, 0.0.0.0:8080:8080 » 8080/tcp
+ ghostwriter_queue      0559....        ghostwriter_local_queue         Up 43 hours (healthy)
+ ghostwriter_django     bf9b....        ghostwriter_local_django        Up 43 hours (healthy)   0.0.0.0:8000:8000 » 8000/tcp
+ ghostwriter_postgres   9992....        ghostwriter_production_postgres Up 43 hours (healthy)   0.0.0.0:5432:5432 » 5432/tcp
 ```
 
-### Collecting Logs
+{% hint style="success" %}
+The `Status` column shows the uptime and health of the service. If you see an `unhealthy` status, that means that service failed a health check and it may not be working properly. Learn more about health checks here: [Health Monitoring](../features/health-monitoring.md)
+{% endhint %}
 
 You can use the `logs` command to view a particular container's recent log events. The command requires the name of a running container. Valid container names are:
 
 * all
-* ghostwriter\_django
-* ghostwriter\_graphql
-* ghostwriter\_nginx
-* ghostwriter\_postgres
-* ghostwriter\_redis
+* django
+* graphql
+* nginx
+* postgres
+* redis
 
 Using `all` for the container name will return logs from all running containers. By default, `logs` will return up to 500 lines. You can use the `--lines` flag to adjust how many lines you want to retrieve.
 

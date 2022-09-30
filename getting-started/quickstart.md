@@ -8,11 +8,11 @@ description: >-
 
 ## Before You Begin: System Requirements
 
-Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker before proceeding.
+Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker and Docker Compose before proceeding.
 
-You will need a Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
+You will need Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
 
-You will need a Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
+You will need Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
 
 ```python
 $ docker-compose --version
@@ -33,6 +33,12 @@ Client:
 « snip »
 ```
 
+{% hint style="warning" %}
+There are now multiple ways to install Docker Compose. One of them makes it a subcommand of Docker, so you run it as `docker compose`. Ghostwriter CLI needs `docker-compose` in your PATH.
+
+If you install Compose and `docker-compose` is not in your PATH, rename the script in the install directory (e.g., `/usr/local/bin/docker-compose` on macOS and Linux) or create a symlink.
+{% endhint %}
+
 Docker requires sufficient resources to successfully build the containers. Most systems capable of running a modern OS should have the necessary resources. If building Ghostwriter inside of a VM, ensure the VM meets the following recommended specs:
 
 * Two (2) vCPUs
@@ -49,7 +55,7 @@ The above specs are recommendations for the bare minimum necessary to get starte
 
 Ghostwriter comes with the [Ghostwriter CLI](https://github.com/GhostManager/Ghostwriter\_CLI) tool. This tool makes it simple to manage the application. You will use it to install, reconfigure, and upgrade Ghostwriter.
 
-Ghostwriter can run on Windows, macOS, and Linux, so there are multiple versions of Ghostwriter CLI. Pick the appropriate Ghostwriter CLI binary for your operating system.
+Ghostwriter can run on Windows, macOS, and Linux, so there are multiple builds of Ghostwriter CLI. Pick the appropriate Ghostwriter CLI binary for your operating system.
 
 * `ghostwriter-cli-macos` : macOS (Intel)
 * `ghostwriter-cli-linux` : Linux amd64
@@ -63,7 +69,7 @@ You can rename these binaries without causing any issues. This wiki will always 
 
 You can install Ghostwriter with three basic commands:
 
-```
+```bash
 git clone https://github.com/GhostManager/Ghostwriter.git
 cd Ghostwriter
 ./ghostwriter-cli install
@@ -100,6 +106,8 @@ You can also get the password by running this command:
 
 {% hint style="success" %}
 This password is only used for creating the account. You can change it in the admin panel after logging into Ghostwriter. You can also change any other part of the user profile.
+
+Changing the password in the config DOES NOT affect the installation. It's only stored in the config to make it easy for you to view the original password.
 {% endhint %}
 
 ### Adding More Users

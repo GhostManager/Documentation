@@ -56,6 +56,13 @@
   * [Authorization](features/graphql-api/authorization.md)
   * [Common API Actions](features/graphql-api/common-api-actions.md)
   * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
+* [Health Monitoring](features/health-monitoring.md)
+
+## Getting Help
+
+* [FAQ](getting-help/faq.md)
+* [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
+* [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 
@@ -87,12 +94,6 @@
   * [Oplog Models](development/database-models/oplog-models.md)
   * [Reporting Models](development/database-models/reporting-models.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
-
-## Getting Help
-
-* [FAQ](getting-help/faq.md)
-* [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
-* [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
 
 ## Change Logs
 

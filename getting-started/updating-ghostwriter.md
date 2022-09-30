@@ -11,8 +11,8 @@ You can check for updates with Ghostwriter CLI and the `update` command. The out
 ```
 $ ./ghostwriter-cli update
 
-Installed version: Ghostwriter v2.2.3 ( 22 February 2022 )
-Latest stable version: Ghostwriter v2.2.3 ( 22 February 2022 )
+Local Ghostwriter Version	Ghostwriter v3.0.5 ( 23 September 2022 )
+Latest Stable Release		Ghostwriter v3.0.5 ( 23 September 2022 )
 ```
 
 The command will take a moment to run as Ghostwriter CLI requests the latest release number from GitHub. If you do not have a network connection the latest version number will not be displayed.
