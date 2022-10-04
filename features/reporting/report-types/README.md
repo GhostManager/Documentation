@@ -18,14 +18,14 @@ Ghostwriter supports a variety of report types:
 
 While viewing a report, scroll down to the **Generate Reports** section to configure your report and select the type of report you want.
 
-![Report Generation Options](<../../../.gitbook/assets/image (1) (2).png>)
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Report Generation OptionsMicrosoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.</p></figcaption></figure>
 
 ### JSON
 
 The JSON output is the foundation of every other report type. It is surfaced as a report type to enable users to take it and create custom reports and visualizations.
 
 {% code title="Example Report JSON" %}
-```
+```json
 {
   "client": {
     "id": 1,
@@ -140,7 +140,7 @@ The JSON output is the foundation of every other report type. It is surfaced as 
 
 ### Office Documents
 
-Microsoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office filetypes: Word documents, Excel spreadsheets, and PowerPoint slide decks.
+Microsoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.
 
 You can customize each of these so the exported files fit your specific needs.
 
@@ -159,8 +159,6 @@ For PowerPoint, Ghostwriter renders a _pptx_ file using the JSON data and a slid
 {% content-ref url="powerpoint-deck-customization.md" %}
 [powerpoint-deck-customization.md](powerpoint-deck-customization.md)
 {% endcontent-ref %}
-
-
 
 #### Excel Spreadsheets
 

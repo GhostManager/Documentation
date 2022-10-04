@@ -36,9 +36,9 @@ Ghostwriter also tests each service more thoroughly with two API endpoints:
 
 The first endpoint, _/status_, tests critical services and displays a table of results:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Ghostwriter's Detailed System Status Dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Ghostwriter's Detailed System Status Dashboard</p></figcaption></figure>
 
-These tests are more thorough than the Docker health checks. For example, Docker will verify the database backend is listening and accepting connections, but Ghostwriter runs tests to ensure the database is accepting connections and reading and writing are working as expected. Ghostwriter also checks disk usage is below 90% and at least 100MB of memory is available. These checks are can be adjusted via Ghostwriter CLI's `config set` command:
+These tests are more thorough than the Docker health checks. For example, Docker will verify the database back end is listening and accepting connections, but Ghostwriter runs tests to ensure the database is accepting connections and reading and writing are working as expected. Ghostwriter also checks disk usage is below 90% and at least 100MB of memory is available. These checks are can be adjusted via Ghostwriter CLI's `config set` command:
 
 * `HEALTHCHECK_DISK_USAGE_MAX` (Default is `90`)
 * `HEALTHCHECK_MEM_MIN` (Default is `100`)
@@ -57,7 +57,7 @@ You can visit the simplified endpoint, _/status/simple/_, to run lightweight che
 |  WARNING |      200      | One or more tests did not pass and you should check the detailed status endpoint |
 |   ERROR  |      500      | There was an unexpected error indicating a critical issue                        |
 
-The home dashboard displays a basic system health status. The status is based on the results simplified endpoint.
+The home dashboard displays a basic system health status. The status is based on the results from the simplified endpoint.
 
 <figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption><p>Home Dashboard System Status Card</p></figcaption></figure>
 
@@ -72,7 +72,7 @@ You can automate monitoring with something like Uptime Kuma or a similar tool. T
 If the tool is capable of triggering a secondary action, you could have the tool pull the JSON data from _/status/_:
 
 ```json
-$ curl -k http://127.0.0.1:8000/status/ -H "Accept: application/json"
+$ curl -k https://ghostwriter.local/status/ -H "Accept: application/json"
 {"Cache backend: default": "working", "DatabaseBackend": "working", "DefaultFileStorageHealthCheck": "working", "DiskUsage": "working", "MemoryUsage": "working", "MigrationsHealthCheck": "working", "RedisHealthCheck": "working"}
 ```
 

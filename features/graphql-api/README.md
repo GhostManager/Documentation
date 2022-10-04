@@ -209,7 +209,5 @@ except TransportQueryError as e:
 except GraphQLError as e:
 	# Do something...
 	pass
-
-
 ```
 

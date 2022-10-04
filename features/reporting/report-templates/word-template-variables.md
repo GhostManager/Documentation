@@ -51,6 +51,12 @@ These expressions are built into Jinja2 and might be useful in your Word documen
 | `unique(value, case_sensitive=False)` | Return a list of unique items from an iterable                               |
 | `upper(string)`                       | Convert a value to all uppercase                                             |
 
+{% hint style="info" %}
+There are many other expressions and filters available. If there is something you want to do, there is probably a way to cleanly accomplish it with a built-in expression. You can perform math, logic, string mutations, and more.
+
+Check the Jinja2 documentation: [https://jinja.palletsprojects.com/en/3.1.x/templates/#expressions](https://jinja.palletsprojects.com/en/3.1.x/templates/#expressions)
+{% endhint %}
+
 ### Ghostwriter Expressions
 
 To see what all is available for your report, generate the JSON report. Everything in the resulting JSON will be available to a report template. The following table describes the top-level keys:
@@ -196,7 +202,7 @@ Subdocuments are like other variables except they are pre-rendered Word document
 
 Ghostwriter uses subdocuments to translate your WYSIWYG content (e.g., findings) to Office Open XML.
 
-Subdocuments are referenced as `{{p VARIABLE }}`.That variable is automatically replaced with the contents of the subdocument.
+Subdocuments are referenced as `{{p VARIABLE }}`. That variable is automatically replaced with the contents of the subdocument.
 
 ## Debugging a Template
 
