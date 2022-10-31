@@ -26,17 +26,33 @@ Categorization data is stored as _jsonb_ in the `categorization` field. The form
 }
 ```
 
+This JSON data is displayed as a table under each domain's _Health_ tab:
+
+<figure><img src="../../../.gitbook/assets/image (7).png" alt="Example of Domain Health and Categorization Information"><figcaption><p>Example of Domain Health and Categorization Information</p></figcaption></figure>
+
 Ghostwriter assumes these categories are bad and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
 
 * spam
-* phishing
+* adult/mature content
+* extreme
 * gambling
-* suspicious
-* pornography
-* placeholders
-* web ads/analytics
-* scam/questionable/illegal
+* hacking
+* malicious outbound data/botnets
+* malicious sources
 * malicious sources/malnets
+* malware repository
+* nudity
+* phishing
+* placeholders
+* pornography
+* potentially unwanted software
+* scam/questionable/illegal
+* spam
+* spyware and malware
+* suspicious
+* violence/hate/racism
+* weapons
+* web ads/analytic
 
 {% hint style="info" %}
 Most of these categories are self-explanatory, but some ⁠— like gambling ⁠— may not seem like they belong.
@@ -48,10 +64,6 @@ Most of these categories are self-explanatory, but some ⁠— like gambling ⁠
 {% hint style="success" %}
 If a domain is flagged as **Burned** it may still be recoverable. If you have a domain you really like, it may be worth trying to get it recategorized and continuing to monitor its reputation to determine if it can be used after a cool-off period.
 {% endhint %}
-
-### Additional Checks
-
-The infrastructure manager also references _malwaredomains.com_ to check if one of your domain names appears in their list of malicious domains.
 
 ## Domain DNS Updates
 

@@ -187,5 +187,5 @@ Large forms can be unwieldy, especially if the form contains one or more inline 
 
 Ghostwriter does not use Crispy's `Tab()` class. Instead, there is a `CustomTab()` class available in the project that allows for additional customization of the tabs.
 
-![Large Form for a New Project Broken Into Tabs](<../../.gitbook/assets/image (1) (1).png>)
+![Large Form for a New Project Broken Into Tabs](<../../.gitbook/assets/image (1) (1) (1).png>)
 

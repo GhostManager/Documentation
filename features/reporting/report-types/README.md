@@ -18,7 +18,7 @@ Ghostwriter supports a variety of report types:
 
 While viewing a report, scroll down to the **Generate Reports** section to configure your report and select the type of report you want.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Report Generation OptionsMicrosoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Report Generation OptionsMicrosoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.</p></figcaption></figure>
 
 ### JSON
 
