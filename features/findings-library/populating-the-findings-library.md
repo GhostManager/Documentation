@@ -12,7 +12,7 @@ To add just one finding to the library, click the **Findings Library** tab on th
 
 The **Finding Guidance** field is not used in reports. Use this field to explain how a finding should be used or what sort of evidence should be included with it. The field can be left blank if you do not have anything for the finding.
 
-![New Finding Form](../../.gitbook/assets/new_individual_finding.png)
+![New Finding Form](../../.gitbook/assets/new\_individual\_finding.png)
 {% endtab %}
 
 {% tab title="Upload Findings" %}
@@ -22,11 +22,10 @@ _title, description, severity, impact, mitigation, replication\_steps, host\_det
 
 The _finding\_guidance_ field is not used in reports. Use this field to explain how a finding should be used or what sort of evidence should be included with it. The field can be left blank if you do not have anything for the finding.
 
-![](../../.gitbook/assets/image%20%283%29.png)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 {% hint style="info" %}
-If a finding \(based on the _title_ field\) already exists in the library, the import will update the existing record instead of discarding the data or duplicating the entry.
+If a finding (based on the _title_ field) already exists in the library, the import will update the existing record instead of discarding the data or duplicating the entry.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
-
