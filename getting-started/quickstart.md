@@ -39,13 +39,13 @@ There are now multiple ways to install Docker Compose. One of them makes it a su
 If you install Compose and `docker-compose` is not in your PATH, rename the script in the install directory (e.g., `/usr/local/bin/docker-compose` on macOS and Linux) or create a symlink.
 {% endhint %}
 
-Docker requires sufficient resources to successfully build the containers. Most systems capable of running a modern OS should have the necessary resources. If building Ghostwriter inside of a VM, ensure the VM meets the following recommended specs:
+Docker requires sufficient resources to build the containers successfully. Most systems capable of running a modern OS should have the necessary resources. If building Ghostwriter inside of a VM, ensure the VM meets the following recommended specs:
 
 * Two (2) vCPUs
 * 3GB RAM
 * 10GB Storage
 
-The above specs are recommendations for the bare minimum necessary to get started. Ideally, provide at least one vCPU per container, more RAM to allow for multiple users and scheduled tasks to run smoothly, and more storage for file uploads.
+The above specs are recommendations for the bare minimum necessary to get started. Ideally, provide at least one vCPU per container, more RAM for multiple users and scheduled tasks to run smoothly, and more storage for file uploads.
 
 * Five (5) vCPUs
 * 4GB RAM
@@ -76,7 +76,7 @@ cd Ghostwriter
 ```
 
 {% hint style="info" %}
-Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use your own signed certificates, do that now to make things easier. If you don't have them ready, you can always install them later.
+Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use your own signed certificates, do that now to make things easier. If you don't have them ready, you can install them later.
 
 There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
 {% endhint %}
@@ -145,7 +145,7 @@ When you set `DATE_FORMAT` use Django's format string values:
 
 #### Using Your Own Certificates
 
-You can use your own TLS/SSL certificates for Ghostwriter. To swap in your own certificate package:
+You can use your own TLS/SSL certificates for Ghostwriter. To swap in your certificate package:
 
 1. Name the keypair files _ghostwriter.key_ and _ghostwriter.crt_
 2. Name the Diffie-Helman Parameters file _dhparam.pem_
@@ -163,7 +163,7 @@ To allow a new IP address or hostname, run this command:
 
 If you are setting up a new domain accompanied by a TLS certificate, update the Nginx hostname to match your new certificate and domain name:
 
-`./ghostwriter-cli config set NGINX_HOST <YOUR DOMAIN NAME>"`
+`./ghostwriter-cli config set NGINX_HOST <YOUR DOMAIN NAME>`
 
 You can use `config disallowhost` to remove a host you have added to the list.
 
@@ -174,3 +174,11 @@ A `*` will allow any hostname or IP address.
 
 Anything like `*.myserver.local` or `192.168.10.*` will not work to allow a host.
 {% endhint %}
+
+#### Configuring Acces Through a Web Proxy
+
+Similar to the HTTP `Host` header protections, Ghostwriter also checks the `Origin` and `Referer` headers. If you will be accessing Ghostwriter through a proxy, configure Ghostwriter to trust the proxy with this command:
+
+`./ghostwriter-cli config trustorigin <YOUR PROXY>`
+
+You can use `config distrustorigin` to remove a proxy you have added to the list.

@@ -6,11 +6,11 @@ description: Description and explanation of common API actions
 
 ## Getting to Know the API Schema
 
-The Hasura Console (see [Using the Hasura Console](using-the-hasura-console.md)) is the easiest option for browsing the GraphQL schema. It's built into Ghostwriter, offers to autocomplete queries and mutations, and makes suggestions based on the schema, so it's very friendly for people learning how GraphQL queries work.
+The Hasura Console (see [Using the Hasura Console](using-the-hasura-console.md)) is the easiest option for browsing the GraphQL schema. It's built into Ghostwriter, offers to autocomplete queries and mutations, and makes suggestions based on the schema, so it's friendly for people learning how GraphQL queries work.
 
 However, the Hasura Console should not be made widely accessible to anyone except the server administrator.&#x20;
 
-For a safer option that offers all users access to something like the console, you can use an API testing/browsing application like Postman. Import the GraphQL SDL from the _/DOCS/schema.graphql_ in the code repository and configure your personal API token.
+For a safer option that offers all users access to something like the console, you can use an API testing/browsing application like Postman. Import the GraphQL SDL from the _/DOCS/schema.graphql_ in the code repository and configure your API token.
 
 For example, using Postman:
 
@@ -20,11 +20,11 @@ For example, using Postman:
 4. Click the _Definition_ tab and paste in the contents of the _/DOCS/schema.graphql_ file
 5. Click _Save_ and wait a bit for Postman to process the definitions
 
-Back in the _Collections_ tab, you can create new requests with the newly created API. Select GraphQL as the format for the body and then select the API you just created from the dropdown list. Postman should auto-fetch the schema to enable auto-complete.
+In the _Collections_ tab, you can create requests with the newly created API. Select GraphQL as the format for the body and then select the API you just created from the dropdown list. Postman should auto-fetch the schema to enable auto-complete.
 
 ![Atocomplete in the Postman Application](<../../.gitbook/assets/image (32).png>)
 
-Now you can explore the API and get comfortable before trying to convert queries and mutations into code for automation.
+Now you can explore the API and get comfortable before converting queries and mutations into code for automation.
 
 ### Basic Query and Mutations
 
@@ -35,7 +35,7 @@ Most queries and mutations are straightforward and follow a naming convention th
 * To update an existing record, you will use a mutation that begins with `update_*`
 * To delete a record, you will use a mutation that begins with `delete_*`
 
-You will also notice copies of queries and mutations with the `*_by_pk` suffix. These are handy when you want to act against a singular entry and write a simpler query. Instead of writing a `_where` clause that filters the results by the `id` you want, these queries and mutations need only an `id` argument.
+You will also notice copies of queries and mutations with the `*_by_pk` suffix. These are handy when acting against a singular entry and writing a simpler query. Instead of writing a `_where` clause that filters the results by the `id` you want, these queries and mutations need only an `id` argument.
 
 Both of these queries return the same result:
 
@@ -55,13 +55,13 @@ query Domain {
 
 ### Special Queries and Mutations
 
-There are some queries and mutations that have to break away from the above rules. These are special actions that trigger additional business logic before or after the action is completed.
+Some queries and mutations have to break away from the above rules. These are special actions that trigger additional business logic before or after the action is completed.
 
 #### Domain and Server Checkouts
 
 The API uses `checkoutDomain` and `checkoutServer` mutations to prevent overlapping checkouts, attempts to checkout unavailable resources, and issues with bad dates. If a checkout passes all the checks, these actions also update the resource being checked out to mark them as unavailable.
 
-Likewise, there are matching `deleteDomainCheckout` and `deleteServerCheckout` mutations. These mutations set the domain or server back to the "available" status, as needed.
+Likewise, there are matching `deleteDomainCheckout` and `deleteServerCheckout` mutations. As needed, these mutations set the domain or server back to the "available" status.
 
 #### Managing Evidence and Report Template Files
 

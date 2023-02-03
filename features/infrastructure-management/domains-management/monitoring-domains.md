@@ -28,9 +28,9 @@ Categorization data is stored as _jsonb_ in the `categorization` field. The form
 
 This JSON data is displayed as a table under each domain's _Health_ tab:
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt="Example of Domain Health and Categorization Information"><figcaption><p>Example of Domain Health and Categorization Information</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt="Example of Domain Health and Categorization Information"><figcaption><p>Example of Domain Health and Categorization Information</p></figcaption></figure>
 
-Ghostwriter assumes these categories are bad and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
+Ghostwriter assumes these categories are bad, and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
 
 * spam
 * adult/mature content
@@ -62,7 +62,7 @@ Most of these categories are self-explanatory, but some ⁠— like gambling ⁠
 {% endhint %}
 
 {% hint style="success" %}
-If a domain is flagged as **Burned** it may still be recoverable. If you have a domain you really like, it may be worth trying to get it recategorized and continuing to monitor its reputation to determine if it can be used after a cool-off period.
+If a domain is flagged as **Burned** it may still be recoverable. If you have a domain you like, it may be worth getting it recategorized and continuing to monitor its reputation to determine if it can be used after a cool-off period.
 {% endhint %}
 
 ## Domain DNS Updates

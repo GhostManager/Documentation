@@ -18,19 +18,19 @@ Due to limitations in the PowerPoint API (and the nature of PowerPoint compared 
 
 If you enable borders for pictures, you can set a border line weight (in EMUs; default is `12700` EMUs, or 1pt) and a border color code (e.g., `2D2B6B`).
 
-<figure><img src="../.gitbook/assets/image (5).png" alt="Border configuration options"><figcaption><p>Border Configuration</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt="Border configuration options"><figcaption><p>Border Configuration</p></figcaption></figure>
 
 ### Tables and Figures
 
 Ghostwriter will add cross-reference (e.g., bookmarks) for figures and tables. Configure a label and a separator character that will appear between your label and your captions. The default separator is an en dash (–).
 
-<figure><img src="../.gitbook/assets/image (3).png" alt="Table and figure options"><figcaption><p>Table and Figure Options</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt="Table and figure options"><figcaption><p>Table and Figure Options</p></figcaption></figure>
 
 ### Report Generation Options
 
 Finally, you can select default report templates and configure a default filename for new report downloads. The filenames can be generic or include placeholders to create dynamic filenames.
 
-<figure><img src="../.gitbook/assets/image (2).png" alt="Report generation options for filename and templates"><figcaption><p>Report generation Options for Filenames and Default Templates</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt="Report generation options for filename and templates"><figcaption><p>Report generation Options for Filenames and Default Templates</p></figcaption></figure>
 
 Filenames can use the following placeholder strings or [date formatting characters](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date):
 
@@ -59,4 +59,4 @@ Severity categories are managed under the _Reporting_ application and the _Sever
 Do not change the name or weights without updating the HTML templates. Some templates modify styles based on specific severity names. Categories cannot be sorted alphabetically, so weights maintain the ordering in reports.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (9).png" alt="Severity settings for name, weight, and color"><figcaption><p>Severity Settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt="Severity settings for name, weight, and color"><figcaption><p>Severity Settings</p></figcaption></figure>

@@ -14,7 +14,6 @@ The default filename will be: `YYYYMMDD_HHMMSS_CLIENT-NAME_ASESSMENT-TYPE.xlsx`
 
 ### Spreadsheet Contents
 
-The current version of the spreadsheet contains all of the findings attached to your report. The first worksheet will contain a formatted table of your findings sorted by severity. The severity column will be color-coded with your configured severity colors.
+The spreadsheet's current version contains all the findings attached to your report. The first worksheet will contain a formatted table of your findings sorted by severity. The severity column will be color-coded with your configured severity colors.
 
-It is not possible to cleanly insert evidence files into the spreadsheet, so the spreadsheet has an **Evidence** column. Ghostwriter replaces any references to evidence files with an entry in the **Evidence** column so readers know there is additional evidence available for review.
-
+It is impossible to insert evidence files into the spreadsheet cleanly, so it has an **Evidence** column. Ghostwriter replaces any references to evidence files with an entry in the **Evidence** column, so readers know there is additional evidence available for review.

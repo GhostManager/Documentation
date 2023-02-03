@@ -15,7 +15,7 @@ By default, Ghostwriter CLI generates a random password for a default `postgres`
 ./ghostwriter-cli config set POSTGRES_PASSWORD <YOUR PASSWORD>
 ```
 
-If that does not work or you need to change the credentials, you may do so with the `psql` tool. First, start the containers even if initialization will fail due to the bad password.
+If that does not work or you need to change the credentials, you may do so with the `psql` tool. First, start the containers even if initialization fails due to the bad password.
 
 ```
 docker exec -it ghostwriter_postgres_1 bash
@@ -52,3 +52,6 @@ That sets the new password and `\q` quits the `psql` console. Set your new passw
 ```
 
 If the passwords still do not match, you may need to try again. Copy/pasting the password may not work. If you try to paste the new password, you might not be setting the password you expect. It is best to type the password manually.
+
+
+

@@ -2,21 +2,19 @@
 description: Creating a new log
 ---
 
-# Creating a new oplog
+# Creating a New Operation Log
 
-In order to create a new oplog, navigate to the oplog section on the left tool bar and select the "Create Oplog" button.
+To create a new log, navigate to the _Operation Logs_ section on the sidebar and select the _Add New Oplog_ button.
 
-![](../../.gitbook/assets/screen-shot-2020-08-13-at-8.59.48-am%20%281%29.png)
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption><p>Creating a New Log from the Sidebar</p></figcaption></figure>
 
-You will be prompted to enter a name and select the project to which this oplog belongs. While the name doesn't need to be unique to Ghostwriter, it does need to be unique to the project. In this example, we created a new oplog named "new-oplog".
+You will be prompted to enter a name and select the project to which this log belongs. While the name doesn't need to be unique to Ghostwriter, it does need to be unique to the project.
 
-![](../../.gitbook/assets/screen-shot-2020-08-13-at-9.04.00-am.png)
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>New Operation Log Form</p></figcaption></figure>
 
-Click "Save" when you are done and you will be taken to the oplog summary page.
+Click _Submit_ when you are done, and you will be taken to the log summary page.
 
-On the oplog summary page, click on the link for "new-oplog" and you will be taken to the oplog entries table. This is where the user can view,create,modify, and delete entries.
-
-
+On the log summary page, click the link for the new log, and you will be taken to the log entries table. This is where the user can view, create, modify, and delete entries.
 
 
 

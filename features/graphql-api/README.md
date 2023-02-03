@@ -10,7 +10,7 @@ Starting in v3.0.0, Ghostwriter includes a GraphQL API powered by the [Hasura Gr
 
 ## Current Limitations
 
-While the GraphQL API is still in development there are some limitations to be aware of during testing:
+While the GraphQL API is still in development, there are some limitations to be aware of during testing:
 
 * Client and project invitations can only be managed via the Django admin panel or the API
   * See the [_**Authorization**_](authorization.md) page for details
@@ -22,7 +22,7 @@ With the default configuration, the GraphQL endpoints are:
 * Local: [http://127.0.0.1:8080/v1/graphql](http://127.0.0.1:8000/graphql)
 * Production: [https://\<HOST>/v1/graphql](http://127.0.0.1:8000/graphql)
 
-Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. That means you can get exactly what you need without making multiple requests or parsing extra data.
+Unlike a REST API, a GraphQL API does not have specific endpoints you must query with a particular HTTP request type to receive a predetermined set of results. You submit queries with POST requests to one of the above endpoints as JSON. The JSON includes your personalized query and the data you selected to get back. You can get precisely what you need without making multiple requests or parsing extra data.
 
 A standard query is submitted with `Content-Type: application/json` in the headers and a body like this:
 
@@ -34,7 +34,7 @@ A standard query is submitted with `Content-Type: application/json` in the heade
 }
 ```
 
-The `query` and `operationName` keys are required. The `operationName` tells GraphQL which action should be executed. This can be helpful if you stack multiple queries and mutations in the `query` key and want to selectively execute them (see the example at the bottom of the page).
+The `query` and `operationName` keys are required. The `operationName` tells GraphQL which action should be executed. This can be helpful if you stack multiple queries and mutations in the `query` key and want to execute them selectively (see the example at the bottom of the page).
 
 The response will always come back in this form:
 
@@ -50,7 +50,7 @@ For more information, review the GraphQL documentation on queries:
 {% embed url="https://graphql.org/learn/queries" %}
 
 {% hint style="success" %}
-Some basic GraphQL knowledge, such as what the difference between a query and a mutation is, will make the following sections easier to understand. You will also be better prepared to write your own custom queries.
+Some basic GraphQL knowledge, such as the difference between a query and a mutation, will make the following sections easier to understand. You will also be better prepared to write your custom queries.
 {% endhint %}
 
 ### Basic Queries
@@ -82,7 +82,7 @@ query MyQuery {
 ```
 
 {% hint style="success" %}
-Field names are often placed on their own lines in GraphQL examples and in the Hasura Console, but this is not required. You can separate field names with spaces, too. This option is easier to use when preparing queries for web requests because it removes the need to convert newlines to `\n`.
+Field names are often placed on separate lines in GraphQL examples and the Hasura Console, but this is not required. You can separate field names with spaces, too. This option is easier to use when preparing queries for web requests because it removes the need to convert newlines to `\n`.
 {% endhint %}
 
 Queries can also request related data. For a client, you might request the contact information for all related points of contact:
@@ -148,7 +148,7 @@ Note how the above example references the `severity` relationship, instead of re
 
 ### Interacting via Automation
 
-Queries are simple until you need to pack them into the nested JSON for a web request. You should use a script to craft the proper payloads and make them repeatable.
+Queries are simple until you need to pack them into the nested JSON for a web request. It would be best if you used a script to craft the proper payloads and make them repeatable.
 
 You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request. However, this can lead to accidental double-encoding which will cause issues down the line. The simplest option is using a library built for handling GraphQL requests, like `gql` for Python.
 

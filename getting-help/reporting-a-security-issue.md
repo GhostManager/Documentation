@@ -16,7 +16,6 @@ The development team will respond as soon as possible. Depending on the impact a
 
 Fixed vulnerabilities will be closed and documented in release notes.
 
-If a vulnerability will not be fixed for any reason, the issue will be closed and the reason why the vulnerability will not or can not be fixed will be documented.
+If a vulnerability is not fixed for any reason, the issue will be closed, and why the vulnerability will not or can not be fixed will be documented.
 
-If you need to disclose a vulnerability that may be sensitive in nature, you may disclose the issue privately via email. Send such reports to _info@getghostwriter.io_.
-
+If you need to disclose a vulnerability that may be sensitive, you may disclose the issue privately via email. Send such reports to _info@getghostwriter.io_.

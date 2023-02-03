@@ -6,13 +6,15 @@ description: Customizing PowerPoint slide deck generation
 
 ## Getting Started with PowerPoint
 
-Ghostwriter uses template documents and the Jinja2 template language \([https://jinja.palletsprojects.com/en/2.11.x/](https://jinja.palletsprojects.com/en/2.11.x/)\) to give you as much control over the document generation as possible.
+Ghostwriter uses template documents and the Jinja2 template language ([https://jinja.palletsprojects.com/en/2.11.x/](https://jinja.palletsprojects.com/en/2.11.x/)) to give you as much control over document generation as possible.
 
 Learn more about managing report templates here:
 
-{% page-ref page="../report-templates/" %}
+{% content-ref url="../report-templates/" %}
+[report-templates](../report-templates/)
+{% endcontent-ref %}
 
-You will need to upload at least one PowerPoint slide deck to use as a template. Once you have a template you can pick from, open you report and select the template from the dropdown menu under the **Generate Reports** section. You should see a notification when the template selection is saved. You can then click the PowerPoint icon to generate a report.
+You will need to upload at least one PowerPoint slide deck to use as a template. Once you have a template you can pick from, open your report and select the template from the dropdown menu under the **Generate Reports** section. You should see a notification when the template selection is saved. You can then click the PowerPoint icon to generate a report.
 
 Depending on the size of your report and template, rendering can take a few seconds. Once the report is done, your browser will download a new PowerPoint document.
 
@@ -20,7 +22,7 @@ The default filename will be: `YYYYMMDD_HHMMSS_CLIENT-NAME_ASESSMENT-TYPE.pptx`
 
 ### PowerPoint Templates
 
-There are less customization options for PowerPoint than Word. Your template slide deck controls how the generated slide deck looks, but the content will always be the same.
+There are fewer customization options for PowerPoint than Word. Your template slide deck controls how the generated slide deck looks, but the content will always be the same.
 
 {% hint style="warning" %}
 The PowerPoint template should be empty – i.e., should contain zero slides. Edit the master slides to control colors, layout, slide numbers, and other details.
@@ -33,7 +35,7 @@ Ghostwriter will add slides to your chosen template slide deck. The new slides i
 {% hint style="info" %}
 Each slide is set to fit text to the size of the text field. This auto-resizing happens in PowerPoint's rendering engine, so a slide's text might extend beyond the slide's lower boundary when you open your new presentation.
 
-PowerPoint should active auto-resizing when you save the presentation or edit any of the text.
+PowerPoint should activate auto-resizing when you save the presentation or edit any text.
 {% endhint %}
 
 * **Title Slide**
@@ -47,12 +49,12 @@ PowerPoint should active auto-resizing when you save the presentation or edit an
 * **Attack Path Overview Slide**
   * Placeholder for where you might discuss assessment narratives
 * **Findings Overview Slide**
-  * Includes a two-column table showing all findings \(full title and severity\)
+  * Includes a two-column table showing all findings (full title and severity)
 * **Findings Slides**
   * One slide per finding that includes:
     * Finding title as the slide title
     * All image evidence files as inserted images
-    * All text evidence files as new text blocks 9styled with a fixed-width font\)
+    * All text evidence files as new text blocks 9styled with a fixed-width font)
     * Finding description as main slide content
     * All other finding information in the slide's notes field
 * **Observations Slide**
@@ -63,4 +65,3 @@ PowerPoint should active auto-resizing when you save the presentation or edit an
   * Placeholder for closing statements or next steps
 * **Final Slide**
   * Closing title slide that includes your configured company name, social media account, and email address
-

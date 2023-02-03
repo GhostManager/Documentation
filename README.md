@@ -6,9 +6,9 @@ description: Introducing the SpecterOps project management and reporting platfor
 
 ![](https://github.com/GhostManager/Ghostwriter/raw/master/DOCS/images/logo.png)
 
-Ghostwriter is a part of your team. It helps you manage clients, projects, reports, and infrastructure in one application. It does not replace some of the more common or traditional project management tools, such as CRMs. Still, it does consolidate all relevant project information in a way for users to easily curate every aspect of their projects.
+Ghostwriter is a part of your team. It helps you manage clients, projects, reports, and infrastructure in one application. It does not replace some of the more common or traditional project management tools, such as CRMs. Still, it consolidates all relevant project information so users can easily curate every aspect of their projects.
 
-This site will always have the most up-to-date documentation for how to install and use Ghostwriter. To learn more about Ghostwriter, check out this article:
+This site will always have the most up-to-date documentation on how to install and use Ghostwriter. To learn more about Ghostwriter, check out this article:
 
 {% embed url="https://posts.specterops.io/introducing-ghostwriter-part-1-61e7bd014aff" %}
 
@@ -22,7 +22,7 @@ Ghostwriter is licensed under the **BSD-3** license.
 
 {% code title="LICENSE" %}
 ```
-Copyright (c) 2022, Christopher Maddalena
+Copyright (c) 2023, Christopher Maddalena
 
 All rights reserved.
 

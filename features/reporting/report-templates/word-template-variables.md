@@ -34,7 +34,7 @@ Whitespace Control
 {% hint style="danger" %}
 All of Ghostwriter's expressions and statements should be wrapped in curly braces with one space to either side (`{{ client.name }}`or `{% if ... %}` ) – unless otherwise noted.
 
-If you do not include the spaces, that expression will not be recognized as valid and ignored by Jinja2.
+If you do not include the spaces, that expression will not be recognized as valid and will be ignored by Jinja2.
 {% endhint %}
 
 ### Potentially Useful Jinja2 Expressions
@@ -52,7 +52,7 @@ These expressions are built into Jinja2 and might be useful in your Word documen
 | `upper(string)`                       | Convert a value to all uppercase                                             |
 
 {% hint style="info" %}
-There are many other expressions and filters available. If there is something you want to do, there is probably a way to cleanly accomplish it with a built-in expression. You can perform math, logic, string mutations, and more.
+There are many other expressions and filters available. If you want to do something, there is probably a way to accomplish it with a built-in expression cleanly. You can perform math, logic, string mutations, and more.
 
 Check the Jinja2 documentation: [https://jinja.palletsprojects.com/en/3.1.x/templates/#expressions](https://jinja.palletsprojects.com/en/3.1.x/templates/#expressions)
 {% endhint %}
@@ -107,9 +107,9 @@ Let's say you put the following Jinja2 code in a template:
 
 That would drop in raw HTML using whatever style you had assigned to `{{ finding.description }}` in the template. It's unlikely you would want that.
 
-Jinja2's `striptags` filter can help, but that removes all HTML without preserving new lines. Ghostwriter's custom `strip_html` filter will strip the tags and preserve newlines, but the output will still be all plaintext. You will have to re-apply character and paragraph styles, font changes, and other options. Your evidence files will also appear as their text placeholders.
+Jinja2's `striptags` filter can help, but that removes all HTML without preserving new lines. Ghostwriter's custom `strip_html` filter will strip the tags and preserve newlines, but the output will still be all plaintext. You must re-apply character and paragraph styles, font changes, and other options. Your evidence files will also appear as text placeholders.
 
-To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for rich text) to the attribute's name and use the `p` tag (see **Ghostwriter Tags** below). The above example becomes:
+To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for rich text) to the attribute's name, use the `p` tag (see **Ghostwriter Tags** below). The above example becomes:
 
 ```
 {% raw %}
@@ -123,17 +123,17 @@ This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image a
 
 Each finding also has a unique `severity_rt` attribute. You don't style this text in the WYSIWYG editor. Ghostwriter creates a rich text version of your severity category that is colored using your configured color code for that category.
 
-The `severity_rt` attribute only styles the color of the text run, so you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag (for a run) like so:
+The `severity_rt` attribute only styles the color of the text run so that you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag (for a run) like so:
 
 ![Severity Category Styled as Heading 4](<../../../.gitbook/assets/image (19).png>)
 
 That template renders as:
 
-![Rendered Severity Category with Chosen Color](<../../../.gitbook/assets/image (8).png>)
+![Rendered Severity Category with Chosen Color](<../../../.gitbook/assets/image (8) (1).png>)
 
 ### Ghostwriter Tags
 
-There are several tags used for Word documents that are not built into Jinja2. These tags are added after you open an expression or statement (before the space).
+Several tags used for Word documents are not built into Jinja2. These tags are added after you open an expression or statement (before the space).
 
 Example: `{{p findings_subdoc }}`
 
@@ -181,7 +181,7 @@ There are several statements for Word documents that are not built into Jinja2:
 
 ### Ghostwriter Filters
 
-Ghostwriter offers some custom filters you can use to quickly modify report values:
+Ghostwriter offers some custom filters you can use to modify report values quickly:
 
 {% hint style="success" %}
 The filter collection is under development and will continue to grow.

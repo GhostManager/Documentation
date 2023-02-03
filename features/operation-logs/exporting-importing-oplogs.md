@@ -2,23 +2,20 @@
 description: Exporting and importing activity log data
 ---
 
-# Exporting / Importing Oplogs
+# Exporting / Importing Operation Logs
 
 ### Exporting
 
-A user can export an oplog by navigating to the oplog list and selecting export on the corresponding oplog.
+You can export a log to a csv file by navigating to the log list view and clicking the _Export_ button next to the log you wish to export.
 
-![](../../.gitbook/assets/export_example.png)
-
-The resulting downloaded file is a plain text CSV file.
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Exporting a Log File</p></figcaption></figure>
 
 ### Importing
 
-To import a CSV file, navigate to the "Import Oplog Entries" tab on the left toolbar. 
+To import a CSV log file, open the _Operation Logs_ menu in the sidebar and click _Import Oplog Entries_:
 
-![](../../.gitbook/assets/screen-shot-2020-08-13-at-11.00.29-am.png)
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption><p>Log Import Option in the Sidebar</p></figcaption></figure>
 
-Click on the "Click or drop your csv file here" button and select a file to upload. Once the file is selected, click on the green upload button. You will be redirected to the oplog list page if successful, otherwise an error will be displayed indicating what went wrong during the import.
+Drag and drop your csv file or click the _Browse_ button to select it. Once the file is selected, click on the green _Upload_ button. You will be redirected to the log list page if successful. Otherwise, an error will be displayed indicating what went wrong during the import.
 
-![](../../.gitbook/assets/screen-shot-2020-08-13-at-11.07.08-am.png)
-
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption><p>Operation Log Import Form</p></figcaption></figure>

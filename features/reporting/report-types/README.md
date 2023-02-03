@@ -18,7 +18,7 @@ Ghostwriter supports a variety of report types:
 
 While viewing a report, scroll down to the **Generate Reports** section to configure your report and select the type of report you want.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>Report Generation OptionsMicrosoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (3).png" alt=""><figcaption><p>Report Generation OptionsMicrosoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.</p></figcaption></figure>
 
 ### JSON
 
@@ -140,13 +140,13 @@ The JSON output is the foundation of every other report type. It is surfaced as 
 
 ### Office Documents
 
-Microsoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports construction and export of all three of the major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.
+Microsoft Office is ubiquitous and a staple of many reporting workflows. To that end, Ghostwriter's reporting engine supports the construction and export of all three major Office file types: Word documents, Excel spreadsheets, and PowerPoint slide decks.
 
-You can customize each of these so the exported files fit your specific needs.
+You can customize each of these, so the exported files fit your specific needs.
 
 #### Word Documents
 
-For Word, Ghostwriter renders a _docx_ file using the JSON data and a report template document. Review the Word section for more information on customization options and how to get started generating Word documents.
+For Word, Ghostwriter renders a _docx_ file using the JSON data and a report template. Review the Word section for more information on customization options and how to get started generating Word documents.
 
 {% content-ref url="word-document-customization.md" %}
 [word-document-customization.md](word-document-customization.md)

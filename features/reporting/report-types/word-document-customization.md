@@ -6,7 +6,7 @@ description: Customizing Word document generation
 
 ## Getting Started with Word
 
-Ghostwriter uses template documents and the Jinja2 template language ([https://jinja.palletsprojects.com/en/2.11.x/](https://jinja.palletsprojects.com/en/2.11.x/)) to give you as much control over the document generation as possible.
+Ghostwriter uses template documents and the Jinja2 template language ([https://jinja.palletsprojects.com/en/2.11.x/](https://jinja.palletsprojects.com/en/2.11.x/)) to give you as much control over document generation as possible.
 
 Learn more about managing report templates here:
 
@@ -22,7 +22,7 @@ The default filename will be: `YYYYMMDD_HHMMSS_CLIENT-NAME_ASESSMENT-TYPE.docx`
 
 ### Word Templates
 
-Your templates can be simple documents or complete reports. If you currently manage one or more report templates for different types of projects, you can convert those to Ghostwriter templates.
+Your templates can be simple documents or complete reports. You can convert those to Ghostwriter templates if you currently manage one or more report templates for different projects.
 
 One of the simplest examples of how Ghostwriter can save a team time and effort is replacements. You can create complex dynamic Word templates for Ghostwriter, but the most basic Jinja2 expression is a simple variable, like this one: `{{ report_date }}`
 
@@ -30,10 +30,10 @@ Ghostwriter will replace every instance of `{{ report_date }}` in your template 
 
 ![](<../../../.gitbook/assets/image (7) (1).png>)
 
-![](<../../../.gitbook/assets/image (17).png>)
+![](<../../../.gitbook/assets/image (17) (1).png>)
 
 {% hint style="success" %}
-Everything seen in the report [JSON](./#json) is accessible as a variable within your template. There are also additional variables, filters, and expressions you can use to refine or customize the report content.
+Everything seen in the report [JSON](./#json) is accessible as a variable within your template. You can also use additional variables, filters, and expressions to refine or customize the report content.
 
 You decide what to include in your templates.
 {% endhint %}
