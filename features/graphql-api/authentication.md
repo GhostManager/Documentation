@@ -97,3 +97,35 @@ If the token is not accepted, the authorization webhook will return a `401 Unaut
 Any unauthorized request will be treated as having the `public` role with the username `anonymous`. This is not a real user or role and is only used to manage access to resources designed to be accessed without authentication.
 
 The only action available for this `anonymous` user is the `Login` action.
+
+### Authentication & Authorization Flow
+
+This is a MermaidJS diagram showing the general flow for authentication and authorization:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User
+    User->>GraphQL: Login Mutation
+    loop Authentication
+        GraphQL->>Webhook: Username & Password
+        Webhook->>Back End: Who is this user?
+        Back End->>Webhook: `User` Object
+        Webhook->>Webhook: Generate JSON Token
+        Webhook->>GraphQL: JSON Token
+    end
+    GraphQL->>User: Authentication Error || Pass JSON Web Token to User
+    User->>GraphQL: GraphQL Request
+    loop Authorization
+        GraphQL->>Webhook: Request Data
+        Webhook->>Back End: Validate JSON Token
+        Back End->>Back End: JWT Validation
+        Back End->>Webhook: `User` Object
+        Webhook->>Webhook: Is this user's role authorized for this request?
+        Webhook->>GraphQL: Authentication Result
+    end
+    Note right of GraphQL: Check `Authentication` header
+    GraphQL->>User: Authorization Error || GraphQL Result
+    
+  
+```
