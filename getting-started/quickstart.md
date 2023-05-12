@@ -10,11 +10,11 @@ description: >-
 
 Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker and Docker Compose before proceeding.
 
-You will need Docker version >=20 for the Alpine Linux images used for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
+You will need Docker version >=20 for the Alpine Linux images for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
 
 You will need Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
 
-```python
+```shell-session
 $ docker-compose --version
 docker-compose version 1.29.2, build 5becea4c   # Good; >=1.26.x
 
@@ -69,14 +69,14 @@ You can rename these binaries without causing any issues. This wiki will always 
 
 You can install Ghostwriter with three basic commands:
 
-```bash
-git clone https://github.com/GhostManager/Ghostwriter.git
-cd Ghostwriter
-./ghostwriter-cli install
+```shell-session
+$ git clone https://github.com/GhostManager/Ghostwriter.git
+$ cd Ghostwriter
+$ ./ghostwriter-cli install
 ```
 
 {% hint style="info" %}
-Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use your own signed certificates, do that now to make things easier. If you don't have them ready, you can install them later.
+Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use yoursigned certificates, do that now to make things easier. If you don't have them ready, you can install them later.
 
 There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
 {% endhint %}
@@ -143,7 +143,7 @@ When you set `DATE_FORMAT` use Django's format string values:
 [https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#std:templatefilter-date](https://docs.djangoproject.com/en/4.0/ref/templates/builtins/#std:templatefilter-date)
 {% endhint %}
 
-#### Using Your Own Certificates
+#### Using Your Certificates
 
 You can use your own TLS/SSL certificates for Ghostwriter. To swap in your certificate package:
 
@@ -155,7 +155,7 @@ Your certificate will likely have a new hostname, so continue to the next sectio
 
 #### Customizing the Domain Name or IP Address
 
-To avoid potential exposure to [HTTP Host header attacks](https://portswigger.net/web-security/host-header), Ghostwriter explicitly checks the hostname against a list of allowed hosts. To access Ghostwriter with your custom domain name or server IP address, you must tell the server to allow new IP addresses or hostnames.
+Ghostwriter explicitly checks the hostname against a list of allowed hosts to avoid potential exposure to [HTTP Host header attacks](https://portswigger.net/web-security/host-header). To access Ghostwriter with your custom domain name or server IP address, you must tell the server to allow new IP addresses or hostnames.
 
 To allow a new IP address or hostname, run this command:
 
@@ -175,9 +175,9 @@ A `*` will allow any hostname or IP address.
 Anything like `*.myserver.local` or `192.168.10.*` will not work to allow a host.
 {% endhint %}
 
-#### Configuring Acces Through a Web Proxy
+#### Configuring Access Through a Web Proxy
 
-Similar to the HTTP `Host` header protections, Ghostwriter also checks the `Origin` and `Referer` headers. If you will be accessing Ghostwriter through a proxy, configure Ghostwriter to trust the proxy with this command:
+Similar to the HTTP `Host` header protections, Ghostwriter also checks the `Origin` and `Referer` headers. If you are accessing Ghostwriter through a proxy, configure Ghostwriter to trust the proxy with this command:
 
 `./ghostwriter-cli config trustorigin <YOUR PROXY>`
 
