@@ -71,6 +71,7 @@ To see what all is available for your report, generate the JSON report. Everythi
 | targets        | \[`Dict`] All project targets                                                                                         |
 | scope          | \[`Dict`] All project scope lists                                                                                     |
 | infrastructure | \[`Dict`] All project infrastructure information                                                                      |
+| logs           | \[`Dict`] All activity logs and related entries from the project                                                      |
 | findings       | \[`Dict`] All information about a project's findings                                                                  |
 | docx\_template | \[`Dict`] All information about the selected DOCX template                                                            |
 | pptx\_template | \[`Dict`] All information about the selected PPTX template                                                            |
@@ -93,7 +94,7 @@ If you do not have a client `short_name` value set, Ghostwriter will replace ref
 
 #### Findings Attributes – HTML & Rich Text Attributes
 
-You write your findings in Ghostwriter's WYSIWYG editor where you can style text as you would directly in Word. The WYSIWYG editor uses HTML, so Ghostwriter stores your content as HTML.
+You write your findings in Ghostwriter's WYSIWYG editor, where you can style text as you would directly in Word. The WYSIWYG editor uses HTML, so Ghostwriter stores your content as HTML.
 
 Let's say you put the following Jinja2 code in a template:
 
@@ -119,9 +120,9 @@ To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for 
 {% endraw %}
 ```
 
-This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied) and all of your text will be styled.
+This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied), and all of your text will be styled.
 
-Each finding also has a unique `severity_rt` attribute. You don't style this text in the WYSIWYG editor. Ghostwriter creates a rich text version of your severity category that is colored using your configured color code for that category.
+Each finding also has a unique `severity_rt` attribute. You don't style this text in the WYSIWYG editor. Ghostwriter creates a rich text version of your severity category that is colored using your configured color code.
 
 The `severity_rt` attribute only styles the color of the text run so that you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag (for a run) like so:
 
@@ -187,18 +188,19 @@ Ghostwriter offers some custom filters you can use to modify report values quick
 The filter collection is under development and will continue to grow.
 {% endhint %}
 
-| **Filter**                                              | **Usage**                                                                                                                                                                                                                                                                                 |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `filter_severity(list)`                                 | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p><br>Example: This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p> |
-| `strip_html`                                            | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                                 |
-| `compromised`                                           | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                       |
-| `filter_type(list)`                                     | <p>Accepts the <code>findings</code> variable and filters it with a list of categories</p><p>Example: This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                                    |
-| `add_days(date,`` `_``_` ``current_format, new_format)` | <p>Provide a date to format with the current format string and a new format string. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | add_days("%b. %d, %Y", -10)</code></p>                                                                                         |
-| `format_datetime`_`(`_`date, format_str, days)`         | <p>Provide a date, a format string, and a number of days to add or subtract. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | format_datetime("%b. %d, %Y", "%B %-d, %Y")</code></p>                                                                                |
+| **Filter**                                      | **Usage**                                                                                                                                                                                                                                                                                 |
+| ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filter_severity(list)`                         | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p><br>Example: This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p> |
+| `strip_html(string)`                            | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                                 |
+| `compromised(targets)`                          | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                       |
+| `filter_type(list)`                             | <p>Accepts the <code>findings</code> variable and filters it with a list of categories</p><p>Example: This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                                    |
+| `add_days(date,` `current_format, new_format)`  | <p>Provide a date to format with the current format string and a new format string. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | add_days("%b. %d, %Y", -10)</code></p>                                                                                         |
+| `format_datetime`_`(`_`date, format_str, days)` | <p>Provide a date, a format string, and a number of days to add or subtract. Use Python's date format strings.<br><br>Example: <code>Feb. 1, 2022 | format_datetime("%b. %d, %Y", "%B %-d, %Y")</code></p>                                                                                |
+| `get_item(list, index)`                         | <p>Provide a list and an index to retrieve the list item at that index.</p><p></p><p>Example: <code>["ghostwriter", "report", "ghost"] | get_item(0)</code> returns <code>ghostwriter</code></p>                                                                                          |
 
 ### Subdocuments
 
-Subdocuments are like other variables except they are pre-rendered Word documents. When a subdocument is inserted into the template, it is like copy/pasting content from one document into another. A subdocument can be a small paragraph or a much larger section.
+Subdocuments are like other variables, except they are pre-rendered Word documents. When a subdocument is inserted into the template, it is like copy/pasting content from one document into another. A subdocument can be a small paragraph or a much larger section.
 
 Ghostwriter uses subdocuments to translate your WYSIWYG content (e.g., findings) to Office Open XML.
 
