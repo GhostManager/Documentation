@@ -28,25 +28,27 @@ The roles carry the following privileges:
 
 The `user` role can only access client and project data if they:
 
-* Have been assigned to the project
-* Have been invited to access the client
-* Have been invited to access the project
+* have been assigned to the project
+* have been invited to access the client
+* have been invited to access the project
 
-Otherwise, this role has the standard permissions you might expect. They can edit or delete their cancomments, update their profiles, and view the shared information in the various libraries (e.g., findings, domains).
+Otherwise, this role has the standard permissions you might expect. They can edit or delete their comments, update their profiles, and view the shared information in the various libraries (e.g., findings, domains).
+
+When viewing the project history for a domain, an account with the `user` role will only see project details if they can access the project or the related client.
 
 ### Manager Role Privileges
 
-The `manager` role has the ability to view all clients and projects. The role can also:
+The `manager` role can view all clients and projects. The role can also:
 
-* Invite others to access client data
-* Invite others to access project data
-* Assign others to a project
-* Edit report templates flagged as _protected_
+* invite others to access client data
+* invite others to access project data
+* assign others to a project
+* edit report templates flagged as _protected_
 
 If an account is flagged as a Django _Superuser_ that account will automatically inherit the `manager` role.
 
 {% hint style="info" %}
-In v3.0.0 web interface, client and project invitations must be created via the admin panel (_/admin/rolodex/clientinvite/_ and _/admin/rolodex/projecttinvite/_). Access to the admin panel requires an account with `superuser` status.
+In the v3.0.0 web interface, client and project invitations must be created via the admin panel (_/admin/rolodex/clientinvite/_ and _/admin/rolodex/projecttinvite/_). Access to the admin panel requires an account with `superuser` status.
 
 A future release will add an option to invite users from the client and project pages for the `manager` role.
 {% endhint %}
