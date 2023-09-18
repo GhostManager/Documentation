@@ -6,9 +6,11 @@ description: Configuring global variables for Ghostwriter and report generation
 
 ## Introducing Global Configurations
 
-Ghostwriter has an application called Command Center that manages a variety of global settings. An administrator can update the configuration at any time in the Django admin panel. Using a database means the Ghostwriter server does not need to be restarted for changes to take effect.
+An administrator can update global configuration at any time in the Django admin panel under the _Command Center_ section. Visit _/admin/commandcenter/_ to view the current configuration on your server. Visit each configuration and personalize your settings.
 
-Visit _/admin/commandcenter/_ to view the current configuration on your server. Visit each configuration and personalize your settings.
+{% hint style="info" %}
+The Ghostwriter server does **not** need to be restarted for changes to take effect.
+{% endhint %}
 
 ### Reporting Options
 
@@ -33,6 +35,4 @@ Other notification options may be added in the future. Email and services such a
 
 See [Background Tasks](../features/background-tasks/) for more information.
 {% endhint %}
-
-
 

@@ -6,7 +6,6 @@ description: UML diagrams for Ghostwriter database models
 
 ## The Ghostwriter Database
 
-Ghostwriter uses multiple Django sub-applications that are all tied together. This map shows all of the relationships between each app and the various models within each app.
+Ghostwriter uses multiple Django sub-applications to organize the codebase. This map shows all of the relationships between each app and the various models within each app.
 
-![All Models and Relationships](https://github.com/GhostManager/Ghostwriter/raw/master/DOCS/UML/all_models.png)
-
+![](../../.gitbook/assets/all\_models.png)

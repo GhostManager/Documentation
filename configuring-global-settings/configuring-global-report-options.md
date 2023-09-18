@@ -6,25 +6,57 @@ description: Configuring report styles
 
 Ghostwriter's report engine pulls several default style settings from Command Center. The settings apply to all projects and reports.
 
-{% hint style="success" %}
-Per report overrides are in development for all of the following settings.
-{% endhint %}
+## Report Configuration
 
-You can set a weight \(in EMUs; default is `12700` EMUs, or 1pt\) for borders, a color code for border color \(e.g., `2D2B6B`\), and the separator between "Table" or "Figure" and your captions. The default separator is an en dash \(–\).
+The Global Report Configuration section contains options for customizing the contents of your Word documents.
 
 {% hint style="info" %}
-These values only affect Word documents, but any future additions will also live here.
+Due to limitations in the PowerPoint API (and the nature of PowerPoint compared to Word), options for borders, tables, and figures only apply to Word documents right now.
 {% endhint %}
 
-![Global Report Configuration](../.gitbook/assets/image%20%2823%29.png)
+### Borders
+
+If you enable borders for pictures, you can set a border line weight (in EMUs; default is `12700` EMUs, or 1pt) and a border color code (e.g., `2D2B6B`).
+
+<figure><img src="../.gitbook/assets/image (5) (2).png" alt="Border configuration options"><figcaption><p>Border Configuration</p></figcaption></figure>
+
+### Tables and Figures
+
+Ghostwriter will add cross-reference (e.g., bookmarks) for figures and tables. Configure a label and a separator character that will appear between your label and your captions. The default separator is an en dash (–).
+
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt="Table and figure options"><figcaption><p>Table and Figure Options</p></figcaption></figure>
+
+### Report Generation Options
+
+Finally, you can select default report templates and configure a default filename for new report downloads. The filenames can be generic or include placeholders to create dynamic filenames.
+
+<figure><img src="../.gitbook/assets/image (2) (2).png" alt="Report generation options for filename and templates"><figcaption><p>Report generation Options for Filenames and Default Templates</p></figcaption></figure>
+
+Filenames can use the following placeholder strings or [date formatting characters](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date):
+
+| Placeholder         | Description                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{date}`            | The current date formatted with your [configured date format](https://www.ghostwriter.wiki/getting-started/quickstart#customizing-the-date-format). |
+| `{client}`          | The name of the client associated with the project.                                                                                                 |
+| `{company}`         | Your configured company name ([Company Information](personalizing-company-information.md)).                                                         |
+| `{assessment_type}` | The assessment type set for the project.                                                                                                            |
+
+{% hint style="success" %}
+The default filename value is a good example of how to use these dynamic elements. The default value is:
+
+`{Y-m-d`}`_{His} {company} - {client} {assessment_type} Report`
+
+That translates into a string like this:
+
+`2022-11-02_185117 SpecterOps - Ghostwriter Red Team Report`
+{% endhint %}
 
 ### Severity Categories and Color
 
-Severity categories are managed in the Reporting application, under the Severity model. Set a color code for each severity category \(e.g., `966FD6`\).
+Severity categories are managed under the _Reporting_ application and the _Severity_ model. Set a color code for each severity category (e.g., `966FD6`).
 
 {% hint style="danger" %}
 Do not change the name or weights without updating the HTML templates. Some templates modify styles based on specific severity names. Categories cannot be sorted alphabetically, so weights maintain the ordering in reports.
 {% endhint %}
 
-![Severity Settings](../.gitbook/assets/image%20%289%29.png)
-
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt="Severity settings for name, weight, and color"><figcaption><p>Severity Settings</p></figcaption></figure>

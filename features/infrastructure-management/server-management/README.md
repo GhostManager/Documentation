@@ -8,15 +8,14 @@ description: Managing servers with the Server Library
 
 The server library lives at `/shepherd/servers/`. The library is where users can view the current status of each server and checkout a server for a project.
 
-![The Server Library](../../../.gitbook/assets/server_library.png)
+![The Server Library](../../../.gitbook/assets/server\_library.png)
 
 ### Types of Servers
 
 The infrastructure manager tracks static servers and transient servers.
 
-The server library tracks servers in the `StaticServer` model. These _static_ servers are intended to be servers you own, such as your command control teamservers.
+The server library tracks servers in the `StaticServer` model. These _static_ servers are intended to be servers you own, such as your command control team servers.
 
-The `TransientServer` model tracks _transient_ servers, the various cloud servers/virtual private servers that come and go during assessments. These servers are added to specific projects from the project details page using the **Add a Transient Server** button.
+The `TransientServer` model tracks _transient_ servers, the various cloud servers/virtual private servers that come and go during assessments. The **Add a Transient Server** button adds these servers to specific projects from the project details page.
 
-![Adding a Transient Server to a Project](../../../.gitbook/assets/project_servers.png)
-
+![Adding a Transient Server to a Project](../../../.gitbook/assets/project\_servers.png)

@@ -6,11 +6,11 @@ description: Managing domains with the Domain Library
 
 ## The Domain Library
 
-The domain library lives at `/shepherd/domains/`. The library is where users can view the current status of each domain and checkout a domain for a project.
+The domain library lives at `/shepherd/domains/`. The library is where users can view the current status of each domain and check out a domain for a project.
 
-![The Domain Library](../../../.gitbook/assets/domain_library.png)
+![The Domain Library](../../../.gitbook/assets/domain\_library.png)
 
-### 
+###
 
 ## Adding Domains
 
@@ -22,7 +22,7 @@ To add just one domain name to the library, click the **Domain Library** tab on 
 
 You may not know the latest health information for the domain. You can set the domain to **Healthy** as a default value and leave categories blank.
 
-![New Domain Form](../../../.gitbook/assets/new_individual_domain.png)
+![New Domain Form](../../../.gitbook/assets/new\_individual\_domain.png)
 {% endtab %}
 
 {% tab title="Upload Domains" %}
@@ -45,4 +45,3 @@ The DomainCheck tool outputs a csv in this format if you want to preload health 
 {% endhint %}
 {% endtab %}
 {% endtabs %}
-

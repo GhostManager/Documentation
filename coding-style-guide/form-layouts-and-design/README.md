@@ -155,7 +155,7 @@ Assign the Submit button these CSS classes: `css_class="btn btn-primary col-md-4
 
 Assign the Cancel button these CSS classes: `css_class="btn btn-outline-secondary col-md-4`
 
-![Example of Default Buttons Assigned the Correct CSS Classes](<../../.gitbook/assets/image (2).png>)
+![Example of Default Buttons Assigned the Correct CSS Classes](<../../.gitbook/assets/image (2) (1).png>)
 
 The submit button should be an instance of Crispy's `Submit()` class. This class accepts a name and a value. In most examples online the `name` parameter is set to _submit_. The name can be anything, but using _submit-button_ is generally preferred. The value should always be _Submit_.
 
@@ -187,5 +187,5 @@ Large forms can be unwieldy, especially if the form contains one or more inline 
 
 Ghostwriter does not use Crispy's `Tab()` class. Instead, there is a `CustomTab()` class available in the project that allows for additional customization of the tabs.
 
-![Large Form for a New Project Broken Into Tabs](<../../.gitbook/assets/image (1).png>)
+![Large Form for a New Project Broken Into Tabs](<../../.gitbook/assets/image (1) (1) (1).png>)
 

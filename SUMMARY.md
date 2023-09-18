@@ -4,10 +4,9 @@
 
 ## Getting Started
 
-* [Installation](getting-started/installation/README.md)
-  * [Database Setup](getting-started/installation/database-setup.md)
-  * [First Server Run](getting-started/installation/first-server-run.md)
-* [Switch to Production](getting-started/production.md)
+* [Quickstart](getting-started/quickstart.md)
+* [Updating Ghostwriter](getting-started/updating-ghostwriter.md)
+* [Managing the Server](getting-started/managing-the-server.md)
 
 ## Configuring Global Settings
 
@@ -35,11 +34,11 @@
     * [Domain Checkout](features/infrastructure-management/domains-management/domain-checkout-1.md)
     * [Monitoring Domains](features/infrastructure-management/domains-management/monitoring-domains.md)
 * [Operation Logs](features/operation-logs/README.md)
-  * [Creating a new oplog](features/operation-logs/creating-a-new-oplog.md)
-  * [Interacting with the oplog table](features/operation-logs/create-a-new-entry.md)
+  * [Creating a New Operation Log](features/operation-logs/creating-a-new-oplog.md)
+  * [Interacting with the Operation Log Table](features/operation-logs/create-a-new-entry.md)
   * [Setting up Automated Logging](features/operation-logs/setting-up-automated-logging.md)
   * [Oplog REST API](features/operation-logs/oplog-rest-api-1.md)
-  * [Exporting / Importing Oplogs](features/operation-logs/exporting-importing-oplogs.md)
+  * [Exporting / Importing Operation Logs](features/operation-logs/exporting-importing-oplogs.md)
 * [Reporting](features/reporting/README.md)
   * [Report Types](features/reporting/report-types/README.md)
     * [Word Document Customization](features/reporting/report-types/word-document-customization.md)
@@ -55,6 +54,15 @@
 * [GraphQL API](features/graphql-api/README.md)
   * [Authentication](features/graphql-api/authentication.md)
   * [Authorization](features/graphql-api/authorization.md)
+  * [Common API Actions](features/graphql-api/common-api-actions.md)
+  * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
+* [Health Monitoring](features/health-monitoring.md)
+
+## Getting Help
+
+* [FAQ](getting-help/faq.md)
+* [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
+* [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
 
 ## Workflow & Usage <a href="#workflow" id="workflow"></a>
 
@@ -78,19 +86,18 @@
 * [Contributing to the Project](development/contributing-to-the-project/README.md)
   * [Pre-Release Checklist](development/contributing-to-the-project/pre-release-checklist.md)
 * [Database Models](development/database-models/README.md)
-  * [Home Models](development/database-models/home-models.md)
+  * [API Models](development/database-models/api-models.md)
   * [Client & Project Models](development/database-models/rolodex-models.md)
+  * [Configuration Models](development/database-models/configuration-models.md)
+  * [Home & User Models](development/database-models/home-models.md)
   * [Infrastructure Models](development/database-models/infrastructure-models.md)
+  * [Oplog Models](development/database-models/oplog-models.md)
   * [Reporting Models](development/database-models/reporting-models.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
 
-## Getting Help
-
-* [Reporting a Problem](getting-help/getting-help-with-a-problem.md)
-* [Reporting a Security Issue](getting-help/reporting-a-security-issue.md)
-
 ## Change Logs
 
+* [4 April 2022, v2.3.0-rc1](change-logs/4-april-2022-v2.3.0-rc1.md)
 * [16 February 2022, v2.2.3](change-logs/16-february-2022-v2.2.3.md)
 * [9 February 2022, v2.2.3-rc2](change-logs/9-february-2022-v2.2.3-rc2.md)
 * [28 January 2022, v2.2.3-rc1](change-logs/28-january-2022-v2.2.3-rc1.md)
