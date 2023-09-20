@@ -28,9 +28,17 @@ One of the simplest examples of how Ghostwriter can save a team time and effort 
 
 Ghostwriter will replace every instance of `{{ report_date }}` in your template with the current date (e.g., October 31, 2020). The replacement does not affect any formatting or styling, so this variable becomes the current date and keeps the original font style, color, and placement.
 
-![](<../../../.gitbook/assets/image (7) (1).png>)
+<div align="center">
 
-![](<../../../.gitbook/assets/image (17) (1).png>)
+<img src="../../../.gitbook/assets/image (7) (1).png" alt="">
+
+</div>
+
+<div align="center">
+
+<img src="../../../.gitbook/assets/image (17) (1).png" alt="">
+
+</div>
 
 {% hint style="success" %}
 Everything seen in the report [JSON](./#json) is accessible as a variable within your template. You can also use additional variables, filters, and expressions to refine or customize the report content.

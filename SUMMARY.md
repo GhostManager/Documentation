@@ -37,7 +37,6 @@
   * [Creating a New Operation Log](features/operation-logs/creating-a-new-oplog.md)
   * [Interacting with the Operation Log Table](features/operation-logs/create-a-new-entry.md)
   * [Setting up Automated Logging](features/operation-logs/setting-up-automated-logging.md)
-  * [Oplog REST API](features/operation-logs/oplog-rest-api-1.md)
   * [Exporting / Importing Operation Logs](features/operation-logs/exporting-importing-oplogs.md)
 * [Reporting](features/reporting/README.md)
   * [Report Types](features/reporting/report-types/README.md)

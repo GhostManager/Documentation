@@ -34,12 +34,7 @@ Finally, you can select default report templates and configure a default filenam
 
 Filenames can use the following placeholder strings or [date formatting characters](https://docs.djangoproject.com/en/4.1/ref/templates/builtins/#date):
 
-| Placeholder         | Description                                                                                                                                         |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{date}`            | The current date formatted with your [configured date format](https://www.ghostwriter.wiki/getting-started/quickstart#customizing-the-date-format). |
-| `{client}`          | The name of the client associated with the project.                                                                                                 |
-| `{company}`         | Your configured company name ([Company Information](personalizing-company-information.md)).                                                         |
-| `{assessment_type}` | The assessment type set for the project.                                                                                                            |
+<table><thead><tr><th width="238">Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>{date}</code></td><td>The current date formatted with your <a href="https://www.ghostwriter.wiki/getting-started/quickstart#customizing-the-date-format">configured date format</a>.</td></tr><tr><td><code>{client}</code></td><td>The name of the client associated with the project.</td></tr><tr><td><code>{company}</code></td><td>Your configured company name (<a href="personalizing-company-information.md">Company Information</a>).</td></tr><tr><td><code>{assessment_type}</code></td><td>The assessment type set for the project.</td></tr></tbody></table>
 
 {% hint style="success" %}
 The default filename value is a good example of how to use these dynamic elements. The default value is:

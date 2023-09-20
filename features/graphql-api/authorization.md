@@ -5,7 +5,7 @@ description: Explanation of Ghostwriter's role-based access controls
 # Authorization
 
 {% hint style="success" %}
-The role-based access controls described on this page apply _only to the GraphQL API_. These controls will apply to the web interface in a future version.
+In Ghostwriter <= v3.x, the role-based access controls described on this page apply _only to the GraphQL API_.
 {% endhint %}
 
 ## Introduction
@@ -48,7 +48,7 @@ The `manager` role can view all clients and projects. The role can also:
 If an account is flagged as a Django _Superuser_ that account will automatically inherit the `manager` role.
 
 {% hint style="info" %}
-In the v3.0.0 web interface, client and project invitations must be created via the admin panel (_/admin/rolodex/clientinvite/_ and _/admin/rolodex/projecttinvite/_). Access to the admin panel requires an account with `superuser` status.
+Client and project invitations must be created via the admin panel (_/admin/rolodex/clientinvite/_ and _/admin/rolodex/projecttinvite/_). Access to the admin panel requires an account with `admin` role.
 
 A future release will add an option to invite users from the client and project pages for the `manager` role.
 {% endhint %}

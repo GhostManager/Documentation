@@ -183,7 +183,7 @@ The cancel button could be an instance of `Button()` with an `onclick` kwarg, bu
 
 #### Organizing Large Forms
 
-Large forms can be unwieldy, especially if the form contains one or more inline formsets that users can add to the form to make it longer. Large forms should be organized into Bootstrap tabs using Crispy's __ `Tabholder()` class. This class must contain tabs that hold different sections of the form.
+Large forms can be unwieldy, especially if the form contains one or more inline formsets that users can add to the form to make it longer. Large forms should be organized into Bootstrap tabs using Crispy's `Tabholder()` class. This class must contain tabs that hold different sections of the form.
 
 Ghostwriter does not use Crispy's `Tab()` class. Instead, there is a `CustomTab()` class available in the project that allows for additional customization of the tabs.
 

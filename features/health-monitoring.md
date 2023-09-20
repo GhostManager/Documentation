@@ -51,11 +51,7 @@ Running these tests constantly could be a strain on the server, so the tests run
 
 You can visit the simplified endpoint, _/status/simple/_, to run lightweight checks. This endpoint checks the web server, database status, and cache status and returns one of the following responses:
 
-| Response | Response Code | Description                                                                      |
-| :------: | :-----------: | -------------------------------------------------------------------------------- |
-|    OK    |      200      | System is healthy                                                                |
-|  WARNING |      200      | One or more tests did not pass and you should check the detailed status endpoint |
-|   ERROR  |      500      | There was an unexpected error indicating a critical issue                        |
+<table><thead><tr><th width="158" align="center">Response</th><th width="172" align="center">Response Code</th><th>Description</th></tr></thead><tbody><tr><td align="center">OK</td><td align="center">200</td><td>System is healthy</td></tr><tr><td align="center">WARNING</td><td align="center">200</td><td>One or more tests did not pass and you should check the detailed status endpoint</td></tr><tr><td align="center">ERROR</td><td align="center">500</td><td>There was an unexpected error indicating a critical issue</td></tr></tbody></table>
 
 The home dashboard displays a basic system health status. The status is based on the results from the simplified endpoint.
 
