@@ -12,7 +12,7 @@ The task will report back with JSON detailing your active (powered-on) cloud ser
 
 You may spin up cloud servers on the same account that you do not want to be monitored. You can tag these servers with an "ignore tag" of your choosing. Provide a comma-separated list of tags for Ghostwriter to ignore when checking cloud assets.
 
-![Cloud Services Configuration](<../../.gitbook/assets/image (10) (1).png>)
+![Cloud Services Configuration](<../../.gitbook/assets/image (43).png>)
 
 {% hint style="info" %}
 This task is under development to support monitoring Microsoft Azure and additional AWS resources (e.g., Elastic IPs).

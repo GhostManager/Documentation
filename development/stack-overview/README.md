@@ -18,7 +18,7 @@ Ghostwriter uses the Docker **Python3.8-Alpine** image, a barebones image with P
 
 Docker Compose handles all of the dependencies, so nothing needs to be installed on the host except Docker.
 
-![Anatomy of the Docker Container for Ghostwriter](../../.gitbook/assets/image%20%2830%29.png)
+![Anatomy of the Docker Container for Ghostwriter](<../../.gitbook/assets/image (58).png>)
 
 ### The Database — PostgreSQL
 
@@ -32,5 +32,4 @@ Trying to move code updates to a production server can be messy when migrations 
 
 ### Background Tasking — AQMP
 
-Finally, Django Q and Redis handle automated queue management processing \(AQMP\). Ghostwriter automates a number of things like updating domain categorization data and DNS records. These tasks are handed off to Redis for background processing.
-
+Finally, Django Q and Redis handle automated queue management processing (AQMP). Ghostwriter automates a number of things like updating domain categorization data and DNS records. These tasks are handed off to Redis for background processing.

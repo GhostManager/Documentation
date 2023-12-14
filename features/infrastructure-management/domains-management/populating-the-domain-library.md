@@ -14,13 +14,13 @@ To add just one domain name to the library, click the **Domains** tab on the men
 
 You may not know the latest health information for the domain. You can set the domain to **Healthy** as a default value and leave categories blank.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt="New domain form"><figcaption><p>New Domain Form</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt="New domain form"><figcaption><p>New Domain Form</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Upload Domains" %}
 To bulk add servers to the library, visit the admin panel and navigate to the **Domains** model.  Click the **Import** button and follow the on-screen instructions.
 
-![Domain Import](<../../../.gitbook/assets/image (13) (1).png>)
+![Domain Import](<../../../.gitbook/assets/image (49).png>)
 
 You can upload csv, xls, xlsx, tsv, json, and yaml files. Select the matching format from the dropdown menu.
 

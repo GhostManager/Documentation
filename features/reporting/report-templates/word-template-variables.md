@@ -126,11 +126,11 @@ Each finding also has a unique `severity_rt` attribute. You don't style this tex
 
 The `severity_rt` attribute only styles the color of the text run so that you can apply a paragraph style to it directly in your Word template. Use it with the `r` tag (for a run) like so:
 
-![Severity Category Styled as Heading 4](<../../../.gitbook/assets/image (19).png>)
+![Severity Category Styled as Heading 4](<../../../.gitbook/assets/image (25).png>)
 
 That template renders as:
 
-![Rendered Severity Category with Chosen Color](<../../../.gitbook/assets/image (8) (1).png>)
+![Rendered Severity Category with Chosen Color](<../../../.gitbook/assets/image (56).png>)
 
 ### Ghostwriter Tags
 
@@ -147,7 +147,7 @@ Example: `{{p findings_subdoc }}`
 
 The table tags may appear complicated at first. You can create a table with a row for each point of contact using the provided statements, expressions, and tags like this:
 
-![Example of Dynamic Table Generation](<../../../.gitbook/assets/image (20).png>)
+![Example of Dynamic Table Generation](<../../../.gitbook/assets/image (33).png>)
 
 {% hint style="danger" %}
 Per `python-docx-template`, do not use `{%p`, `{%tr`, `{%tc` or `{%r` twice in the same paragraph, row, column or run.

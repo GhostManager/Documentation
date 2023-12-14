@@ -28,7 +28,7 @@ Categorization data is stored as _jsonb_ in the `categorization` field. The form
 
 This JSON data is displayed as a table under each domain's _Health_ tab:
 
-<figure><img src="../../../.gitbook/assets/image (7) (3).png" alt="Example of Domain Health and Categorization Information"><figcaption><p>Example of Domain Health and Categorization Information</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32).png" alt="Example of Domain Health and Categorization Information"><figcaption><p>Example of Domain Health and Categorization Information</p></figcaption></figure>
 
 Ghostwriter assumes these categories are bad, and any source flagging a domain with one of these categories will trigger the health status to flip to **Burned**:
 

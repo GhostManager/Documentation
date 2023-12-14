@@ -18,7 +18,7 @@ To add just one server to the library, click the **Servers** tab on the menu bar
 {% tab title="Upload Servers" %}
 To bulk add servers to the library, visit the admin panel and navigate to the **Static Servers** model.  Click the **Import** button and follow the on-screen instructions.
 
-![Server Import](<../../../.gitbook/assets/image (12) (1).png>)
+![Server Import](<../../../.gitbook/assets/image (21).png>)
 
 You can upload csv, xls, xlsx, tsv, json, and yaml files. Select the matching format from the dropdown menu.
 

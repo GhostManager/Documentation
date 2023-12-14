@@ -12,5 +12,4 @@ Fill-in the configuration values in accordance with your API configuration. All 
 
 {% embed url="https://www.namecheap.com/support/api/intro/" %}
 
-![Namecheap Configuration](../../.gitbook/assets/image%20%2824%29.png)
-
+![Namecheap Configuration](<../../.gitbook/assets/image (39).png>)

@@ -6,5 +6,4 @@ description: Configuring your company's information for reporting
 
 The Company Information settings affect reports. Ghostwriter can dynamically insert your company's name, social media handle, or email address. Update these values in Command Center.
 
-![Company Information Configuration](../.gitbook/assets/image%20%2822%29.png)
-
+![Company Information Configuration](<../.gitbook/assets/image (19).png>)

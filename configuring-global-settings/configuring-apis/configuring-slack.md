@@ -18,4 +18,4 @@ The alert target is the message target. You can set this to a blank string or a 
 
 Finally, set the target channel. This might be your `#general` or some other channel. This is the global value Ghostwriter will use for all messages unless a project-specific channel is supplied. When users create a new project, there is an option to provide a Slack channel for project-related notifications.
 
-![Slack Configuration](<../../.gitbook/assets/image (28).png>)
+![Slack Configuration](<../../.gitbook/assets/image (42).png>)

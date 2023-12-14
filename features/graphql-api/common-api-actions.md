@@ -22,7 +22,7 @@ For example, using Postman:
 
 In the _Collections_ tab, you can create requests with the newly created API. Select GraphQL as the format for the body and then select the API you just created from the dropdown list. Postman should auto-fetch the schema to enable auto-complete.
 
-![Atocomplete in the Postman Application](<../../.gitbook/assets/image (32).png>)
+![Atocomplete in the Postman Application](<../../.gitbook/assets/image (48).png>)
 
 Now you can explore the API and get comfortable before converting queries and mutations into code for automation.
 

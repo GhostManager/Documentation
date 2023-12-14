@@ -16,7 +16,7 @@ You can also request the template to be linted at any time by viewing the templa
 
 ## Template Statuses
 
-![Example Linter Status](<../../../.gitbook/assets/image (14) (1).png>)
+![Example Linter Status](<../../../.gitbook/assets/image (44).png>)
 
 There are four possible linter results:
 
@@ -50,4 +50,4 @@ If you'd like to check a Word template's available styles before uploading, open
 
 The list of styles in a new document is far more limited than what you see in the style gallery or style pane.
 
-![Styles Available in a New Document](<../../../.gitbook/assets/image (6) (1).png>)
+![Styles Available in a New Document](<../../../.gitbook/assets/image (40).png>)

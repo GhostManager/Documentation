@@ -6,7 +6,7 @@ description: The following information is for Ghostwriter's provided tasks
 
 ## Release Domains
 
-The `tasks.release_domains` function checks if the currently checked-out domain names are due to be released. If Slack is enabled, it sends a Slack message when the domain's release date is either tomorrow or today. If the release date is today, the domain is also released back into the pool.
+The `ghostwriter.shepherd.tasks.release_domains` function checks if the currently checked-out domain names are due to be released. If Slack is enabled, it sends a Slack message when the domain's release date is tomorrow or today. If the release date is today, the domain is also released back into the pool.
 
 The task accepts an optional `reset_dns` argument that defaults to `False`. If this argument is set to `True`, the task will use the Namecheap API to reset the domain's DNS records upon release. This feature requires:
 
@@ -32,12 +32,12 @@ The `ghostwriter.reporting.tasks.archive_projects` function collects a list of p
 
 ## Scan Servers
 
-The `ghostwriter.shepherd.tasks.scan_servers` function collects a list of static servers cataloged in Ghostwriter, scans them for open ports using `python-nmap`, and records the results (the open port number and protocol). Then the results are compared to previous results. Ghostwriter will send a Slack notification if a new port is open if Slack is enabled.
+The `ghostwriter.shepherd.tasks.scan_servers` function collects a list of static servers cataloged in Ghostwriter, scans them for open ports using `python-nmap`, and records the results (the open port number and protocol). Then, the results are compared to previous results. Ghostwriter will send a Slack notification if a new port is open if Slack is enabled.
 
-This function focuses on the static servers because these servers are assumed to be owned by you and used for command and control (C2). These servers should not have open services exposed to the whole internet, so this is meant to alert you of open ports accessible outside of your management ranges. Transient servers (i.e. virtual private servers, cloud servers) will likely have open ports for phishing webpages and C2 redirection.
+This function focuses on the static servers because these servers are assumed to be owned by you and used for command and control (C2). These servers should not have open services exposed to the whole internet, so this is meant to alert you of open ports accessible outside of your management ranges. Transient servers (i.e., virtual private servers, cloud servers) will likely have open ports for phishing webpages and C2 redirection.
 
 {% hint style="danger" %}
-If you will be using this task the Q cluster needs to be started using as administrator / root permissions. Administrative privileges are required for the TCP SYN scan.
+If you will be using this task, the Q cluster needs to be started using an administrator / root permissions. Administrative privileges are required for the TCP SYN scan.
 {% endhint %}
 
 ## Namecheap Synchronization
@@ -54,11 +54,11 @@ The task will send a Slack message with all relevant server data to the project'
 
 ## Update Expiration
 
-The `check_expiration` task checks the expiration dates of all domains in the domain library and compares it to the current date. If the domain is set to auto-renew, the task will increment the expiration date by one year. Otherwise, the task will mark the domain as expired.
+The `check_expiration` task checks the expiration dates of all domains in the domain library and compares them to the current date. If the domain is set to auto-renew, the task will increment the expiration date by one year. Otherwise, the task will mark the domain as expired.
 
 ## Operation Log Monitor
 
-The `ghostwriter.modules.oplog_monitors.review_activity_logs` task checks operation logs for activity. It reviews all logs for all active projects. By default, the task looks for an entry to have been created in the past 24 hours. You can change the hours by setting the `hours` argument when scheduling the task.
+The `ghostwriter.modules.oplog_monitors.review_activity_logs` task checks operation logs for activity. It reviews all logs for all active projects. By default, the task looks for an entry created in the past 24 hours. You can change the hours by setting the `hours` argument when scheduling the task.
 
 The task outputs JSON detailing all activity logs that appear to be idle. This is useful for catching automated activity logging that may have started failing.
 

@@ -36,7 +36,7 @@ Ghostwriter also tests each service more thoroughly with two API endpoints:
 
 The first endpoint, _/status_, tests critical services and displays a table of results:
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Ghostwriter's Detailed System Status Dashboard</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>Ghostwriter's Detailed System Status Dashboard</p></figcaption></figure>
 
 These tests are more thorough than the Docker health checks. For example, Docker will verify the database back end is listening and accepting connections, but Ghostwriter runs tests to ensure the database is accepting connections and reading and writing are working as expected. Ghostwriter also checks disk usage is below 90% and at least 100MB of memory is available. These checks are can be adjusted via Ghostwriter CLI's `config set` command:
 
@@ -55,7 +55,7 @@ You can visit the simplified endpoint, _/status/simple/_, to run lightweight che
 
 The home dashboard displays a basic system health status. The status is based on the results from the simplified endpoint.
 
-<figure><img src="../.gitbook/assets/image (7) (2).png" alt=""><figcaption><p>Home Dashboard System Status Card</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (60).png" alt=""><figcaption><p>Home Dashboard System Status Card</p></figcaption></figure>
 
 ## Automated Monitoring
 

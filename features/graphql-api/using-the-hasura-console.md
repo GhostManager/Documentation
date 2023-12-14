@@ -48,6 +48,6 @@ It is best to create an API token for yourself by visiting your user profile and
 
 Once you have a token, uncheck the box next to the `-X-Hasura-Admin-Secret` header and create a new `Authorization` header. Your new _API Explorer_ window will look something like this:
 
-![Hasura Console Using an Authorization Header](<../../.gitbook/assets/image (33).png>)
+![Hasura Console Using an Authorization Header](<../../.gitbook/assets/image (31).png>)
 
 Now you will see the GraphQL queries and mutations available to your user under the _Explorer_ panel.
