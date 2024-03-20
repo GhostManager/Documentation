@@ -22,7 +22,7 @@ Ghostwriter is licensed under the **BSD-3** license.
 
 {% code title="LICENSE" %}
 ```
-Copyright (c) 2023, Christopher Maddalena
+Copyright (c) 2024, Christopher Maddalena
 
 All rights reserved.
 
