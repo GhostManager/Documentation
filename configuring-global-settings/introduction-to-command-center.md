@@ -17,6 +17,10 @@ The Ghostwriter server does **not** need to be restarted for changes to take eff
 * Company Information Configuration
 * Global Report Configuration
 
+### Customizing Models
+
+* Extra Fields Configuration
+
 ### Monitoring
 
 * VirusTotal Configuration
@@ -31,8 +35,8 @@ The Ghostwriter server does **not** need to be restarted for changes to take eff
 * Slack Configuration
 
 {% hint style="info" %}
-Other notification options may be added in the future. Email and services such as Pushover are possibilities. That said, you can add your own notification mediums and tasks in _tasks.py_.
+If you don't use Slack, you can customize notifications and tasks in _tasks.py_. You may also consider using the GraphQL API to create your own integrations.
 
-See [Background Tasks](../features/background-tasks/) for more information.
+See [Background Tasks](../features/background-tasks/) and [GraphQL API](../features/graphql-api/) for more information.
 {% endhint %}
 

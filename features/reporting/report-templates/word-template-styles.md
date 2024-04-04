@@ -20,7 +20,8 @@ These styles are called by name:
 | Bullet List    | Style bulleted (unordered) lists                                                                                                                   |
 | Caption        | Built-in style used for captions below evidence and lines pre-ceded by the _\{{.caption\}}_ expression                                             |
 | List Paragraph | Built-in base style used for bulleted and numbered lists; the fallback built-in style if your template lacks the customized styles mentioned above |
-| BlockQuote     |                                                                                                                                                    |
+| BlockQuote     | Style used for block quotes.                                                                                                                       |
+| Table Grid     | Built-in style used for tables                                                                                                                     |
 
 {% hint style="success" %}
 **Note on List Styles**

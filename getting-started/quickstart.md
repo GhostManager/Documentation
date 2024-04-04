@@ -10,34 +10,30 @@ description: >-
 
 Ghostwriter uses [Docker Compose](https://docs.docker.com/compose/). Install Docker and Docker Compose before proceeding.
 
-You will need Docker version >=20 for the Alpine Linux images for Ghostwriter. Run `docker --version` to check your installation. Look at the `Version` value for the client and server.
+You will need Docker version >=20 for the Alpine Linux images for Ghostwriter. Run `docker version` to check your installation. Look at the `Version` value for the client and server.
 
-You will need Docker Compose version >=1.26 to support the compose files. Run `docker-compose --version` to check your installation.
+You will need Docker Compose version >=1.26 to support the compose files. Run `docker compose version` to check your installation.
+
+{% hint style="warning" %}
+Older versions of Docker Compose will try to build the containers and run into issues while parsing the configuration file with Docker's older DotEnv file parser—specifically, issues with quotations. Compose versions below v1.26 will parse configurations like port numbers literally and cause errors when Docker tries to bind a port like `"8000"`(with the quotes).
+
+As of v1.26, Compose uses aPython's DotEnv parser, which understands quotations.
+{% endhint %}
+
+{% hint style="info" %}
+Older installations of Docker Compose use `docker-compose` as the command. If you have `docker-compose` in your PATH instead of `docker compose`, consider upgrading to the latest version.&#x20;
+{% endhint %}
 
 ```shell-session
-$ docker-compose --version
-docker-compose version 1.29.2, build 5becea4c   # Good; >=1.26.x
+$ docker compose version
+Docker Compose version v2.23.3    # Good; >=1.26.x
 
-$ docker version                                                                                                                               1 ↵
+$ docker version
 Client:
- Cloud integration: v1.0.25
- Version:           20.10.16                    # Good; >=20.x.x
- API version:       1.41
- Go version:        go1.17.10
- Git commit:        aa7e414
- Built:             Thu May 12 09:20:34 2022
- OS/Arch:           darwin/amd64
- Context:           default
- Experimental:      true
+ Version:           25.0.3        # Good; >=20
 
 « snip »
 ```
-
-{% hint style="warning" %}
-There are now multiple ways to install Docker Compose. One of them makes it a subcommand of Docker, so you run it as `docker compose`. Ghostwriter CLI needs `docker-compose` in your PATH.
-
-If you install Compose and `docker-compose` is not in your PATH, rename the script in the install directory (e.g., `/usr/local/bin/docker-compose` on macOS and Linux) or create a symlink.
-{% endhint %}
 
 Docker requires sufficient resources to build the containers successfully. Most systems capable of running a modern OS should have the necessary resources. If building Ghostwriter inside of a VM, ensure the VM meets the following recommended specs:
 
@@ -76,7 +72,7 @@ $ ./ghostwriter-cli install
 ```
 
 {% hint style="info" %}
-Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use yoursigned certificates, do that now to make things easier. If you don't have them ready, you can install them later.
+Ghostwriter will create self-signed TLS/SSL certificates. If you'd like to use your signed certificates, do that now to make things easier. If you don't have them ready, you can install them later.
 
 There is more information below in [Customizing Your Installation](quickstart.md#customizing-your-installation).
 {% endhint %}
@@ -112,7 +108,7 @@ Changing the password in the config DOES NOT affect the installation. It's only 
 
 ### Adding More Users
 
-You may create users using the admin panel or ask users to sign-up using `/accounts/signup`. Filling out a complete profile is recommended. Ghostwriter can use full names for displaying user actions and filling-in report templates.
+You may create users using the admin panel or ask users to sign-up using `/accounts/signup`. Filling out a complete profile is recommended. Ghostwriter can use full names for displaying user actions and filling in report templates.
 
 {% hint style="warning" %}
 Django usernames are _case-sensitive_, so all lowercase is recommended to avoid confusion later.

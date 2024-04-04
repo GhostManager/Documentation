@@ -2,10 +2,10 @@
 description: Explanation of Ghostwriter's role-based access controls
 ---
 
-# Authorization
+# Role-Based Access Controls
 
 {% hint style="success" %}
-In Ghostwriter <= v3.x, the role-based access controls described on this page apply _only to the GraphQL API_.
+In Ghostwriter <= v3.x, the role-based access controls described on this page apply _only to the GraphQL API_. In those older versions, user privileges are equivalent to every account having the `manager` role.
 {% endhint %}
 
 ## Introduction
@@ -19,7 +19,7 @@ User roles are the primary authorization mechanism. There are three user roles:
 A Ghostwriter administrator sets a user's role in the admin panel. All accounts are assigned the `user` role by default.
 
 {% hint style="info" %}
-If you look in Hasura you will also see a `public` role. Only Hasura uses this role. An unauthenticated request (i.e., any request that lacks a valid JWT in a request's `Authorization` header) is considered to have the `public` role. Specific webhook endpoints (e.g., `login`) are accessible to this role.
+If you look in the Hasura GraphQL console, you will also see a `public` role. Only Hasura uses this role. An unauthenticated request (i.e., any request that lacks a valid JWT in a request's `Authorization` header) is considered to have the `public` role. Specific webhook endpoints (e.g., `login`) are accessible to this role.
 {% endhint %}
 
 The roles carry the following privileges:
@@ -35,6 +35,10 @@ The `user` role can only access client and project data if they:
 Otherwise, this role has the standard permissions you might expect. They can edit or delete their comments, update their profiles, and view the shared information in the various libraries (e.g., findings, domains).
 
 When viewing the project history for a domain, an account with the `user` role will only see project details if they can access the project or the related client.
+
+#### Augmenting User Permission
+
+An admin can augment user permissions in the admin console. By default, the `user` role cannot edit, update, or delete entries in the Findings or Observation libraries.
 
 ### Manager Role Privileges
 

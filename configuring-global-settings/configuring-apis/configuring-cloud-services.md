@@ -12,7 +12,9 @@ The task will report back with JSON detailing your active (powered-on) cloud ser
 
 You may spin up cloud servers on the same account that you do not want to be monitored. You can tag these servers with an "ignore tag" of your choosing. Provide a comma-separated list of tags for Ghostwriter to ignore when checking cloud assets.
 
-![Cloud Services Configuration](<../../.gitbook/assets/image (43).png>)
+If you use Slack notifications to send reminders to teardown cloud infrastructure, you can also provide a notification delay in days. Ghostwriter will wait to send reminders until a project's end date + your delay.
+
+![Cloud Services Configuration](<../../.gitbook/assets/Screenshot 2024-02-28 at 12.19.57.png>)
 
 {% hint style="info" %}
 This task is under development to support monitoring Microsoft Azure and additional AWS resources (e.g., Elastic IPs).
@@ -44,7 +46,7 @@ Then, Ghostwriter uses an EC2 resource to call `instances` and a Lightsail clien
 * Tags
 * Misc. Networking and Hardware
 
-For S3, Ghostwriter calls `list-buckets` to get a list of all buckets.  This data includes the bucket's name and the date on which it was created.
+For S3, Ghostwriter calls `list-buckets` to get a list of all buckets.  This data includes the bucket's name and the date it was created.
 
 
 

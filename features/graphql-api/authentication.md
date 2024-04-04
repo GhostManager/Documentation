@@ -80,7 +80,7 @@ Hasura will connect to an authentication webhook before a request. The webhook t
 3. Verify the JWT contains the proper claims
 4. Finally, verify the user details are correct and that the account is still active
 
-If the token passes the above checks and your user's role is authorized (see [Authorization](authorization.md)) to perform the query or mutation, you will receive a `200 OK` response with your requested data.
+If the token passes the above checks and your user's role is authorized (see [Authorization](../role-based-access-controls.md)) to perform the query or mutation, you will receive a `200 OK` response with your requested data.
 
 If the token is not accepted, the authorization webhook will return a `401 Unauthorized` response with an error like this:
 
