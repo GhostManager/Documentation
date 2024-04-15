@@ -20,11 +20,13 @@ Jinja2 uses _statements_, _expressions_, and _filters_. These equate to lines of
 Templates can contain basic expressions and more complicated statements (e.g., for loops, if/else). In addition to the custom expressions and filters documented on this page, Jinja2 offers built-in statements, expressions, and filters you can use with Ghostwriter templates.
 
 {% hint style="info" %}
-To prevent cross-site scripting (XSS), Ghostwriter sanitizes the text fields. This sanitization creates a minor conflict with Jinja2 because it will escape `<` and `>` (e.g., replace the character with `%gt;`). If you want to check if something is greater or less than a value, use Jinja2's `gt()` and `lt()` tests.
+To prevent cross-site scripting (XSS), Ghostwriter sanitizes formatted text fields. This sanitization creates a minor conflict with Jinja2 because it will escape `<` and `>` (e.g., replace the character with `%gt;`). If you want to check if something is greater or less than a value, use Jinja2's `gt()` and `lt()` tests.
 
 [https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.gt](https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.gt)
 
 [https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.lt](https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.lt)
+
+You can freely use `<` or `>` if you use it inside your report template (not a text field inside Ghostwriter).
 {% endhint %}
 
 The official Jinja2 documentation contains all of the information you need to get started using its more advanced features:
@@ -39,10 +41,18 @@ There are also various considerations covered in the official Jinja2 documentati
 Whitespace Control
 {% endembed %}
 
-{% hint style="danger" %}
+{% hint style="warning" %}
 All of Ghostwriter's expressions and statements should be wrapped in curly braces with one space to either side (`{{ client.name }}`or `{% if ... %}` ) – unless otherwise noted.
 
 If you do not include the spaces, Jinja2 will not recognize the expression as valid and will ignore it.
+{% endhint %}
+
+{% hint style="success" %}
+If you ever need to include double curly braces or Jinja2 code inside a report and you **do not** want it to be rendered, you can escape your text in a couple of ways.
+
+One option is the `{% raw %}{% endraw %}` block.  Another is using Jinja2 's "literal variable delimiter" (`{{`) inside a variable expression (e.g., `{{ '{{' }}`).
+
+[https://jinja.palletsprojects.com/en/3.0.x/templates/#escaping](https://jinja.palletsprojects.com/en/3.0.x/templates/#escaping)
 {% endhint %}
 
 ### Using Conditionals
