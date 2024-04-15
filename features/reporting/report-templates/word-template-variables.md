@@ -19,6 +19,14 @@ Jinja2 uses _statements_, _expressions_, and _filters_. These equate to lines of
 
 Templates can contain basic expressions and more complicated statements (e.g., for loops, if/else). In addition to the custom expressions and filters documented on this page, Jinja2 offers built-in statements, expressions, and filters you can use with Ghostwriter templates.
 
+{% hint style="info" %}
+To prevent cross-site scripting (XSS), Ghostwriter sanitizes the text fields. This sanitization creates a minor conflict with Jinja2 because it will escape `<` and `>` (e.g., replace the character with `%gt;`). If you want to check if something is greater or less than a value, use Jinja2's `gt()` and `lt()` tests.
+
+[https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.gt](https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.gt)
+
+[https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.lt](https://jinja.palletsprojects.com/en/3.1.x/templates/#jinja-tests.lt)
+{% endhint %}
+
 The official Jinja2 documentation contains all of the information you need to get started using its more advanced features:
 
 {% embed url="https://jinja.palletsprojects.com/en/2.11.x/templates/" %}
