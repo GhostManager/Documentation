@@ -37,7 +37,7 @@ $ ./ghostwriter-cli running
 ```
 
 {% hint style="success" %}
-The `Status` column shows the uptime and health of the service. If you see an `unhealthy` status, that means that service failed a health check and it may not be working properly. Learn more about health checks here: [Health Monitoring](../features/health-monitoring.md)
+The `Status` column shows the uptime and health of the service. If you see an `unhealthy` status, that means that service failed a health check and it may not be working properly. Learn more about health checks here: [Health Monitoring](../../features/health-monitoring.md)
 {% endhint %}
 
 You can use the `logs` command to view a particular container's recent log events. The command requires the name of a running container. Valid container names are:

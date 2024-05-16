@@ -6,7 +6,8 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Updating Ghostwriter](getting-started/updating-ghostwriter.md)
-* [Managing the Server](getting-started/managing-the-server.md)
+* [Managing the Server](getting-started/managing-the-server/README.md)
+  * [Managing Logon Sessions](getting-started/managing-the-server/managing-logon-sessions.md)
 
 ## Configuring Global Settings
 
