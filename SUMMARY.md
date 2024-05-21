@@ -6,8 +6,9 @@
 
 * [Quickstart](getting-started/quickstart.md)
 * [Updating Ghostwriter](getting-started/updating-ghostwriter.md)
-* [Managing the Server](getting-started/managing-the-server/README.md)
-  * [Managing Logon Sessions](getting-started/managing-the-server/managing-logon-sessions.md)
+* [Managing the Server with Ghostwriter CLI](getting-started/managing-the-server-with-ghostwriter-cli/README.md)
+  * [Managing Logon Sessions](getting-started/managing-the-server-with-ghostwriter-cli/managing-logon-sessions.md)
+  * [Creating and Managing Backups](getting-started/managing-the-server-with-ghostwriter-cli/creating-and-managing-backups.md)
 
 ## Configuring Global Settings
 

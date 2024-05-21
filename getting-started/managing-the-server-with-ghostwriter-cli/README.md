@@ -2,13 +2,29 @@
 description: How to use Ghostwriter CLI to monitor and manage your Ghostwriter installation
 ---
 
-# Managing the Server
+# Managing the Server with Ghostwriter CLI
 
 ## Using Ghostwriter CLI to Manage the Server
 
 Ghostwriter CLI can handle just about anything you might need or want to do with your Ghostwriter installation. Running the tool with the `help` command–or no command–will print the latest usage information.
 
 The following sections explain some of the core functionality.
+
+{% hint style="info" %}
+By default, all commands target a production environment. Provide the `--dev` if you're interacting with a development environment. Every command can accept the `--dev` flag.
+{% endhint %}
+
+### Managing the Server Configuration
+
+The `config` command is your Swiss Army knife when managing your server configuration. If you don't provide any subcommands or arguments, the command prints your current configuration values (the contents of your server's DotEnv file).
+
+You can pull and set configuration values with `config`. Use `config get` to fetch a specific value or set of values. Use `config set` to change a value.
+
+There are also several subcommands to help you manage hostnames and origins you trust: `allowhost`, `disallowhost`, `trustorigin`, and `distrustorigin`. Use these subcommands to adjust those values, as the Quick Start guide describes.
+
+{% embed url="https://www.ghostwriter.wiki/getting-started/quickstart#customizing-your-installation" %}
+Customizing Your Installation
+{% endembed %}
 
 ### Managing Docker Containers
 
@@ -18,10 +34,10 @@ Ghostwriter CLI's `containers` command contains the following subcommands:
 * `up` : Bring up Ghostwriter containers
 * `down` : Bring down Ghostwriter containers
 * `start`: Start all stopped services and restart any running services
-* `stop`: Stop all running serviced
+* `stop`: Stop all running services
 * `restart` : Stop and restart all services
 
-If you ever need to check which containers are running, issue the `running` command. This command lists all running containers related to Ghostwriter. The output will look something like this (edited for easier display):
+If you need to check which containers are running, issue the `running` command. This command lists all running containers related to Ghostwriter. The output will look something like this (edited for easier display):
 
 ```
 $ ./ghostwriter-cli running
@@ -37,7 +53,7 @@ $ ./ghostwriter-cli running
 ```
 
 {% hint style="success" %}
-The `Status` column shows the uptime and health of the service. If you see an `unhealthy` status, that means that service failed a health check and it may not be working properly. Learn more about health checks here: [Health Monitoring](../../features/health-monitoring.md)
+The `Status` column shows the uptime and health of the service. If you see an `unhealthy` status that the service failed a health check and may not work properly. Learn more about health checks here: [Health Monitoring](../../features/health-monitoring.md)
 {% endhint %}
 
 You can use the `logs` command to view a particular container's recent log events. The command requires the name of a running container. Valid container names are:
@@ -49,10 +65,10 @@ You can use the `logs` command to view a particular container's recent log event
 * postgres
 * redis
 
-Using `all` for the container name will return logs from all running containers. By default, `logs` will return up to 500 lines. You can use the `--lines` flag to adjust how many lines you want to retrieve.
+With `all`, logs from all running containers will be returned. By default, `logs` will return up to 500 lines. You can use the `--lines` flag to adjust how many lines you want to retrieve.
 
 ```
-$ ./ghostwriter-cli logs ghostwriter_django
+$ ./ghostwriter-cli logs django
 
 PostgreSQL is available
 No changes detected
@@ -72,13 +88,3 @@ INFO 2022-06-06 21:47:37,674 on 20 140231754545992 ASGI 'lifespan' protocol appe
 INFO:     Application startup complete.
 INFO 2022-06-06 21:47:37,674 on 20 140231754545992 Application startup complete.
 ```
-
-### Creating and Managing Backups
-
-Ghostwriter CLI (>=v0.2.12) includes `backup` and `restore` commands to help you create and manage backups of your PostgreSQL database.
-
-The `backup` command uses PostgreSQL's `pg_dump` to dump the contents of the database. The resulting SQL file is gunzipped and stored in the `production_postgres_data_backups` Docker volume. Each file is named with the current timestamp (e.g., _backup\_2023\_05\_23T15\_54\_19.sql.gz_).
-
-Use the `--list` flag to list all available backup files stored in the volume.
-
-The `restore` command recreates the database using the specified backup file.
