@@ -59,7 +59,7 @@ One option is the `{% raw %}{% endraw %}` block.  Another is using Jinja2 's "li
 
 One of the easiest and most powerful things you can do in your templates is leverage conditional statements to control content.
 
-For example, you can use an `if` block to check a value to determine the content or formatting. Conditional blocks are powerful when combined with things like [your custom extra fields](../../../configuring-global-settings/configuring-extra-fields/).
+For example, you can use an `if` block to check a value to determine the content or formatting. Conditional blocks are powerful when combined with things like [your custom extra fields](../../../configuring-global-settings/configuring-extra-fields.md).
 
 Conditional blocks can be written in a couple of different ways.  The simplest will be familiar to anyone who has written a script in a language like Python:
 

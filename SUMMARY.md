@@ -20,8 +20,7 @@
   * [Configuring VirusTotal](configuring-global-settings/configuring-apis/configuring-virustotal.md)
   * [Configuring Namecheap](configuring-global-settings/configuring-apis/configuring-namecheap.md)
   * [Configuring Cloud Services](configuring-global-settings/configuring-apis/configuring-cloud-services.md)
-* [Configuring Extra Fields](configuring-global-settings/configuring-extra-fields/README.md)
-  * [Templating and Rich Text Fields](configuring-global-settings/configuring-extra-fields/templating-and-rich-text-fields.md)
+* [Configuring Extra Fields](configuring-global-settings/configuring-extra-fields.md)
 
 ## Features
 
@@ -70,6 +69,7 @@
   * [Common API Actions](features/graphql-api/common-api-actions.md)
   * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
 * [Health Monitoring](features/health-monitoring.md)
+* [Templating and Rich Text Fields](features/templating-and-rich-text-fields.md)
 
 ## Getting Help
 
