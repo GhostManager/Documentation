@@ -14,8 +14,8 @@ These styles are called by name:
 
 | Style Name     | Description                                                                                                                                        |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CodeBlock      | Style text evidence and anything in the WYSIWYG editor's code editor                                                                               |
-| CodeInline     | Style runs of text formatted as code in the WYSIWYG editor                                                                                         |
+| CodeBlock      | Style text evidence and anything in the WYSIWYG editor's code editor (must be a _Paragraph_ style type)                                            |
+| CodeInline     | Style runs of text formatted as code in the WYSIWYG editor (must be a _Character_ style type)                                                      |
 | Number List    | Style numbered (ordered) lists                                                                                                                     |
 | Bullet List    | Style bulleted (unordered) lists                                                                                                                   |
 | Caption        | Built-in style used for captions below evidence and lines pre-ceded by the _\{{.caption\}}_ expression                                             |
