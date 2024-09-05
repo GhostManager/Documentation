@@ -25,6 +25,7 @@
 ## Features
 
 * [Role-Based Access Controls](features/role-based-access-controls.md)
+* [Single Sign-On](features/single-sign-on.md)
 * [Client & Project Management](features/client-and-project-management/README.md)
   * [Client Dashboard](features/client-and-project-management/client-dashboard.md)
   * [Project Dashboard](features/client-and-project-management/project-dashboard/README.md)
