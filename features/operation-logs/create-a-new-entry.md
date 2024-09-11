@@ -14,7 +14,7 @@ There will be times when you will need the log's unique ID. The ID number is alw
 
 To manually create an entry, click on the "Create a new entry" button in the top right corner:
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Operation Log View Controls and Filtering</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Operation Log View Controls and Filtering</p></figcaption></figure>
 
 You will notice a new row is populated with the current UTC timestamps and your username in the _Operator_ field_._
 
@@ -82,4 +82,4 @@ By default, all new operation logs have notifications enabled. The optional [Ope
 
 Notification status is also displayed in the operation logs table:
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Log Notification Status in the Logs Table</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Log Notification Status in the Logs Table</p></figcaption></figure>

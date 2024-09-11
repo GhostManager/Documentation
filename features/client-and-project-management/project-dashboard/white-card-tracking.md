@@ -10,6 +10,6 @@ The latter may be the most common white card. Today, we commonly refer to assess
 
 This white card and other simulated events must be documented and tracked. Each white card has a date and time the client issued it, a descriptive title or headline field, and a free-form field for more thorough or detailed descriptions.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>Example of a White Card</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Example of a White Card</p></figcaption></figure>
 
 These fields make it simple to include these in a Ghostwriter report template as a list or table of white cards.

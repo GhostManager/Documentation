@@ -24,8 +24,11 @@
 
 ## Features
 
-* [Role-Based Access Controls](features/role-based-access-controls.md)
-* [Single Sign-On](features/single-sign-on.md)
+* [Access, Authentication, & Session Controls](features/access-authentication-and-session-controls/README.md)
+  * [Single Sign-On](features/access-authentication-and-session-controls/single-sign-on.md)
+  * [Two-Factor Authentication](features/access-authentication-and-session-controls/two-factor-authentication.md)
+  * [Role-Based Access Controls](features/access-authentication-and-session-controls/role-based-access-controls.md)
+  * [Session Management](features/access-authentication-and-session-controls/session-management.md)
 * [Client & Project Management](features/client-and-project-management/README.md)
   * [Client Dashboard](features/client-and-project-management/client-dashboard.md)
   * [Project Dashboard](features/client-and-project-management/project-dashboard/README.md)
@@ -62,6 +65,7 @@
     * [Word Template Variables](features/reporting/report-templates/word-template-variables.md)
     * [Word Template Styles](features/reporting/report-templates/word-template-styles.md)
     * [Troubleshooting Word Templates](features/reporting/report-templates/troubleshooting-word-templates.md)
+  * [Templating and Rich Text Fields](features/reporting/templating-and-rich-text-fields.md)
 * [Background Tasks](features/background-tasks/README.md)
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
@@ -70,7 +74,6 @@
   * [Common API Actions](features/graphql-api/common-api-actions.md)
   * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
 * [Health Monitoring](features/health-monitoring.md)
-* [Templating and Rich Text Fields](features/templating-and-rich-text-fields.md)
 
 ## Getting Help
 

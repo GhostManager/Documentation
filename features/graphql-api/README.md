@@ -13,7 +13,7 @@ Starting in v3.0.0, Ghostwriter includes a GraphQL API powered by the [Hasura Gr
 While the GraphQL API is still in development, there are some limitations to be aware of during testing:
 
 * Client and project invitations can only be managed via the Django admin panel or the API
-  * See the [_**Authorization**_](../role-based-access-controls.md) page for details
+  * See the [_**Authorization**_](../access-authentication-and-session-controls/role-based-access-controls.md) page for details
 
 ## Interacting with the API
 
