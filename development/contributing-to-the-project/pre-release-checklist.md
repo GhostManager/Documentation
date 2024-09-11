@@ -40,4 +40,3 @@ The following sections walk you through what to do to prepare for a new release 
 4. If all is well, merge into `main` or create the pull request with an itemized _CHANGELOG_
 5. Wait some time (usually \~25 minutes) and review the results of the GitHub Actions
 6. If required Actions succeeded, the code may be merged and Ghostwriter team members will review the code prior to a release
-7. If code is approved, the Ghostwriter team will update the [Change Logs](broken-reference) section, tag a release on GitHub, and link the new Change Logs page

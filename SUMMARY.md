@@ -111,16 +111,3 @@
   * [Oplog Models](development/database-models/oplog-models.md)
   * [Reporting Models](development/database-models/reporting-models.md)
 * [Expected Services & Processes](development/expected-services-and-processes.md)
-
-## Change Logs
-
-* [4 April 2022, v2.3.0-rc1](change-logs/4-april-2022-v2.3.0-rc1.md)
-* [16 February 2022, v2.2.3](change-logs/16-february-2022-v2.2.3.md)
-* [9 February 2022, v2.2.3-rc2](change-logs/9-february-2022-v2.2.3-rc2.md)
-* [28 January 2022, v2.2.3-rc1](change-logs/28-january-2022-v2.2.3-rc1.md)
-* [22 October 2021, v2.2.2](change-logs/22-october-2021-v2.2.2.md)
-* [27 September 2021, v2.2.2-rc2](change-logs/27-september-2021-v2.2.2-rc2.md)
-* [15 September 2021, v2.2.2-rc1](change-logs/15-september-2021-v2.2.2-rc1.md)
-* [28 May 2021, v2.2.1](change-logs/28-may-2021-v2.2.1.md)
-* [10 May 2021, v2.2.0](change-logs/10-may-2021-v2.2.0.md)
-* [13 April 2021, v2.2.0-rc1](change-logs/13-april-2021-v2.2.0-rc1.md)
