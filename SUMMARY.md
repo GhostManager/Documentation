@@ -62,7 +62,7 @@
     * [Excel Spreadsheet Customization](features/reporting/report-types/excel-spreadsheet-customization.md)
   * [Report Templates](features/reporting/report-templates/README.md)
     * [Report Template Linting](features/reporting/report-templates/report-template-linting.md)
-    * [Word Template Variables](features/reporting/report-templates/word-template-variables.md)
+    * [Word Template Variables & Filters](features/reporting/report-templates/word-template-variables.md)
     * [Word Template Styles](features/reporting/report-templates/word-template-styles.md)
     * [Troubleshooting Word Templates](features/reporting/report-templates/troubleshooting-word-templates.md)
   * [Templating and Rich Text Fields](features/reporting/templating-and-rich-text-fields.md)

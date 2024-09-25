@@ -2,7 +2,7 @@
 description: Introducing the Word template variables
 ---
 
-# Word Template Variables
+# Word Template Variables & Filters
 
 ## Jinja2 Statements, Expressions, & Filters
 
@@ -95,17 +95,19 @@ More on `cellbg`, creating tables, and other functionality below!
 
 ### Potentially Useful Jinja2 Expressions
 
-These expressions are built into Jinja2 and might be useful in your Word documents:
+These expressions are built into Jinja2 and might be helpful in your Word documents:
 
-| **Expression**                        | **Description**                                                              |
-| ------------------------------------- | ---------------------------------------------------------------------------- |
-| `capitalize(string)`                  | Capitalize the first character and convert the rest to lowercase             |
-| `lower(string)`                       | Convert a value to all lowercase                                             |
-| `replace(string, old, new)`           | Replace the old string (a substring of the first argument) with a new string |
-| `title(string)`                       | Return a titlecased string                                                   |
-| `trim(value, chars=None)`             | Strip leading and trailing characters (default is whitespace)                |
-| `unique(value, case_sensitive=False)` | Return a list of unique items from an iterable                               |
-| `upper(string)`                       | Convert a value to all uppercase                                             |
+| **Expression**                                                        | **Description**                                                                                                                                                                                                                                                                                                               |
+| --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `capitalize(string)`                                                  | Capitalize the first character and convert the rest to lowercase                                                                                                                                                                                                                                                              |
+| `lower(string)`                                                       | Convert a value to all lowercase                                                                                                                                                                                                                                                                                              |
+| `replace(string, old, new)`                                           | Replace the old string (a substring of the first argument) with a new string                                                                                                                                                                                                                                                  |
+| `title(string)`                                                       | Return a titlecased string                                                                                                                                                                                                                                                                                                    |
+| `trim(value, chars=None)`                                             | Strip leading and trailing characters (default is whitespace)                                                                                                                                                                                                                                                                 |
+| `unique(value, case_sensitive=False)`                                 | Return a list of unique items from an iterable                                                                                                                                                                                                                                                                                |
+| `upper(string)`                                                       | Convert a value to all uppercase                                                                                                                                                                                                                                                                                              |
+| `sort(iterable, reverse=False, case_sensitive=False, attribute=None)` | <p>Sort an iterable with Python's <code>sorted()</code><br><br><a href="https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.sort"><br></a><a href="https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.sort">https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.sort</a></p> |
+| `dictsort(mapping, case_sensitive=False, by="key", reverse=False)`    | <p>Like <code>sort</code> but accepts a mapping of key and value pairs to yield a dictionary<br><br><a href="https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.dictsort">https://jinja.palletsprojects.com/en/3.0.x/templates/#jinja-filters.dictsort</a></p>                                               |
 
 {% hint style="info" %}
 There are many other expressions and filters available. If you want to do something, there is probably a way to accomplish it with a built-in expression cleanly. You can perform math, logic, string mutations, and more.
@@ -165,7 +167,7 @@ Let's say you put the following Jinja2 code in a template:
 
 That would drop in raw HTML using whatever style you had assigned to `{{ finding.description }}` in the template. It's unlikely you would want that.
 
-Jinja2's `striptags` filter can help, but that removes all HTML without preserving new lines. Ghostwriter's custom `strip_html` filter will strip the tags and preserve newlines, but the output will still be all plaintext. You must re-apply character and paragraph styles, font changes, and other options. Your evidence files will also appear as text placeholders.
+Jinja2's `striptags` filter can help, but it removes all HTML without preserving new lines. Ghostwriter's custom `strip_html` filter will strip the tags and preserve newlines, but the output will still be all plaintext. You must re-apply character and paragraph styles, font changes, and other options. Your evidence files will also appear as text placeholders.
 
 To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for rich text) to the attribute's name, use the `p` tag (see **Ghostwriter Tags** below). The above example becomes:
 
@@ -177,7 +179,7 @@ To get what you see in the WYSIWYG editor in your Word document, add `_rt` (for 
 {% endraw %}
 ```
 
-This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied), and You add these tagsyour text will be styled.
+This will drop in your WYSIWYG HTML converted to Open XML for Word. Your image and text evidence will be present (with style and border options applied), and your text will be styled.
 
 Each finding also has a unique `severity_rt` attribute. You don't style this text in the WYSIWYG editor. Ghostwriter creates a rich text version of your severity category that is colored using your configured color code.
 
@@ -245,21 +247,22 @@ Ghostwriter offers some custom filters you can use to modify report values quick
 The filter collection is under development and will continue to grow.
 {% endhint %}
 
-| **Filter**                         | **Usage**                                                                                                                                                                                                                                                                                                  |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `filter_severity(list)`            | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p><br><strong>Example:</strong> This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p> |
-| `strip_html(string)`               | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                                                  |
-| `compromised(targets)`             | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                                        |
-| `filter_type(list)`                | <p>Accepts the <code>findings</code> variable and filter it with a list of categories.</p><p></p><p><strong>Example:</strong> This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                             |
-| `add_days(date,` `days)`           | <p>Provide a date and a number of days (integer) to add or subtract. Use negative numbers for subtraction and Python's date format strings.<br><br><strong>Example:</strong> <code>Feb. 1, 2022 | add_days(-10)</code></p>                                                                                 |
-| `format_datetimedate, format_str)` | <p>Provide a date and a format string. Use Python's date format strings.<br><br><strong>Example:</strong> <code>Feb. 1, 2022 | format_datetime("%B %-d, %Y")</code></p>                                                                                                                                    |
-| `get_item(list, index)`            | <p>Provide a list and an index to retrieve the list item at that index.</p><p></p><p><strong>Example:</strong> <code>["ghostwriter", "report", "ghost"] | get_item(0)</code> returns <code>ghostwriter</code></p>                                                                                          |
-| `filter_tags(list, allowlist)`     | <p>Accepts a list of objects (e.g., <code>findings</code>) and filters it with a list of tags.</p><p></p><p><strong>Example:</strong> This statement loops over only findings tagged with <code>xss</code>:</p><p> <code>{% for x in findings|filter_tags(["xss"]) %}</code></p>                           |
-| `regex_search(text, regex)`        | Perform a search with a regular expression and get the first match.                                                                                                                                                                                                                                        |
+| **Filter**                          | **Usage**                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filter_severity(list)`             | <p>Accepts the <code>findings</code> variable and filters it with a list of severities</p><p><br><strong>Example</strong><br>This statement loops over only findings rated as <em>High</em> or <em>Medium</em> severity:</p><p> <code>{% for x in findings|filter_severity(["High", "Medium"]) %}</code></p>                                                                                                                                                  |
+| `strip_html(string)`                | Accepts HTML strings and strips all tags.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `compromised(targets)`              | Accepts `targets` value and filters it to only include hosts marked as compromised.                                                                                                                                                                                                                                                                                                                                                                           |
+| `filter_type(list)`                 | <p>Accepts the <code>findings</code> variable and filter it with a list of categories.</p><p></p><p><strong>Example</strong><br>This statement loops over only findings with the type <em>Network</em>:</p><p> <code>{% for x in findings|filter_type(["Network"]) %}</code></p>                                                                                                                                                                              |
+| `add_days(date,` `days)`            | <p>Provide a date and a number of days (integer) to add or subtract. Use negative numbers for subtraction and Python's date format strings.<br><br><strong>Example</strong><br><code>Feb. 1, 2022 | add_days(-10)</code></p>                                                                                                                                                                                                                                  |
+| `format_datetimedate, format_str)`  | <p>Provide a date and a format string. Use Python's date format strings.<br><br><strong>Example</strong><br><code>Feb. 1, 2022 | format_datetime("%B %-d, %Y")</code></p>                                                                                                                                                                                                                                                                                     |
+| `get_item(list, index)`             | <p>Provide a list and an index to retrieve the list item at that index.</p><p></p><p><strong>Example</strong><br><code>["ghostwriter", "report", "ghost"] | get_item(0)</code> returns <code>ghostwriter</code></p>                                                                                                                                                                                                                                           |
+| `filter_tags(list, allowlist)`      | <p>Accepts a list of objects (e.g., <code>findings</code>) and filters it with a list of tags.</p><p></p><p><strong>Example</strong><br>This statement loops over only findings tagged with <code>xss</code>:</p><p> <code>{% for x in findings|filter_tags(["xss"]) %}</code></p>                                                                                                                                                                            |
+| `regex_search(text, regex)`         | Perform a search with a regular expression and get the first match.                                                                                                                                                                                                                                                                                                                                                                                           |
+| `replace_blanks(list, placeholder)` | <p>Replace null dictionary keys with <code>""</code> (default) or the specified placeholder value.<br><br><strong>Example</strong><br>Attempting to use Jinja2's <code>sort</code> filter with a list of dictionaries with null values will cause an error. This statement loops over all entries in an activity log while also replacing blank values and then sorting.<br><br><code>{% for entry in log|replace_blanks|sort(attribute="tool") %}</code></p> |
 
 ### Subdocuments
 
-Subdocuments are like other variables, except they are pre-rendered Word documents. When a subdocument is inserted into the template, it is like copy/pasting content from one document into another. A subdocument can be a small paragraph or a much larger section.
+Subdocuments are like other variables, except they are pre-rendered Word documents. Inserting a subdocument is like copying and pasting content from one document into another. A subdocument can be a small paragraph or a much larger section.
 
 Ghostwriter uses subdocuments to translate your WYSIWYG content (e.g., findings) to Office Open XML.
 
@@ -271,4 +274,4 @@ Ghostwriter uses the `jinja2.ext.debug` extension to make it easier for you to d
 
 The next time you generate a report with that template, Ghostwriter will replace the tag with the template's available context (the report and project data) and filters.
 
-Also, see [Troubleshooting Word Templates](troubleshooting-word-templates.md) for a more in-depth explanation of troubleshooting a template that gives you problems.
+Also, see [Troubleshooting Word Templates](troubleshooting-word-templates.md) for a more in-depth explanation of how to troubleshoot a template that gives you problems.
