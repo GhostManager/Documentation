@@ -16,7 +16,7 @@ The template library is where you manage all of your templates. The library live
 
 Upload a template by selecting **Reports** from the sidebar and then clicking **Add New Report Template**. The template form has a few options for controlling how the template is used and who can edit it.
 
-![The Report Template Form](<../../../.gitbook/assets/image (29).png>)
+![The Report Template Form](<../../../.gitbook/assets/image (43).png>)
 
 The **Template Name** is what users will select from the report template dropdown menus. The **Doc Type** (_docx_ or _pptx_) affects under which reports the template will appear as an option and how the template linter reads the document. These two fields are required.
 

@@ -152,7 +152,11 @@ Queries are simple until you need to pack them into the nested JSON for a web re
 
 You can write your query in a human-readable format and then use something like JavaScript's `JSON.stringify()` or Python's `json.dumps()` to create the properly formatted payload for the POST request. However, this can lead to accidental double-encoding which will cause issues down the line. The simplest option is using a library built for handling GraphQL requests, like `gql` for Python.
 
-Here is an example query request in Python using the `gql` library:
+Here is an example query request in Python using the `gql` library. For more examples and ideas, see this section:
+
+{% content-ref url="graphql-usage-examples/" %}
+[graphql-usage-examples](graphql-usage-examples/)
+{% endcontent-ref %}
 
 ```python
 from gql import Client, gql

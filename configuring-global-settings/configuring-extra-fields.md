@@ -6,7 +6,7 @@ Ghostwriter v4.1 introduces Extra Fields, additional user-defined fields that ca
 
 To configure extra fields, go to Admin Panel > Admin Panel, and then "Extra Field Configurations". Then select the object type you wish to configure extra fields for.
 
-<figure><img src="../../.gitbook/assets/extra-fields-objects.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/extra-fields-objects.png" alt=""><figcaption></figcaption></figure>
 
 Each extra field has the following options:
 
@@ -19,13 +19,13 @@ Each extra field has the following options:
   * **Integer**: Whole integer value without any decimal component
   * **Number**: Numeric value, potentially with a decimal component
 
-<figure><img src="../../.gitbook/assets/extra-fields-fields.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/extra-fields-fields.png" alt=""><figcaption></figcaption></figure>
 
 After saving the field, it will appear in the object's edit forms and in their detail pages:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Using in Templates
 

@@ -8,11 +8,11 @@ When performing offensive assessment work, you will likely trigger an alert or g
 
 You can record deconfliction events under a project’s _Deconflictions_ tab. Each recorded event appears as a card, like so:
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Example Deconfliction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Example Deconfliction</p></figcaption></figure>
 
 Deconflictions are time-sensitive. Delayed or inconclusive responses can mean wasted effort and frustration for defenders. Events like these are why activity logging is critical. Each deconfliction card tracks a few key pieces of information and light metrics.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Log Entries Related to a Deconfliction</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Log Entries Related to a Deconfliction</p></figcaption></figure>
 
 Once you have responded, you can update the status to reflect if the event was or was not related to your work, and the card will show how much time has passed between receiving the deconfliction request and the final response.
 

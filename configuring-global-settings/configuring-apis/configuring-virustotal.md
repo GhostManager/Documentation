@@ -34,8 +34,8 @@ If your organization has a premium API key (aka Premium API or Private API), you
 
 Some older API keys may have more restrictive quotas. You can check your key's quotas by visiting _https://virustotal.com/_, logging in with the account linked to the key, clicking your profile, and clicking "API Key" from the menu.
 
-![Quotas for a Free VirusTotal API Key](<../../.gitbook/assets/image (51).png>)
+![Quotas for a Free VirusTotal API Key](<../../.gitbook/assets/image (65).png>)
 
 Under the VirusTotal Configuration section, check the _Enable_ checkbox and provide your API key. Only change the _Sleep Time_ value if your rate limit allows for faster requests.
 
-![VirusTotal Configuration](<../../.gitbook/assets/image (30).png>)
+![VirusTotal Configuration](<../../.gitbook/assets/image (44).png>)

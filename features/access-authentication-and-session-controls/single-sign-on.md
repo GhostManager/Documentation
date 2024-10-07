@@ -100,7 +100,7 @@ These settings enable Microsoft email authentication and consider all email addr
 
 If someone were to authenticate with a Microsoft account, they would only be allowed to create or link an account if registration is enabled and the domain allowlist checks passed. If either check fails, the user will be redirected to a page like this.
 
-<figure><img src="../../.gitbook/assets/image (68).png" alt=""><figcaption><p>Registration Unavailable Page</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption><p>Registration Unavailable Page</p></figcaption></figure>
 
 ### Additional SSO Settings
 

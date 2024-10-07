@@ -149,7 +149,7 @@ Note the newline after the opening `"""` which deviates from standard practice (
 
 The above example is rendered like this:
 
-![](<../.gitbook/assets/image (16).png>)
+![](<../.gitbook/assets/image (30).png>)
 
 Anything wrapped in grave accent marks will be transformed into a link leading to the related object (e.g., a model).
 

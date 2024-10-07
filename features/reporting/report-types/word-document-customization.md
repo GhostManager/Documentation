@@ -30,13 +30,13 @@ Ghostwriter will replace every instance of `{{ report_date }}` in your template 
 
 <div align="center">
 
-<img src="../../../.gitbook/assets/image (17).png" alt="">
+<img src="../../../.gitbook/assets/image (31).png" alt="">
 
 </div>
 
 <div align="center">
 
-<img src="../../../.gitbook/assets/image (22).png" alt="">
+<img src="../../../.gitbook/assets/image (36).png" alt="">
 
 </div>
 

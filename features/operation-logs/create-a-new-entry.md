@@ -14,17 +14,17 @@ There will be times when you will need the log's unique ID. The ID number is alw
 
 To manually create an entry, click on the "Create a new entry" button in the top right corner:
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Operation Log View Controls and Filtering</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Operation Log View Controls and Filtering</p></figcaption></figure>
 
 You will notice a new row is populated with the current UTC timestamps and your username in the _Operator_ field_._
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>New Log Entry with Pre-Populated Fields</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>New Log Entry with Pre-Populated Fields</p></figcaption></figure>
 
 ### Modifying an Entry
 
 You can modify fields by double-clicking the table row you want to edit. A modal form will open:
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption><p>Modal Form for Editing a Log Entry</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption><p>Modal Form for Editing a Log Entry</p></figcaption></figure>
 
 Once you submit a change, the edits will sync via WebSockets and be visible to anyone with the log open.
 
@@ -38,13 +38,13 @@ The _Options_ column is home to two buttons: copy and delete. The _copy_ button 
 
 Log entries contain fields useful for tracking but can be too much for a table view, especially if you're viewing the log in a smaller browser window or a VM. You can customize the columns displayed by clicking the _Show/Hide Columns_ button and toggling columns on and off.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Table Column Selection and Customization</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption><p>Table Column Selection and Customization</p></figcaption></figure>
 
 ### Filtering Entries
 
 The log table provides a search bar to filter entries containing only the provided text. This filter helps you view log entries related to a specific user, host, or command. To use the filter bar, type in the keyword. The filter is applied as you type, so you can keep typing to narrow down the results further.
 
-<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption><p>Filtering Log Entries Based on Keywords</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption><p>Filtering Log Entries Based on Keywords</p></figcaption></figure>
 
 {% hint style="info" %}
 Note that text search will include columns you may have hidden. The filter is also limited to the currently loaded log entries. If you don't find what you want, scroll down to load additional entries and try filtering again.
@@ -62,7 +62,7 @@ Since all entries are created/modified/deleted using WebSockets, a persistent co
 
 Like many objects in Ghostwriter, you can add tags to a log entry to help with filtering and tracking. The log table will change how certain tags appear in the table:
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption><p>Example of Tags Displayed for a Log Entry</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption><p>Example of Tags Displayed for a Log Entry</p></figcaption></figure>
 
 Tags that include:
 
@@ -82,4 +82,4 @@ By default, all new operation logs have notifications enabled. The optional [Ope
 
 Notification status is also displayed in the operation logs table:
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Log Notification Status in the Logs Table</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption><p>Log Notification Status in the Logs Table</p></figcaption></figure>

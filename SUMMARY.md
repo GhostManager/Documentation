@@ -73,6 +73,9 @@
   * [Authentication](features/graphql-api/authentication.md)
   * [Common API Actions](features/graphql-api/common-api-actions.md)
   * [Using the Hasura Console](features/graphql-api/using-the-hasura-console.md)
+  * [GraphQL Usage Examples](features/graphql-api/graphql-usage-examples/README.md)
+    * [Recording Cloud Server Deployments](features/graphql-api/graphql-usage-examples/recording-cloud-server-deployments.md)
+    * [Integrating with BloodHound for Reporting](features/graphql-api/graphql-usage-examples/integrating-with-bloodhound-for-reporting.md)
 * [Health Monitoring](features/health-monitoring.md)
 
 ## Getting Help

@@ -18,7 +18,7 @@ Due to limitations in the PowerPoint API (and the nature of PowerPoint compared 
 
 If you enable borders for pictures, you can set a border line weight (in EMUs; default is `12700` EMUs, or 1pt) and a border color code (e.g., `2D2B6B`).
 
-<figure><img src="../.gitbook/assets/image (55).png" alt="Border configuration options"><figcaption><p>Border Configuration</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (69).png" alt="Border configuration options"><figcaption><p>Border Configuration</p></figcaption></figure>
 
 ### Tables and Figures
 
@@ -58,4 +58,4 @@ Severity categories are managed under the _Reporting_ application and the _Sever
 Do not change the name or weights without updating the HTML templates. Some templates modify styles based on specific severity names. Categories cannot be sorted alphabetically, so weights maintain the ordering in reports.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (45).png" alt="Severity settings for name, weight, and color"><figcaption><p>Severity Settings</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (59).png" alt="Severity settings for name, weight, and color"><figcaption><p>Severity Settings</p></figcaption></figure>

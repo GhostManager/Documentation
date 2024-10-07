@@ -18,7 +18,7 @@ Ghostwriter uses the Docker **Python3.8-Alpine** image, a barebones image with P
 
 Docker Compose handles all of the dependencies, so nothing needs to be installed on the host except Docker.
 
-![Anatomy of the Docker Container for Ghostwriter](<../../.gitbook/assets/image (58).png>)
+![Anatomy of the Docker Container for Ghostwriter](<../../.gitbook/assets/image (72).png>)
 
 ### The Database — PostgreSQL
 

@@ -8,7 +8,7 @@ Objectives are key to any assessment. As such, they must be carefully tracked an
 
 The objective list tracks each objective's status, completion progress, description, and sub-tasks.
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption><p>Example of an Objective with Tasks</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption><p>Example of an Objective with Tasks</p></figcaption></figure>
 
 By clicking the status bar, the status rotates through several states:
 

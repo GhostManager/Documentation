@@ -8,7 +8,7 @@ description: Tips for troubleshooting templates reporting issues inside Word
 
 You may see an error like this when opening your report in Word:
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt="" width="290"><figcaption><p>Common Word Error</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt="" width="290"><figcaption><p>Common Word Error</p></figcaption></figure>
 
 Generally, clicking "Yes" here is fine, and Word will fix whatever error(s) it finds in the document. The trouble here is this could lead to Word removing or changing the content you want in the document. These changes may not be noticeable and cause you problems later.
 
@@ -16,7 +16,7 @@ In some cases, the issue may be severe enough that Word displays this error afte
 
 <div align="center" data-full-width="false">
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt="" width="275"><figcaption><p>Corrupted Document Warning</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt="" width="275"><figcaption><p>Corrupted Document Warning</p></figcaption></figure>
 
 </div>
 
@@ -26,7 +26,7 @@ Read on to learn about the cause of these errors. If you'd rather try to fix the
 
 Your Office documents are archive files with XML files. You can open them with a utility like 7-zip to see the contents. An average Word document looks like this:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Contents of a Word Document</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption><p>Contents of a Word Document</p></figcaption></figure>
 
 These XML files are OpenXML files. The _document.xml_ file is where your report content lives, and the _styles.xml_ file holds the styles saved in your document (these carry over from your template).
 

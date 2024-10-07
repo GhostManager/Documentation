@@ -16,4 +16,4 @@ The client dashboard is your go-to place for viewing everything about a specific
 * Extra Fields and Notes
   * Any additional information you want to track
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>Client Dashboard Example</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Client Dashboard Example</p></figcaption></figure>
