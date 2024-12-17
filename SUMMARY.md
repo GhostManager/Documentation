@@ -66,6 +66,7 @@
     * [Word Template Styles](features/reporting/report-templates/word-template-styles.md)
     * [Troubleshooting Word Templates](features/reporting/report-templates/troubleshooting-word-templates.md)
   * [Templating and Rich Text Fields](features/reporting/templating-and-rich-text-fields.md)
+  * [Jinja2 Tips & Tricks](features/reporting/jinja2-tips-and-tricks.md)
 * [Background Tasks](features/background-tasks/README.md)
   * [Scheduling Tasks](features/background-tasks/scheduled-tasks.md)
   * [Prebuilt Tasks](features/background-tasks/prebuilt-tasks.md)
